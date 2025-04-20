@@ -1,21 +1,19 @@
-import { useContext } from "react";
-import Content from "./components/Content";
-import Sidebar from "./components/Sidebar";
-import { AppContext } from "./contexts/AppContext";
-import Announcements from "./components/Announcements";
-
 function App() {
-    const context = useContext(AppContext);
-    if (!context) {
-        throw new Error("Context is not loaded properly.");
-    }
-    const { hide, hideAnnouncements } = context;
-
     return (
         <main>
-            <Content />
-            {!hide && <Sidebar />}
-            {!hideAnnouncements && <Announcements />}
+            <div className="vercel-halt">
+                <p>
+                    I have to halt Vercel's deployment due to exceeding the
+                    bandwidth limit.
+                </p>
+                <p>Please head to Netlify App while I fix the problem.</p>
+                <p>
+                    An update will be posted there once the issue is resolved~
+                </p>
+                <a href="https://sekai-stories.netlify.app/">
+                    <img src="/img/netlify.png" alt="" />
+                </a>
+            </div>
         </main>
     );
 }

@@ -45,3 +45,15 @@
     display: flex;
     flex-direction: row;
 }
+
+.vercel-halt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100dvw;
+    min-height: 100dvh;
+    p {
+        text-align: center;
+    }
+}
