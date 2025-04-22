@@ -1,1 +1,0 @@
-{"Version": 3, "Meta": {"Duration": 1, "Fps": 60.0, "Loop": true, "AreBeziersRestricted": true, "CurveCount": 1, "UserDataCount": 0, "TotalSegmentCount": 2, "TotalPointCount": 2, "TotalUserDataSize": 0}, "Curves": [{"Target": "Parameter", "Id": "PARAM_HIGHLIGHT_VIEW", "Segments": [0, 1, 0, 1, 1]}], "UserData": []}

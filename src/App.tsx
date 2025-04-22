@@ -3,14 +3,20 @@ function App() {
         <main>
             <div className="vercel-halt">
                 <p>
-                    Netlify's deployment has been halted due to exceeding the
+                    SEKAI Stories has been paused due to exceeding the
                     bandwidth limit.
                 </p>
-                <p>Please head to Vercel App.</p>
+                <p>For more information, see this announcement.</p>
 
-                <a href="https://sekai-stories.vercel.app/">
-                    <img src="/img/vercel.png" alt="Vercel" />
-                </a>
+                <button
+                    className="btn-regular btn-blue"
+                    onClick={() =>
+                        (window.location.href =
+                            "https://ko-fi.com/post/SEKAI-Stories-Important-Announcement-A0A01DXJW5")
+                    }
+                >
+                    Ko-fi Announcement
+                </button>
             </div>
         </main>
     );
