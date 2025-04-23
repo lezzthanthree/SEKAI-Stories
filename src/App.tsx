@@ -11,8 +11,7 @@ function App() {
                 <button
                     className="btn-regular btn-blue"
                     onClick={() =>
-                        (window.location.href =
-                            "https://ko-fi.com/post/SEKAI-Stories-Important-Announcement-A0A01DXJW5")
+                        (window.location.href = "https://ko-fi.com/post/SEKAI-Stories-Important-Announcement-A0A01DXJW5")
                     }
                 >
                     Ko-fi Announcement
