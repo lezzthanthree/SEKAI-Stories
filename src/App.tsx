@@ -2,18 +2,20 @@ function App() {
     return (
         <main>
             <div className="vercel-halt">
-                <h1>New Announcement!</h1>
-                <p>SEKAI Stories will be moving to another site!</p>
+                <h3>SEKAI Stories has moved to a new domain.</h3>
 
                 <button
                     className="btn-regular btn-orange"
                     onClick={() =>
                         (window.location.href =
-                            "https://ko-fi.com/post/SEKAI-Stories-Relaunching-to-Cloudflare-Pages-T6T41E311K")
+                            "https://sekai-stories.pages.dev")
                     }
                 >
-                    Ko-fi Announcement
+                    Continue to SEKAI Stories
                 </button>
+                <a href="https://ko-fi.com/post/SEKAI-Stories-Relaunching-to-Cloudflare-Pages-T6T41E311K">
+                    Previous announcement
+                </a>
             </div>
         </main>
     );
