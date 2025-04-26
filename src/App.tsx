@@ -13,7 +13,7 @@ function App() {
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                ></iframe>
+                />
                 <button
                     className="btn-regular btn-orange"
                     onClick={() =>
