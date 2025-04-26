@@ -2,16 +2,14 @@ function App() {
     return (
         <main>
             <div className="vercel-halt">
-                <p>
-                    SEKAI Stories has been paused due to exceeding the
-                    bandwidth limit.
-                </p>
-                <p>For more information, see this announcement.</p>
+                <h1>New Announcement!</h1>
+                <p>SEKAI Stories will be moving to another site!</p>
 
                 <button
-                    className="btn-regular btn-blue"
+                    className="btn-regular btn-orange"
                     onClick={() =>
-                        (window.location.href = "https://ko-fi.com/post/SEKAI-Stories-Important-Announcement-A0A01DXJW5")
+                        (window.location.href =
+                            "https://ko-fi.com/post/SEKAI-Stories-Relaunching-to-Cloudflare-Pages-T6T41E311K")
                     }
                 >
                     Ko-fi Announcement
