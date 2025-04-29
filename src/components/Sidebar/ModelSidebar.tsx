@@ -19,6 +19,7 @@ import { ILive2DModelList } from "../../types/ILive2DModelList";
 import AddModelSelect from "../AddModelSelect";
 import { GetMotionData } from "../../utils/GetMotionUrl";
 import { useTranslation } from "react-i18next";
+import { CoreModel } from "../../types/CoreModel";
 
 interface StaticCharacterData {
     [key: string]: string[];
@@ -52,6 +53,8 @@ const ModelSidebar: React.FC<ModelSidebarProps> = () => {
         "We are Project Sekai"
     );
     const [showAddModelScreen, setShowAddModelScreen] =
+        useState<boolean>(false);
+    const [showAdvancedOptions, setShowAdvancedOptions] =
         useState<boolean>(false);
 
     const characterSelect = useRef<null | HTMLSelectElement>(null);
@@ -370,6 +373,7 @@ const ModelSidebar: React.FC<ModelSidebarProps> = () => {
                     : (firstFile as ILive2DModelList).modelBase,
                 modelData,
             });
+            console.log(live2DModel);
         } catch {
             setLoadingMsg("Failed to load model!");
         } finally {
@@ -525,6 +529,35 @@ const ModelSidebar: React.FC<ModelSidebarProps> = () => {
             }
         }
     };
+
+    const handleAdvanced = async (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        const value = event.target.checked;
+        if (value) {
+            const confirmation = confirm(
+                "You are about to access every parts of this model. Continue?"
+            );
+            if (!confirmation) return;
+        }
+
+        setShowAdvancedOptions(value);
+    };
+
+    const handleParamChange = async (
+        event: React.ChangeEvent<HTMLInputElement>
+
+    ) => {
+        
+    }
+
+    // const getParameterIds = async () => {
+    //     const coreModel = currentModel?.model instanceof Live2DModel
+    //         ? currentModel.model.internalModel.coreModel.
+    //         : undefined;
+
+    // };
+
     return (
         <div>
             <h1>{t("model-header")}</h1>
@@ -787,6 +820,60 @@ const ModelSidebar: React.FC<ModelSidebarProps> = () => {
                     />
                 </div>
             </div>
+            {currentModel?.model instanceof Live2DModel && (
+                <div className="option">
+                    <h2>Advanced</h2>
+                    <div className="option__content">
+                        <Checkbox
+                            id="advanced"
+                            label="Show advanced options"
+                            checked={showAdvancedOptions}
+                            onChange={handleAdvanced}
+                        />
+                    </div>
+                    {showAdvancedOptions &&
+                        currentModel && // Ensure currentModel exists
+                        (
+                            currentModel.model.internalModel
+                                .coreModel as CoreModel
+                        )["_parameterIds"].map((params, idx) => (
+                            <div className="option__content" key={params}>
+                                <h3>{params}</h3>
+                                <input
+                                    type="range"
+                                    name={params}
+                                    id={params}
+                                    min={(
+                                        (currentModel.model as Live2DModel)
+                                            .internalModel
+                                            .coreModel as CoreModel
+                                    ).getParameterMinimumValue(idx)}
+                                    max={(
+                                        (currentModel.model as Live2DModel)
+                                            .internalModel
+                                            .coreModel as CoreModel
+                                    ).getParameterMaximumValue(idx)}
+                                    step={0.01}
+                                    value={(
+                                        (currentModel.model as Live2DModel)
+                                            .internalModel
+                                            .coreModel as CoreModel
+                                    ).getParameterValueById(params)}
+                                    onChange={(e) => {
+                                        (
+                                            (currentModel.model as Live2DModel)
+                                                .internalModel
+                                                .coreModel as CoreModel
+                                        ).setParameterValueById(
+                                            params,
+                                            Number(e.target.value)
+                                        );
+                                    }}
+                                />
+                            </div>
+                        ))}
+                </div>
+            )}
         </div>
     );
 };
