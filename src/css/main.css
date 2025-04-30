@@ -292,6 +292,7 @@ select {
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
+  min-width: 100dvw;
   box-sizing: border-box;
   padding: 20px;
 }
