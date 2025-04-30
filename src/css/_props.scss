@@ -51,9 +51,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 100dvw;
     min-height: 100dvh;
-    p {
+    box-sizing: border-box;
+    h1, h2, h3, h4, p {
         text-align: center;
     }
+    padding: 20px;
 }

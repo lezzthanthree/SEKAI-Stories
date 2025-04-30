@@ -291,10 +291,11 @@ select {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 100dvw;
   min-height: 100dvh;
+  box-sizing: border-box;
+  padding: 20px;
 }
-.vercel-halt p {
+.vercel-halt h1, .vercel-halt h2, .vercel-halt h3, .vercel-halt h4, .vercel-halt p {
   text-align: center;
 }
 
