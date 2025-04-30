@@ -3,7 +3,13 @@ function App() {
         <main>
             <div className="vercel-halt center">
                 <h3>SEKAI Stories has moved to a new domain.</h3>
-                <p>Please update your bookmark to <a href="">sekai-stories.pages.dev</a>.</p>
+                <p>
+                    Please update your bookmark to{" "}
+                    <a href="https://sekai-stories.pages.dev">
+                        sekai-stories.pages.dev
+                    </a>
+                    .
+                </p>
                 <button
                     className="btn-regular btn-orange"
                     onClick={() =>
