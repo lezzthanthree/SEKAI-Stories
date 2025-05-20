@@ -142,7 +142,7 @@ export const SceneProvider: React.FC<AppProviderProps> = ({ children }) => {
     const initialScene: InitialScene = getInitialScene();
 
     useEffect(() => {
-        const announcementCookie = localStorage.getItem("featureAnnouncement2");
+        const announcementCookie = localStorage.getItem("uiuxTest");
         if (Number(announcementCookie) < 1) {
             setHideAnnouncements(false);
         }
