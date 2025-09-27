@@ -277,7 +277,7 @@
         "disable-dialog": "Don't show dialog next time."
     },
     "error": {
-        "header": "Error",
+        "header": "ข้อผิดพลาด",
         "import-scene-fail": "The canvas has been reset.",
         "invalid-json": "Invalid JSON format",
         "no-autosave": "No auto-save data found.",
