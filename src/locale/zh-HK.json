@@ -10,7 +10,27 @@
         "filters": "濾鏡",
         "flashback": "「過去」濾鏡",
         "sick": "「頭暈眼花」濾鏡",
-        "drooping-lines": "「尷尬」濾鏡"
+        "drooping-lines": "「尷尬」濾鏡",
+
+        "lighting": "燈光",
+        "preset": "預設參數",
+        "red": "紅色",
+        "green": "綠色",
+        "blue": "藍色",
+        "brightness": "亮度",
+        "saturation": "飽和度",
+        "select-preset": "揀一個預設參數",
+        "default": "預設",
+        "warm": "暖",
+        "night": "冷",
+        "off": "熄燈",
+        "bright": "照射燈",
+        "silhoutte": "剪影",
+        "custom-preset": "自訂"
+
+
+
+
     },
 
     "text": {
@@ -42,8 +62,12 @@
         "add-model-static-description": "當Sekai Viewer無法訪問時嘅備用選項",
         "delete-model-warn": "冇得Del最後嘅圖層",
         "character": "角色",
+        "upload-image": "上傳圖片",
+        "upload-image-description": "上傳你自己嘅PNG人物圖片。",
         "select-character": "揀一個角色",
         "costume": "服裝",
+        "live2d-issue": "呢件服裝可能缺少某啲部件。",
+        "live2d-issue-github": "問題係呢度睇。",
         "virtual": "虛擬",
         "emotion": "表情",
         "rename-emotion": "幫呢個表情起個朵，重置請留空",
