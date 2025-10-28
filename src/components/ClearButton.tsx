@@ -6,7 +6,7 @@ import { SettingsContext } from "../contexts/SettingsContext";
 import { SceneContext } from "../contexts/SceneContext";
 
 const ClearButton: React.FC = () => {
-    const month = new Date().getMonth() + 1;
+    const month = new Date().getMonth() * -1 + 1;
     const { t } = useTranslation();
     const scene = useContext(SceneContext);
     const settings = useContext(SettingsContext);

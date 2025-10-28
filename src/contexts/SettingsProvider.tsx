@@ -8,7 +8,7 @@ interface SidebarProviderProps {
 export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     children,
 }) => {
-    const month = new Date().getMonth() + 1;
+    const month = new Date().getMonth() * -1 + 1;
     const [openedSidebar, setOpenedSidebar] = useState<string>("text");
     const [hide, setHide] = useState<boolean>(false);
     const [hideAnnouncements, setHideAnnouncements] = useState<boolean>(true);

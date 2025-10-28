@@ -21,7 +21,7 @@ interface SceneProviderProps {
 }
 
 export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
-    const month = new Date().getMonth() + 1;
+    const month = new Date().getMonth() * -1 + 1;
     const softError = useContext(SoftErrorContext);
     const settings = useContext(SettingsContext);
     const { t } = useTranslation();
@@ -84,7 +84,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
             setStartingMessage,
             setLoading,
             ...(!blankCanvas
-                ? { scene: month === 10 ? "october" : "none" }
+                ? { scene: month === 10 ? "october" : "getjumped" }
                 : {
                       scene: month === 10 ? "blankoctober" : "blank",
                   }),
