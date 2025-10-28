@@ -129,7 +129,6 @@ const randomText = {
         "我繪我名",
         "是唸「デコ　ニナ」啦！",
         // "瑞繪99", // Uncomment after Nov 30, 2025
-        // "瑞希就是跨女！可愛就是正義！", // #SHEHERFORMIZUKI related, remove if needed
     ],
 	
 	zhHK:[] as string[],
