@@ -267,6 +267,20 @@ const LoadInitialScene = (scene?: string): InitialScene => {
         };
     }
 
+    if (scene === "getjumped") {
+        return {
+            background: "/background_compressed/bg00026.jpg",
+            model: "v2_20mizuki_casual",
+            text: "a lot of you guys use this site whose owner is a huge ruinene fan but there are 14k of you every week and i don't wanna get jumped.",
+            nameTag: "Mizuki",
+            character: "mizuki",
+            modelX: 940,
+            modelY: 550,
+            pngName: "mizuki_lookaway",
+            sceneText: "white",
+        };
+    }
+
     if (scene === "october") {
         return randomOctoberScene[
             Math.floor(Math.random() * randomOctoberScene.length)
