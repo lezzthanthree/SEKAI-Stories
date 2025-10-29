@@ -54,7 +54,7 @@
         "add-model-sekai": "sekai.best",
         "add-model-sekai-description": "เข้าถึงโมเดลต่างๆที่นำเสนอโดย Sekai Viewer!",
         "add-model-static": "SEKAI Stories",
-        "add-model-static-description": "ตัวเลือกสำรองเมื่อ Sekai Viewer ล่ม",
+        "add-model-static-description": "ตัวเลือกสำรองกรณี Sekai Viewer ล่ม",
         "upload-image": "อัปโหลดรูปภาพ",
         "upload-image-description": "อัปโหลดรูปภาพสไปรต์ของคุณ",
         "delete-model-warn": "นี่เป็นเลเยอร์เดียวและไม่สามารถลบได้",
@@ -125,6 +125,7 @@
     "cancel": "ยกเลิก",
     "next": "ถัดไป",
     "input": "ใส่ข้อมูล",
+    "adjust": "ปรับ",
     "enter-value": "ใส่ค่าข้อมูล",
 
     "support": {
@@ -147,6 +148,7 @@
 
     "character": {
         "none": "ไม่มี",
+        "blank": "",
         "custom": "กำหนดเอง",
         "ichika": "Ichika",
         "saki": "Saki",
@@ -188,14 +190,15 @@
         "ln": "Leo/need",
         "vs": "VIRTUAL SINGER",
         "split": "สถานที่แยก",
-        "temp": "อื่นๆ"
+        "temp": "อื่นๆ",
+        "cards": "การ์ด"
     },
 
     "settings": {
         "header": "ตั้งค่า",
         "language": "ภาษา",
         "auto-save": "บันทึกอัตโนมัติ",
-        "auto-save-description": "งานของคุณจะถูกบันทึกโดยอัตโนมัติทุก 3 นาที หากเกิดปัญหา, คุณสามารถดาวน์โหลดข้อมูลสำรองล่าสุดเป็นไฟล์ JSON ได้",
+        "auto-save-description": "งานของคุณจะถูกบันทึกโดยอัตโนมัติทุก 3 นาที หากเกิดปัญหา, คุณสามารถดาวน์โหลดข้อมูลสำรองล่าสุดเป็นไฟล์ SEKAISCENE ได้",
         "auto-save-button": "รับบันทึกครั้งล่าสุด",
         "toggles": "เปิด/ปิด",
         "audio": "เสียง",
@@ -209,7 +212,7 @@
     },
     "import-export": {
         "header": "นำเข้า/ส่งออก",
-        "description": "พื้นหลังและสไปรต์แบบกำหนดเองจะไม่ถูกรวมอยู่ในไฟล์ JSON นี้",
+        "description": "พื้นหลังและสไปรต์แบบกำหนดเองจะไม่ถูกรวมอยู่ในไฟล์ SEKAISCENE นี้",
         "import": "นำเข้า",
         "export": "ส่งออก"
     },
@@ -240,9 +243,11 @@
         "selectedLayerHeader": "เลเยอร์ที่เลือก",
         "selectedLayerParagraph": "โมเดลทั้งหมดที่แสดงบนงานของคุณจะอยู่ที่นี่ คุณสามารถเลือกและปรับแต่งได้",
         "addModelHeader": "เพิ่มโมเดล",
-        "addModelParagraph": "คุณสามารถเพิ่มโมเดล Live2D ใหม่ได้",
+        "addModelParagraph": "คุณสามารถเพิ่มโมเดล Live2D ใหม่และอัปโหลดภาพของคุณได้",
         "uploadSpriteHeader": "อัปโหลดสไปรท์",
         "uploadSpriteParagraph": "อัปโหลดสไปร์ PNG ของคุณ",
+        "hideLayerHeader": "การมองเห็น",
+        "hideLayerParagraph": "เปิด/ปิดการมองเห็นของเลเยอร์",
         "removeLayerHeader": "ลบเลเยอร์",
         "removeLayerParagraph": "ลบเลเยอร์ที่เลือก",
         "transformHeader": "แทรนซฺฟอร์ม",
@@ -281,6 +286,7 @@
         "import-scene-fail": "แคนวาสได้ถูกรีเซ็ตแล้ว",
         "invalid-json": "รูปแบบ JSON ไม่ถูกต้อง",
         "no-autosave": "ไม่พบข้อมูลการบันทึกอัตโนมัติ",
+        "no-valid-models": "กรุณาเพิ่มโมเดล Live2D ใหม่ก่อน",
         "not-an-image": "นี่ไม่ใช่รูปภาพ",
         "default-scene-fail": "เกิดข้อผิดพลาดขณะโหลดฉากเริ่มต้น\nโปรดใช้ปุ่มล้าง รีเฟรชเบราว์เซอร์ของคุณ หรือล้างคุกกี้ของคุณ\nหากปัญหายังคงอยู่ โปรดรายงานปัญหานี้บน GitHub",
         "name-tag-inputs-limit": "จำกัดการใส่ข้อมูลสำหรับป้ายชื่อไว้ที่ 2 ถึง 6 รายการ",
