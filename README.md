@@ -14,11 +14,15 @@ I would like to thank the developers of [Sekai Viewer](https://github.com/Sekai-
 ### The Localization Contributors
 A huge thanks to our translators!
 
-[<img src="https://avatars.githubusercontent.com/u/33550839?v=4" width="50">](https://github.com/counter185)
-[<img src="https://avatars.githubusercontent.com/u/98752512?v=4" width="50">](https://github.com/MiddleRed)
 [<img src="https://yt3.googleusercontent.com/bXEX1lrt2hFwcGYSGUuWDDYSd2VtHMJ-_-FnJMWzVRjcpQZMlpYeWe7MSCI9kszUAbydBSN5=s120-c-k-c0x00ffffff-no-rj" width="50">](https://www.youtube.com/@GatoMagoMusic)
+[<img src="https://avatars.githubusercontent.com/u/98752512?v=4" width="50">](https://github.com/MiddleRed)
 [<img src="https://avatars.githubusercontent.com/u/182323592?v=4" width="50">](https://github.com/SteveLF-bili)
+[<img src="https://avatars.githubusercontent.com/u/61617417?v=4" width="50">](https://github.com/emptylight370)
 [<img src="https://avatars.githubusercontent.com/u/58261459?v=4" width="50">](https://github.com/fab144)
+[<img src="https://avatars.githubusercontent.com/u/33550839?v=4" width="50">](https://github.com/counter185)
+[<img src="https://avatars.githubusercontent.com/u/117494034?v=4" width="50">](https://github.com/aungpaos)
+[<img src="https://avatars.githubusercontent.com/u/59890180?v=4" width="50">](https://github.com/39Choko)
+[<img src="https://avatars.githubusercontent.com/u/67418738?v=4" width="50">](https://github.com/lmaodick1239)
 
 
 ## Features

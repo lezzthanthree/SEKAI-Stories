@@ -6,7 +6,6 @@ import { SettingsContext } from "../contexts/SettingsContext";
 import { SceneContext } from "../contexts/SceneContext";
 
 const ClearButton: React.FC = () => {
-    const month = new Date().getMonth() * -1 + 1;
     const { t } = useTranslation();
     const scene = useContext(SceneContext);
     const settings = useContext(SettingsContext);
@@ -44,19 +43,14 @@ const ClearButton: React.FC = () => {
                             <h3 className="text-center">{t("clear")}</h3>
                         </div>
                         <div className="windown__divider center">
-                            {month === 10 ? (
-                                <p>
-                                    You can change the option for blank canvas
-                                    on Settings.
-                                </p>
-                            ) : (
+                            {
                                 <Checkbox
                                     id="stop-show"
                                     label={t("start-blank")}
                                     checked={blankCanvas}
                                     onChange={handleBlankCanvas}
                                 />
-                            )}
+                            }
                         </div>
                     </div>
                 </Window>

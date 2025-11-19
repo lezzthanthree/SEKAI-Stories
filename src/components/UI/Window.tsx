@@ -58,8 +58,8 @@ const Window: React.FC<WindowProps> = ({
     const handleClose = () => {
         playSound("/sound/close.wav");
         if (window.current) {
-            window.current.style.transition = "transform 0.05s linear";
-            window.current.style.transform = "scale(0.5)";
+            window.current.style.transition = "transform 0.1s linear";
+            window.current.style.transform = "scale(0)";
             setTimeout(() => {
                 show(false);
                 if (window.current) {

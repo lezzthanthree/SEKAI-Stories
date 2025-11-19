@@ -24,7 +24,8 @@
         line-height: 2.25rem;
     }
     p,
-    label, li {
+    label,
+    li {
         line-height: 1.5rem;
     }
 
@@ -45,21 +46,56 @@
     #flavor-text {
         font-family: "FOT-RodinNTLGPro-M", sans-serif;
     }
+}
 
-    // .middle-information {
-    //     p {
-    //         font-family: "FOT-RodinNTLGPro-M", sans-serif;
-    //     }
-    // }
+.app-es,
+.app-fr,
+.app-fil,
+.app-ms,
+.app-pl {
+    font-family: "Noto Sans JP", "Noto Sans", sans-serif;
+    button,
+    select {
+        font-family: "Noto Sans JP", "Noto Sans", sans-serif;
+    }
+}
+
+.app-th {
+    font-family: "Noto Sans Thai", sans-serif;
+    button,
+    select {
+        font-family: "Noto Sans Thai", sans-serif;
+    }
+}
+
+.app-zh {
+    font-family: "Noto Sans SC", sans-serif;
+    button,
+    select {
+        font-family: "Noto Sans SC", sans-serif;
+    }
+}
+
+.app-zhTW {
+    font-family: "Noto Sans TC", sans-serif;
+    button,
+    select {
+        font-family: "Noto Sans TC", sans-serif;
+    }
+}
+
+.app-zhHK {
+    font-family: "Noto Sans HK", sans-serif;
+    button,
+    select {
+        font-family: "Noto Sans HK", sans-serif;
+    }
 }
 
 [class^="app-"]:not(.app-en):not(.app-ja) {
-    font-family: "Noto Sans JP", "Noto Sans TC", "Noto Sans SC", "Noto Sans HK",
-        "Noto Sans KR", "Noto Sans Thai", "Noto Sans", sans-serif;
     button,
     select {
-        font-family: "Noto Sans JP", "Noto Sans TC", "Noto Sans SC",
-            "Noto Sans HK", "Noto Sans KR", "Noto Sans", sans-serif;
+        font-family: "Noto Sans JP", "Noto Sans", sans-serif;
         font-weight: 800;
         p {
             font-weight: 400;

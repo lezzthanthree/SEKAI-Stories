@@ -52,7 +52,8 @@
   line-height: 2.25rem;
 }
 .app-en p,
-.app-en label, .app-en li,
+.app-en label,
+.app-en li,
 .app-ja p,
 .app-ja label,
 .app-ja li {
@@ -81,12 +82,61 @@
   font-family: "FOT-RodinNTLGPro-M", sans-serif;
 }
 
-[class^=app-]:not(.app-en):not(.app-ja) {
-  font-family: "Noto Sans JP", "Noto Sans TC", "Noto Sans SC", "Noto Sans HK", "Noto Sans KR", "Noto Sans Thai", "Noto Sans", sans-serif;
+.app-es,
+.app-fr,
+.app-fil,
+.app-ms,
+.app-pl {
+  font-family: "Noto Sans JP", "Noto Sans", sans-serif;
 }
+.app-es button,
+.app-es select,
+.app-fr button,
+.app-fr select,
+.app-fil button,
+.app-fil select,
+.app-ms button,
+.app-ms select,
+.app-pl button,
+.app-pl select {
+  font-family: "Noto Sans JP", "Noto Sans", sans-serif;
+}
+
+.app-th {
+  font-family: "Noto Sans Thai", sans-serif;
+}
+.app-th button,
+.app-th select {
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+.app-zh {
+  font-family: "Noto Sans SC", sans-serif;
+}
+.app-zh button,
+.app-zh select {
+  font-family: "Noto Sans SC", sans-serif;
+}
+
+.app-zhTW {
+  font-family: "Noto Sans TC", sans-serif;
+}
+.app-zhTW button,
+.app-zhTW select {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.app-zhHK {
+  font-family: "Noto Sans HK", sans-serif;
+}
+.app-zhHK button,
+.app-zhHK select {
+  font-family: "Noto Sans HK", sans-serif;
+}
+
 [class^=app-]:not(.app-en):not(.app-ja) button,
 [class^=app-]:not(.app-en):not(.app-ja) select {
-  font-family: "Noto Sans JP", "Noto Sans TC", "Noto Sans SC", "Noto Sans HK", "Noto Sans KR", "Noto Sans", sans-serif;
+  font-family: "Noto Sans JP", "Noto Sans", sans-serif;
   font-weight: 800;
 }
 [class^=app-]:not(.app-en):not(.app-ja) button p,
@@ -624,7 +674,9 @@ select:disabled {
   }
 }
 
-#content-background {
+#content-background,
+#split-background-1,
+#split-background-2 {
   position: absolute;
   filter: blur(25px);
   -webkit-filter: blur(25px);
@@ -634,6 +686,12 @@ select:disabled {
   z-index: -1;
   width: 100%;
   height: 100dvh;
+}
+
+#split-background-2 {
+  right: 0;
+  width: 50%;
+  background-position: 100%;
 }
 
 #flavor-text {

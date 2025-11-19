@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext } from "react";
 import Canvas from "./Canvas";
 import SidebarSelect from "./SidebarSelect";
 import DownloadButton from "./DownloadButton";
@@ -11,22 +11,12 @@ import { SoftErrorContext } from "../contexts/SoftErrorContext";
 import SoftError from "./UI/SoftError";
 import ExportButton from "./ExportButton";
 import ClearButton from "./ClearButton";
+import ContentBackground from "./ContentBackground";
 
 const Content: React.FC = () => {
-    const contentBackground = useRef<HTMLDivElement | null>(null);
     const scene = useContext(SceneContext);
     const settings = useContext(SettingsContext);
     const softError = useContext(SoftErrorContext);
-
-    useEffect(() => {
-        if (!scene || !scene.background) return;
-        if (contentBackground.current) {
-            contentBackground.current.style.backgroundImage = scene?.background
-                .filename
-                ? `url("${scene.background.filename}")`
-                : "";
-        }
-    }, [scene]);
 
     window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY;
@@ -58,7 +48,7 @@ const Content: React.FC = () => {
 
     return (
         <div id="content" className="center" style={{ position: "relative" }}>
-            <div id="content-background" ref={contentBackground}></div>
+            <ContentBackground />
 
             {showTutorial && <Tutorial show={setShowTutorial} />}
             {!hide && <SidebarSelect />}

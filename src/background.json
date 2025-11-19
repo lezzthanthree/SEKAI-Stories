@@ -2,8 +2,12 @@
     "update": "2025-10-20",
     "background": {
         "general": [
-            "bg00026",
-            "bg_a000000",
+            "bg_transparent",
+            "bg_white",
+            "bg_black",
+            "bg_green",
+            "bg_blue",
+            "bg_magenta",
             "bg_a000101",
             "bg_a000102",
             "bg_a000104",

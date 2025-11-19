@@ -78,11 +78,11 @@ const randomText = {
         "不要铺张浪费哦！",
         "你知道吗？中文汉化者SteveLF是个25推",
         "莫妮卡来了（心惊肉跳文学部）",
-        "如果初音未来突然出现在我的屏幕上怎么办？（这是PJSK电影的剧情，好奇的可以去看看电影，大陆没上映）",
+        "如果初音未来突然出现在我的屏幕上怎么办？（这是PJSK电影的剧情，好奇的可以去看看电影）",
         "我是雨！",
         "ena：愛して！　愛して！　愛して！　もっともっと！！！（ena姐在25电台#38的solo）",
         "我们赢了吗？",
-        "旺大吼！！",
+        "汪大吼！！",
         "L！O！V！E！mnr！",
         "恋をして",
         "来看看作者的偶像梦幻祭剧情生成器吧！",
@@ -139,21 +139,21 @@ const FlavorText: React.FC = () => {
     const { i18n } = useTranslation();
     const lng = i18n.language as keyof typeof randomText;
     const daysLeft = Math.ceil(
-        (new Date("November 30, 2025 22:00:00 UTC").getTime() -
+        (new Date("November 30, 2025 23:00:00 UTC").getTime() -
             new Date().getTime()) /
             (1000 * 60 * 60 * 24)
     ); // <---- ena5
     const quote =
         daysLeft < 0
             ? "Thank you, Mizuki~"
-            : `About ${daysLeft} ${
+            : `${daysLeft} ${
                   daysLeft === 1 ? "day remains" : "days remain"
               }.`;
     randomText.en.push(quote);
 	
     const quote_zh =
         daysLeft < 0
-            ? "我們在一起吧，瑞希"
+            ? "我们在一起吧，瑞希"
             : `还有大约${daysLeft}天。`;
 
     const quote_zhTW =

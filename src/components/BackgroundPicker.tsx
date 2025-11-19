@@ -16,6 +16,7 @@ import { SoftErrorContext } from "../contexts/SoftErrorContext";
 import { IBackgroundBookmark } from "../types/IBackgroundBookmark";
 // import { fuzzy } from "fast-fuzzy";
 
+const pngList = ["bg_transparent"];
 interface IBackgroundList {
     update: string;
     background: {
@@ -81,13 +82,16 @@ const BackgroundPicker: React.FC<BackgroundPickerProps> = ({
     }, [show, background?.filename]);
     const handleChangeBackground = async (bg: string) => {
         try {
-            const backgroundSprite = await getBackground(
-                `/background_compressed/${bg}.jpg`
-            );
+            const isPNG = pngList.includes(bg);
+            const filePath = isPNG
+                ? `/background_compressed/${bg}.png`
+                : `/background_compressed/${bg}.jpg`;
+
+            const backgroundSprite = await getBackground(filePath);
 
             background?.backgroundContainer.removeChildAt(0);
             background?.backgroundContainer.addChildAt(backgroundSprite, 0);
-            setFunction(`/background_compressed/${bg}.jpg`);
+            setFunction(filePath);
 
             setFilterValue("all");
             if (bg.includes("bg_s000362")) {
@@ -113,7 +117,8 @@ const BackgroundPicker: React.FC<BackgroundPickerProps> = ({
 
         const currentBackground = background.filename
             .replace("/background_compressed/", "")
-            .replace(".jpg", "");
+            .replace(".jpg", "")
+            .replace(".png", "");
         if (backgroundBookmarks.includes(currentBackground)) {
             const index = backgroundBookmarks.indexOf(currentBackground);
             if (index > -1) {

@@ -33,17 +33,17 @@ To contribute to the localization of the project, please follow these steps:
 For creativity, you can translate the flavor texts or add your own at [`src/components/FlavorText.tsx`](./src/components/FlavorText.tsx). **Make sure not to add any offensive or inappropriate texts**.
 
 ## List of languages translated
-| Language               | Locale Code | Translator/s           | Status            |
-|------------------------|-------------|------------------------|-------------------|
-| Spanish                | es-ES       | GatoMago               | Some are missing  |
-| Filipino               | fil-PH      | lezzthanthree          | Complete          | 
-| French                 | fr-FR       | 39Choko                | Some are missing  | 
-| Malay                  | ms-MY       | fab144                 | Some are missing  | 
-| Polish                 | pl-PL       | counter185             | Mostly incomplete |
-| Thai                   | th-TH       | aungpaos               | Some are missing  |
-| S. Chinese             | zh-CN       | MiddleRed, SteveLF     | Some are missing  |
-| T. Chinese (Hong Kong) | zh-HK       | lmaodick1239           | Some are missing  |
-| T. Chinese (Taiwan)    | zh-TW       | lmaodick1239           | Some are missing  |
+| Language               | Locale Code | Translator/s                          | Status            |
+|------------------------|-------------|---------------------------------------|-------------------|
+| Spanish                | es-ES       | GatoMago                              | Some are missing  |
+| Filipino               | fil-PH      | lezzthanthree                         | Complete          | 
+| French                 | fr-FR       | 39Choko                               | Some are missing  | 
+| Malay                  | ms-MY       | fab144                                | Some are missing  | 
+| Polish                 | pl-PL       | counter185                            | Mostly incomplete |
+| Thai                   | th-TH       | aungpaos                              | Some are missing  |
+| S. Chinese             | zh-CN       | MiddleRed, SteveLF, emptylight370     | Complete          |
+| T. Chinese (Hong Kong) | zh-HK       | lmaodick1239                          | Some are missing  |
+| T. Chinese (Taiwan)    | zh-TW       | lmaodick1239                          | Some are missing  |
 
 You can run the [`_check_missing.py`](./src/locale/_check_missing.py) Python script to check for missing keys in your translation. 
 

@@ -10,7 +10,9 @@
     }
 }
 
-#content-background {
+#content-background,
+#split-background-1,
+#split-background-2 {
     position: absolute;
     filter: blur(25px);
     -webkit-filter: blur(25px);
@@ -20,6 +22,12 @@
     z-index: -1;
     width: 100%;
     height: 100dvh;
+}
+
+#split-background-2 {
+    right: 0;
+    width: 50%;
+    background-position: 100%;
 }
 
 #flavor-text {

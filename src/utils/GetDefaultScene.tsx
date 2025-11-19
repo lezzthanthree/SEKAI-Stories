@@ -241,7 +241,7 @@ const personaScenes: InitialScene[] = [
 const LoadInitialScene = (scene?: string): InitialScene => {
     if (scene === "blank") {
         return {
-            background: "/background_compressed/bg00026.jpg",
+            background: "/background_compressed/bg_white.jpg",
             model: "01ichika_cloth001",
             text: "<insert text here>",
             nameTag: "<name>",
@@ -255,7 +255,7 @@ const LoadInitialScene = (scene?: string): InitialScene => {
 
     if (scene === "blankoctober") {
         return {
-            background: "/background_compressed/bg00026.jpg",
+            background: "/background_compressed/bg_white.jpg",
             model: "01ichika_cloth001",
             text: "<oooo spooky month>",
             nameTag: "<name>",
@@ -444,7 +444,7 @@ const LoadText = async (
     dialogue: string
 ): Promise<IText> => {
     const textAlignmentCookie = Number(
-        localStorage.getItem("textAlignment") ?? 0
+        localStorage.getItem("textAlignment-v2") ?? 0
     );
 
     const textContainer = new PIXI.Container();
@@ -462,7 +462,7 @@ const LoadText = async (
         stroke: 0x5d5d79,
         strokeThickness: 8,
     });
-    textNameTag.position.set(225, 780 + textAlignmentCookie);
+    textNameTag.position.set(225, 775 + textAlignmentCookie);
 
     const textDialogue = new PIXI.Text(dialogue, {
         fontFamily: "FOT-RodinNTLGPro-DB",

@@ -1,3 +1,27 @@
+# 5.8.13
+Release date: November 13, 2025
+- Fixed font-family inconsistencies on every language
+- Updated Simple Chinese Translation
+
+# 5.8.12
+Release date: November 7, 2025
+- Fixed issue on missing white background when blank canvas is checked (#47)
+- Increased distance between name tag and dialogue text
+- Change content background when split location is visible
+
+# 5.8.11
+Release date: November 4, 2025
+- Added colored backgrounds for keying models
+- Added transparent background option
+- Allow PNG selection on BackgroundPicker.tsx
+
+# 5.8.10
+Release date: October 30, 2025
+- Removed block on October Default Scenes
+- Updated Thai Translation
+- Updated Chinese (Taiwan and Hong Kong) Translation
+- Removed "About" on the countdown flavor text
+
 # 5.8.9
 Release date: October 20, 2025
 - Bring back default scenes

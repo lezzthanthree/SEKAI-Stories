@@ -21,6 +21,10 @@ const Translators: React.FC<TranslatorsProps> = ({ lng }) => {
                 img: "https://avatars.githubusercontent.com/u/182323592?v=4",
                 link: "https://github.com/SteveLF-bili",
             },
+            {
+                img: "https://avatars.githubusercontent.com/u/61617417?v=4",
+                link: "https://github.com/emptylight370",
+            },
         ],
         fil: [
             {
@@ -43,32 +47,32 @@ const Translators: React.FC<TranslatorsProps> = ({ lng }) => {
         th: [
             {
                 img: "https://avatars.githubusercontent.com/u/117494034?v=4",
-                link: "https://github.com/aungpaos"
-            }
+                link: "https://github.com/aungpaos",
+            },
         ],
         fr: [
             {
                 img: "https://avatars.githubusercontent.com/u/59890180?v=4",
-                link: "https://github.com/39Choko"
-            }
+                link: "https://github.com/39Choko",
+            },
         ],
         zhTW: [
             {
                 img: "https://avatars.githubusercontent.com/u/67418738?v=4",
                 link: "https://github.com/lmaodick1239",
-            }
+            },
         ],
         zhHK: [
             {
                 img: "https://avatars.githubusercontent.com/u/67418738?v=4",
                 link: "https://github.com/lmaodick1239",
-            }
-        ]
+            },
+        ],
     };
 
     return (
         <div className="window__divider">
-            {lng != "en" && (
+            {lng != "en" && translators[lng] && (
                 <div className="window__divider flex flex-row items-center gap-10">
                     <p>Translators: </p>
                     <>
@@ -87,7 +91,6 @@ const Translators: React.FC<TranslatorsProps> = ({ lng }) => {
                             </a>
                         ))}
                     </>
-                    
                 </div>
             )}
         </div>
