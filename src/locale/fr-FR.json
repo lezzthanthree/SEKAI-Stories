@@ -24,7 +24,11 @@
         "filters": "Filtres",
         "flashback": "Flashback",
         "sick": "Malade",
-        "drooping-lines": "Lignes tombantes"
+        "drooping-lines": "Lignes tombantes",
+        "pov": "POV/FOV",
+        "zoom": "Zoom",
+        "povx": "Position X",
+        "povy": "Position Y"
     },
     "text": {
         "header": "Texte",
@@ -74,6 +78,7 @@
         "y-position": "Position Y",
         "scale": "Échelle",
         "rotation": "Rotation",
+        "blur": "Flou",
         "mouth": "Bouche",
         "ParamMouthForm": "Forme primaire",
         "ParamMouthOpenY": "Ouverture",
@@ -118,9 +123,13 @@
     "cancel": "Annuler",
     "next": "Suivant",
     "input": "Entrée",
+    "adjust": "Ajustez",
     "enter-value": "Entrez une valeur.",
     "support": {
         "header": "Support",
+        "report-header": "Bug trouvée ?",
+        "report-details": "Si vous trouvez n'importe bugs ou glitches, merci de les signaler sur notre depôt GitHub.",
+        "report-button": "Signalez un problème.",
         "details": "Si vous aimez utiliser SEKAI Stories, vous pouvez me soutenir de l’une des façons suivantes :",
         "ko-fi-details": "Les dons sont facultatifs ! Je publierai aussi les mises à jour du site là-bas.",
         "github-details": "Ce projet est totalement open-source ! Vous pouvez signaler des problèmes ou contribuer via une pull request !",
@@ -177,7 +186,8 @@
         "ln": "Leo/need",
         "vs": "VIRTUAL SINGER",
         "split": "Lieux partagés",
-        "temp": "Autres"
+        "temp": "Autres",
+        "cards": "Cartes"
     },
     "settings": {
         "header": "Paramètres",
@@ -231,6 +241,8 @@
         "addModelParagraph": "Vous pouvez ajouter un nouveau personnage Live2D.",
         "uploadSpriteHeader": "Uploader un sprite PNG",
         "uploadSpriteParagraph": "Uploader votre propre sprite PNG.",
+        "hideLayerHeader": "Visibilité",
+        "hideLayerParagraph": "Basculez la visibilité du calque.",
         "removeLayerHeader": "Supprimer un calque",
         "removeLayerParagraph": "Supprime le calque sélectionné.",
         "transformHeader": "Transformer",
@@ -269,6 +281,7 @@
         "import-scene-fail": "Le canevas a été réinitialisé.",
         "invalid-json": "Format JSON invalide",
         "no-autosave": "Aucune donnée de sauvegarde automatique trouvée.",
+        "no-valid-models": "Ajoutez un nouveau modèle Live2D sur ce personnage en premier.",
         "not-an-image": "Ceci n’est pas une image.",
         "default-scene-fail": "Une erreur est survenue lors du chargement de la scène par défaut.\nVeuillez utiliser le bouton effacer, actualiser votre navigateur, ou vider vos cookies.\nSi le problème persiste, veuillez signaler ce bug sur GitHub.",
         "name-tag-inputs-limit": "La limite est de 2 à 6 entrées pour un surnom.",
