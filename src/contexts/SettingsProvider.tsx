@@ -31,7 +31,9 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     const [settingsLoaded, setSettingsLoaded] = useState<boolean>(false);
 
     useEffect(() => {
-        const announcementCookie = localStorage.getItem("5.9.0-announcements");
+        const announcementCookie = localStorage.getItem(
+            "pre-5.9.3-announcements"
+        );
         if (Number(announcementCookie) < 1) {
             setHideAnnouncements(false);
         }
