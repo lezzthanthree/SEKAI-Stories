@@ -47,11 +47,11 @@
             "flashback": "“过去”滤镜",
             "sick": "“头晕眼花”滤镜",
             "drooping-lines": "“尴尬”滤镜",
-            "pov": null,
+            "pov": "视角/视野",
             "pov-settings": {
-                "zoom": null,
-                "povx": null,
-                "povy": null
+                "zoom": "缩放",
+                "povx": "X轴位置",
+                "povy": "Y轴位置"
             }
         }
     },
@@ -123,7 +123,7 @@
             "y-position": "Y轴位置",
             "scale": "大小",
             "rotation": "旋转角度",
-            "blur": null,
+            "blur": "模糊",
             "layering": "图层顺序"
         },
         "mouth": {
@@ -173,6 +173,9 @@
     },
     "support": {
         "header": "支持作者",
+        "report-header": "发现了bug？",
+        "report-details": "如果你遇到了任何bug或者漏洞，请在我们的GitHub仓库中报告它们。",
+        "report-button": "报告一个问题",
         "details": "如果你非常非常喜欢SEKAI Stories，你可以通过以下方式之一支持作者：",
         "ko-fi-details": "捐款是个很好的选择！我也会在捐款网站那里发布我这个网站的更新",
         "github-details": "这个项目是完全开源的！你可以在Github上报告问题或打开拉取请求来做出贡献！",
@@ -248,6 +251,7 @@
         "expand": "自动展开所有菜单选项",
         "tutorial": "教程",
         "show-tutorial": "再次显示",
+        "mentalHealthWindow": "显示心理健康警告",
         "saveDialog": "显示保存菜单",
         "blankCanvas": "从空白画布开始"
     },
@@ -274,7 +278,12 @@
         "background-bookmark": "你不能收藏你自己上传的背景",
         "hide-everything-warning": "在“场景名称”菜单下的“隐藏所有文字与人物模型”选项已经被打开了\n请先把这个选项关闭掉再进行操作"
     },
-    "mental-health": {},
+    "mental-health": {
+        "header": "你可以寻求帮助",
+        "details": "你的感受很重要，你并不孤单。如果你正在经历困难时刻，可以点击下方按钮找到资源和愿意提供帮助的人。",
+        "settings-details": "你可以在设置中关闭此消息。",
+        "button": "带我去那里"
+    },
     "tutorial": {
         "initialSetup1": "调整位置，直到你看不到任何红色的地方",
         "initialSetup2": "你之后可以在文本菜单上把文字改回原来的位置",
