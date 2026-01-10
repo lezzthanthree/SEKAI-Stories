@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { Live2DModel } from "pixi-live2d-display-mulmotion";
+import { Live2DModel } from "@sekai-world/pixi-live2d-display-mulmotion";
 import ISceneContextType from "../types/ISceneContextType";
 import { getBackground } from "./GetBackground";
 

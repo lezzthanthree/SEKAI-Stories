@@ -4,7 +4,7 @@ import { SceneContext } from "../../../../contexts/SceneContext";
 import { SoftErrorContext } from "../../../../contexts/SoftErrorContext";
 import { useTranslation } from "react-i18next";
 import AddModelSelect from "../../../Window/AddModelSelect";
-import { Cubism4InternalModel } from "pixi-live2d-display-mulmotion";
+import { Cubism4InternalModel } from "@sekai-world/pixi-live2d-display-mulmotion";
 import IModel from "../../../../types/IModel";
 
 interface SelectedLayerProps {
@@ -180,7 +180,9 @@ const SelectedLayer: React.FC<SelectedLayerProps> = ({
             if (currentModel.modelName.includes("kisaragi")) {
                 setErrorInformation(" ");
             } else {
-                setErrorInformation(t("model.selected-layer.delete-model-warn"));
+                setErrorInformation(
+                    t("model.selected-layer.delete-model-warn")
+                );
             }
             return;
         }

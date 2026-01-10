@@ -7,7 +7,7 @@ import { getBackground } from "../../utils/GetBackground";
 import {
     Live2DModel,
     Cubism4InternalModel,
-} from "pixi-live2d-display-mulmotion";
+} from "@sekai-world/pixi-live2d-display-mulmotion";
 import IModel from "../../types/IModel";
 import Window from "../UI/Window";
 import { SettingsContext } from "../../contexts/SettingsContext";

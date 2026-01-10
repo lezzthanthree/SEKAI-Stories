@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { SceneContext } from "../../../../contexts/SceneContext";
 import IModel from "../../../../types/IModel";
 import Live2DInputSlider from "../../../UI/Live2DInputSlider";
-import { Cubism4InternalModel } from "pixi-live2d-display-mulmotion";
+import { Cubism4InternalModel } from "@sekai-world/pixi-live2d-display-mulmotion";
 
 interface MouthProps {
     coreModel?: Cubism4InternalModel["coreModel"];

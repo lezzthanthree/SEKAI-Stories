@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ILive2DModelList } from "../types/ILive2DModelList";
-import { sekaiUrl } from "./URL";
+import { sekaiUrl } from "./Constants";
 import { IMotionsExpressions } from "../types/IMotionExpression";
 
 // This code is mostly copied from SEKAI Viewer's Live2dLoader.
@@ -41,7 +41,7 @@ const getUrl = async (url: string): Promise<[number, string]> => {
         },
     });
 
-    const status = headRes.status
+    const status = headRes.status;
     if (status <= 400) {
         return [status, url];
     }

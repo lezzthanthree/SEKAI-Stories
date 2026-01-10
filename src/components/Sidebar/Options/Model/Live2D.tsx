@@ -12,7 +12,7 @@ import Live2DInputSlider from "../../../UI/Live2DInputSlider";
 import {
     Cubism4InternalModel,
     Live2DModel,
-} from "pixi-live2d-display-mulmotion";
+} from "@sekai-world/pixi-live2d-display-mulmotion";
 import { ILive2DParameterJsonSave } from "../../../../types/ILive2DParameterJsonSave";
 import { ValidateLive2DParameterJsonSave } from "../../../../utils/ValidateJsonSave";
 import { Checkbox } from "../../../UI/Checkbox";

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SettingsContext } from "./SettingsContext";
 import { IEasyNameTag } from "../types/IEasyNameTag";
+import { announcementKey } from "../utils/Constants";
 
 interface SidebarProviderProps {
     children: React.ReactNode;
@@ -31,9 +32,7 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     const [settingsLoaded, setSettingsLoaded] = useState<boolean>(false);
 
     useEffect(() => {
-        const announcementCookie = localStorage.getItem(
-            "pre-5.9.3-announcements"
-        );
+        const announcementCookie = localStorage.getItem(announcementKey);
         if (Number(announcementCookie) < 1) {
             setHideAnnouncements(false);
         }

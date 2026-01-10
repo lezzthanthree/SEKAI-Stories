@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { getBackground } from "../utils/GetBackground";
-import { Live2DModel } from "pixi-live2d-display-mulmotion";
+import { Live2DModel } from "@sekai-world/pixi-live2d-display-mulmotion";
 import { Dispatch, SetStateAction } from "react";
 import { Assets } from "@pixi/assets";
 import IBackground from "../types/IBackground";

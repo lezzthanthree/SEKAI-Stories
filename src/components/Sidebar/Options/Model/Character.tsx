@@ -8,7 +8,7 @@ import { ILive2DModelList } from "../../../../types/ILive2DModelList";
 import { useTranslation } from "react-i18next";
 import IModel from "../../../../types/IModel";
 import { ILive2DModelData } from "../../../../types/ILive2DModelData";
-import { Live2DModel } from "pixi-live2d-display-mulmotion";
+import { Live2DModel } from "@sekai-world/pixi-live2d-display-mulmotion";
 
 interface CharacterProps {
     isLoading: boolean;

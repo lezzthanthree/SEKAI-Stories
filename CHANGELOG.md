@@ -1,3 +1,7 @@
+# 5.9.3
+Release date: January 5, 2026
+- Fixed issue regarding on missing parts on certain characters
+
 # 5.9.2
 Release date: January 3, 2026
 - Arranged components folder

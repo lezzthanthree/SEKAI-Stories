@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ILive2DModelData } from "../types/ILive2DModelData";
 import { ILive2DModelList } from "../types/ILive2DModelList";
-import { sekaiUrl, staticUrl } from "./URL";
+import { sekaiUrl, staticUrl } from "./Constants";
 import { GetMotionData } from "./GetMotionUrl";
 
 export const GetModelDataFromStatic = async (

@@ -1,5 +1,8 @@
 import * as PIXI from "pixi.js";
-import { InternalModel, Live2DModel } from "pixi-live2d-display-mulmotion";
+import {
+    InternalModel,
+    Live2DModel,
+} from "@sekai-world/pixi-live2d-display-mulmotion";
 import { ILive2DModelData } from "./ILive2DModelData";
 
 export default interface IModel {

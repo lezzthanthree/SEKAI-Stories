@@ -251,6 +251,7 @@
         "expand": "Développer toutes les options de menu",
         "tutorial": "Tutoriel",
         "show-tutorial": "Afficher encore une fois",
+        "mentalHealthWindow": "Afficher l'avertissement sur la santé mentale",
         "saveDialog": "Afficher la boîte de sauvegarde",
         "blankCanvas": "Commencer avec un canevas vide"
     },
@@ -277,7 +278,12 @@
         "background-bookmark": "Vous ne pouvez pas ajouter de favori pour un arrière-plan personnalisé.",
         "hide-everything-warning": "L’option « Masquer modèles et dialogues » dans le menu Texte de scène est activée.\nVeuillez la désactiver dans le menu Texte."
     },
-    "mental-health": {},
+    "mental-health": {
+        "button": "Trouver de l’aide",
+        "details": "Ce que vous ressentez est important et vous n'êtes pas seul. Si vous traversez un moment difficile, vous pouvez cliquer sur le bouton ci-dessous pour trouvez des ressources et des personnes qui sont là pour vous aider.",
+        "header": "C'est normal de demander de l'aide",
+        "settings-details": "Vous pouvez désactiver ce message dans les paramètres."
+    },
     "tutorial": {
         "initialSetup1": "Ajustez le curseur jusqu’à ce que vous ne voyiez plus de taches rouges.",
         "initialSetup2": "Vous pouvez toujours modifier cela dans le menu Texte.",

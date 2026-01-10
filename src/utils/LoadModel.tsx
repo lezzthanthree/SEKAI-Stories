@@ -4,7 +4,10 @@ import { GetCharacterFolder } from "./GetCharacterFolder";
 import { GetModelDataFromSekai, GetModelDataFromStatic } from "./GetModelData";
 import { t } from "i18next";
 import axios from "axios";
-import { Live2DModel } from "pixi-live2d-display-mulmotion";
+import {
+    Cubism4InternalModel,
+    Live2DModel,
+} from "@sekai-world/pixi-live2d-display-mulmotion";
 import { GetCharacterDataFromSekai } from "./GetCharacterDataFromSekai";
 
 export const loadModel = async (
@@ -61,7 +64,13 @@ export const loadModel = async (
     });
 
     if (abort?.aborted) throw new Error("Operation aborted.");
-    live2DModel.internalModel.extendParallelMotionManager(2);
+    
+    const internalModel = live2DModel.internalModel;
+    internalModel.extendParallelMotionManager(2);
+
+    if (internalModel instanceof Cubism4InternalModel) {
+        internalModel.coreModel.setOverwriteFlagForModelCullings(true);
+    }
 
     return [live2DModel, modelData];
 };

@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { SceneContext } from "../../../../contexts/SceneContext";
-import { Live2DModel } from "pixi-live2d-display-mulmotion";
+import { Live2DModel } from "@sekai-world/pixi-live2d-display-mulmotion";
 import IModel from "../../../../types/IModel";
 import IEmotionBookmark from "../../../../types/IEmotionBookmark";
 import { IEmotionName } from "../../../../types/IEmotionName";
@@ -310,10 +310,12 @@ const Emotion: React.FC<EmotionProps> = ({
                         </button>
                     </div>
                 )}
-                
             </div>
             <div className="option__content">
-                <button className="btn-blue btn-regular btn-extend-width" onClick={handlePlayTogether}>
+                <button
+                    className="btn-blue btn-regular btn-extend-width"
+                    onClick={handlePlayTogether}
+                >
                     Run Both
                 </button>
             </div>

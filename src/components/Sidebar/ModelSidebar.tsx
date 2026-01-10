@@ -10,7 +10,7 @@ import IModel from "../../types/IModel";
 import {
     Live2DModel,
     Cubism4InternalModel,
-} from "pixi-live2d-display-mulmotion";
+} from "@sekai-world/pixi-live2d-display-mulmotion";
 import { ILive2DModelData } from "../../types/ILive2DModelData";
 import { ILive2DModelList } from "../../types/ILive2DModelList";
 import { useTranslation } from "react-i18next";
@@ -364,7 +364,9 @@ const ModelSidebar: React.FC = () => {
                 <Window show={setCopiedParametersWindow} id="export-screen">
                     <div className="window__content">
                         <h1>{t("model.live2d.emotion-copy.confirm-header")}</h1>
-                        <p>{t("model.live2d.emotion-copy.confirm-description")}</p>
+                        <p>
+                            {t("model.live2d.emotion-copy.confirm-description")}
+                        </p>
                         <textarea
                             name=""
                             id=""
