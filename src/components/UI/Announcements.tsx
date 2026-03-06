@@ -22,19 +22,8 @@ const Announcements: React.FC = () => {
     return (
         <div id="announcements" onClick={handleAnnouncements}>
             <h2>Notice</h2>
-            <p>
-                "Let's stay together, Mizuki... N25's been waiting for you..."
-            </p>
-            <p>Few updates has been made:</p>
-            <ul>
-                <li>
-                    You can now make your own choices text! (I'll be waiting
-                    your "choose your own path" stories.)
-                </li>
-                <li>Updated list of models and backgrounds.</li>
-                <li>Updated the tutorial with the recent features.</li>
-            </ul>
-
+            <p>There's a strange bug currently found here in SEKAI Stories.</p>
+            <p>Please try to ignore this bug. We're sorry for the inconvenience.</p>
             <p>Tap this section to close.</p>
         </div>
     );
