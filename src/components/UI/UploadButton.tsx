@@ -2,6 +2,7 @@ import { useContext, useRef, useState } from "react";
 import Window from "./Window";
 import { SoftErrorContext } from "../../contexts/SoftErrorContext";
 import { useTranslation } from "react-i18next";
+import { SettingsContext } from "../../contexts/SettingsContext";
 
 interface UploadImageButtonProps {
     id: string;
@@ -21,9 +22,11 @@ const UploadImageButton: React.FC<UploadImageButtonProps> = ({
     disabled = false,
 }) => {
     const softError = useContext(SoftErrorContext);
+    const settings = useContext(SettingsContext);
     const { t } = useTranslation();
-    if (!softError) throw new Error("Context not loaded");
+    if (!softError || !settings) throw new Error("Context not loaded");
 
+    const { deleted, skippedFools } = settings;
     const { setErrorInformation } = softError;
 
     const uploadElement = useRef<HTMLInputElement | null>(null);
@@ -61,6 +64,12 @@ const UploadImageButton: React.FC<UploadImageButtonProps> = ({
                         : "btn-regular btn-white btn-extend-width"
                 }
                 onClick={async () => {
+                    if (!deleted && !skippedFools) {
+                        setErrorInformation(
+                            "It's just between you and me now... There's nowhere to go～",
+                        );
+                        return;
+                    }
                     if (alertMsg) {
                         setAlertWindow(true);
                     } else if (uploadElement.current) {

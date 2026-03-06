@@ -32,6 +32,7 @@ interface GetDefaultSceneProps {
     setStartingMessage: Dispatch<SetStateAction<string>>;
     setLoading: Dispatch<SetStateAction<number>>;
     blankCanvas: boolean;
+    sceneSelected?: string | null;
 }
 
 const LoadInitialScene = (scene: string): InitialScene => {
@@ -389,8 +390,9 @@ export const LoadScene = async ({
     setStartingMessage,
     setLoading,
     blankCanvas,
+    sceneSelected,
 }: GetDefaultSceneProps) => {
-    const scene = CheckSceneCategory(blankCanvas);
+    const scene = CheckSceneCategory(blankCanvas, sceneSelected);
 
     setLoading(0);
     const initialScene: InitialScene = LoadInitialScene(scene);

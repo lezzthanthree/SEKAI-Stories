@@ -1,11 +1,15 @@
 import { useContext } from "react";
 import { SceneContext } from "../../contexts/SceneContext";
+import { SettingsContext } from "../../contexts/SettingsContext";
 
 const Canvas: React.FC = () => {
     const scene = useContext(SceneContext);
-    if (!scene) throw new Error("Context not found");
+    const settings = useContext(SettingsContext);
+
+    if (!scene || !settings) throw new Error("Context not found");
 
     const { guideline, setGuideline } = scene;
+    const { deleting } = settings;
 
     const handleGuidelineToggle = () => {
         if (!guideline) return;
@@ -21,6 +25,7 @@ const Canvas: React.FC = () => {
             width={1920}
             id="canvas"
             onClick={handleGuidelineToggle}
+            className={deleting ? "tear shake" : ""}
         />
     );
 };

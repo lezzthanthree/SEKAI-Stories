@@ -47,7 +47,7 @@ const Character: React.FC<CharacterProps> = ({
         throw new Error("Context not found");
     }
     const { currentModel, initialState, setInitialState } = scene;
-    const { setLoading } = settings;
+    const { setLoading, deleted, skippedFools } = settings;
     const { setErrorInformation } = softError;
 
     const handleCharacterChange = async (value: string) => {
@@ -139,17 +139,41 @@ const Character: React.FC<CharacterProps> = ({
                         {t("character.blank")}
                     </option>
                 )}
-                {currentModel?.character !== "blank" &&
+                {!deleted && !skippedFools ? (
+                    <option value="mizuki">{t("character.mizuki")}</option>
+                ) : (
+                    currentModel?.character !== "blank" &&
                     Object.keys(
                         currentModel?.from === "static"
                             ? staticCharacterData
                             : sekaiCharacterData,
-                    ).map((character) => (
-                        <option key={character} value={character}>
-                            {t(`character.${character}`)}
-                        </option>
-                    ))}
+                    ).map((character) => {
+                        console.log(
+                            character,
+                            `deleted: ${deleted}`,
+                            `skippedFools: ${skippedFools}`,
+                        );
+                        if (
+                            character === "mizuki" &&
+                            deleted &&
+                            !skippedFools
+                        ) {
+                            return null;
+                        }
+                        return (
+                            <option key={character} value={character}>
+                                {t(`character.${character}`)}
+                            </option>
+                        );
+                    })
+                )}
             </select>
+            {deleted && !skippedFools && (
+                <p>
+                    <i className="bi bi-exclamation-triangle-fill red" /> 1 file
+                    missing. See Settings for information.
+                </p>
+            )}
         </>
     );
 };

@@ -191,3 +191,61 @@
 .blue {
     color: $dark-miku;
 }
+
+.shake {
+    animation: glitch-shake 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+        infinite;
+}
+
+@keyframes glitch-shake {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.tear {
+    animation: tear-effect 0.5s steps(1) infinite;
+}
+
+@keyframes tear-effect {
+    0% {
+        clip-path: inset(10% 0 30% 0);
+        transform: translateX(-5px);
+    }
+    20% {
+        clip-path: inset(40% 0 10% 0);
+        transform: translateX(5px);
+    }
+    40% {
+        clip-path: inset(20% 0 50% 0);
+        transform: translateX(-2px);
+    }
+    60% {
+        clip-path: inset(70% 0 5% 0);
+        transform: translateX(3px);
+    }
+    80% {
+        clip-path: inset(5% 0 80% 0);
+        transform: translateX(-4px);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+        transform: translateX(0);
+    }
+}
+

@@ -29,7 +29,15 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
     if (!softError || !settings) throw new Error("Context not loaded");
 
     const { setErrorInformation } = softError;
-    const { blankCanvas, setLoading, settingsLoaded } = settings;
+    const {
+        blankCanvas,
+        setLoading,
+        settingsLoaded,
+        deleted,
+        setDeleting,
+        skippedFools,
+        setDeleted,
+    } = settings;
     const [app, setApp] = useState<PIXI.Application | undefined>(undefined);
     const [models, setModels] = useState<Record<string, IModel> | undefined>(
         undefined,
@@ -69,6 +77,23 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
     const [lighting, setLighting] = useState<ILighting | undefined>(undefined);
 
     const runCanvas = async () => {
+        let sceneSelected = null;
+        if (reset == 0 && !skippedFools && !deleted) {
+            sceneSelected = "just-mizuki";
+        }
+        if (reset == 1 && !skippedFools && !deleted) {
+            sceneSelected = "deleting";
+            setDeleted(true);
+            const audio = new Audio("/sound/interference.wav");
+            audio.loop = true;
+            audio.play();
+            setDeleting(true);
+            localStorage.setItem("deleted", "true");
+        }
+        if (deleted && !skippedFools) {
+            sceneSelected = "deleted";
+        }
+
         const {
             app: initApplication,
             model,
@@ -88,6 +113,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
             setStartingMessage,
             setLoading,
             blankCanvas,
+            sceneSelected,
         });
 
         setApp(initApplication);

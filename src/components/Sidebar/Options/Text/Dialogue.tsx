@@ -31,6 +31,8 @@ const symbols = {
     "japanese-cross": "×",
 };
 
+const mizukiName = "mizuki";
+
 interface DialogueProps {
     bell: boolean;
     setBell: Dispatch<SetStateAction<boolean>>;
@@ -54,11 +56,13 @@ const Dialogue: React.FC<DialogueProps> = ({
     const settings = useContext(SettingsContext);
     const error = useContext(SoftErrorContext);
     if (!scene || !error || !settings) throw new Error("Context not loaded");
-    const { text, setText } = scene;
+    const { text, setText, reset, setReset } = scene;
     const { setErrorInformation } = error;
-    const { showMentalHealthWindow } = settings;
+    const { showMentalHealthWindow, deleted, skippedFools, setSkippedFools } =
+        settings;
     const [showFontSizeInput, setShowFontSizeInput] = useState<boolean>(false);
     const [mentalWindow, setMentalWindow] = useState<boolean>(false);
+    const [cycle, setCycle] = useState<number>(0);
 
     useEffect(() => {
         if (text?.hideEverything) {
@@ -87,11 +91,42 @@ const Dialogue: React.FC<DialogueProps> = ({
         const changedDialogue = event.target.value
             .replace(/“|”/g, '"')
             .replace(/‘|’/g, "'");
-        text.dialogue.forEach((t) => {
-            t.text = changedDialogue;
-            t.updateText(true);
-        });
 
+        if (/skip/gim.test(changedDialogue) && !skippedFools) {
+            setErrorInformation(
+                "April Fools scene skipped. Will be reverting to default～",
+            );
+            setSkippedFools(true);
+            setReset(reset + 1);
+            localStorage.setItem("skippedFools", "true");
+            return;
+        }
+        if (!deleted && !skippedFools) {
+            text.dialogue.forEach((t) => {
+                t.text = t.text + mizukiName[cycle];
+                t.updateText(true);
+            });
+
+            setCycle((cycle + 1) % 6);
+        } else {
+            text.dialogue.forEach((t) => {
+                t.text = changedDialogue;
+                t.updateText(true);
+            });
+        }
+
+        if (deleted && !skippedFools && /mizuki/gim.test(changedDialogue)) {
+            setErrorInformation("...");
+            text.dialogue.forEach((t) => {
+                t.text = "";
+                t.updateText(true);
+            });
+            setText({
+                ...text,
+                dialogueString: "",
+            });
+            return;
+        }
         if (
             /bell/gim.test(changedDialogue) &&
             /mizuki/gim.test(text.nameTagString) &&

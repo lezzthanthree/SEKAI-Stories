@@ -31,15 +31,6 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             sceneText: "Music Shop(?)",
         },
         {
-            background: "/background_compressed/bg_a001701.jpg",
-            text: "...!",
-            nameTag: "Airi",
-            modelX: 960,
-            modelY: 540,
-            pngName: "girlfriend_meme",
-            sceneText: "Mall",
-        },
-        {
             background: "/background_special/Background_Akarin.jpg",
             text: "Haiii～!",
             nameTag: "Emu",
@@ -260,6 +251,40 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             },
         },
     ],
+    "just-mizuki": [
+        {
+            background: "/background_special/Background_Monika_Room.png",
+            text: "We can be together forever now... can't we? ♡",
+            nameTag: "Mizuki",
+            modelX: 900,
+            modelY: 550,
+            pngName: "transparent",
+            sceneText: "ŧÈīß¨¸Ăà¿ĺãÿıįŸÌóżŻĔŘśúðĚÔ½øŰćŁ",
+        },
+    ],
+    deleting: [
+        {
+            background:
+                "/background_special/Background_Monika_Room_Glitched.png",
+            text: "Wait... No! Please don't go yet!",
+            nameTag: "ŘśúðĚ",
+            modelX: 900,
+            modelY: 550,
+            pngName: "transparent",
+            sceneText: "ŧÈīß¨¸Ăà¿ĺãÿıįŸÌóżŻĔŘśúðĚÔ½øŰćŁ",
+        },
+    ],
+    deleted: [
+        {
+            background: "/background_low_jpg/bg_black.jpg",
+            text: "",
+            nameTag: "",
+            modelX: 900,
+            modelY: 550,
+            pngName: "transparent",
+            sceneText: "",
+        },
+    ],
     blank: [
         {
             background: "/background_compressed/bg_white.jpg",
@@ -273,7 +298,11 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
     ],
 };
 
-export const CheckSceneCategory = (blank: boolean): string => {
+export const CheckSceneCategory = (
+    blank: boolean,
+    sceneSelected?: string | null,
+): string => {
+    if (sceneSelected) return sceneSelected;
     if (blank) return "blank";
 
     const date = new Date();
@@ -303,5 +332,5 @@ export const CheckSceneCategory = (blank: boolean): string => {
 
     if (month in months) return months[month];
 
-    return "memories-of-you";
+    return "default";
 };

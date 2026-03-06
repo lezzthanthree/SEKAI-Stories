@@ -43,7 +43,7 @@ const Content: React.FC = () => {
     if (!scene || !settings || !softError) {
         throw new Error("Context is not loaded properly.");
     }
-    const { hide, setHide, showTutorial, setShowTutorial } = settings;
+    const { hide, setHide, showTutorial, setShowTutorial, deleting } = settings;
     const { showErrorInformation } = softError;
 
     return (
@@ -51,11 +51,15 @@ const Content: React.FC = () => {
             <ContentBackground />
 
             {showTutorial && <Tutorial show={setShowTutorial} />}
-            {!hide && <SidebarSelect />}
+            {!hide && !deleting && <SidebarSelect />}
 
             <div className="absolute bottom-left flex-vertical">
-                <DownloadButton />
-                <ExportButton />
+                {!deleting && (
+                    <>
+                        <DownloadButton />
+                        <ExportButton />
+                    </>
+                )}
                 <ClearButton />
             </div>
             <div className="absolute bottom-right" id="hide-sidebar">
@@ -73,7 +77,7 @@ const Content: React.FC = () => {
                 </button>
             </div>
             <div className="absolute top-left">
-                <SettingsButton />
+                {!deleting && <SettingsButton />}
             </div>
             {showErrorInformation && <SoftError />}
             <Canvas />

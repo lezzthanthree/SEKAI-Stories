@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import IBackground from "../../types/IBackground";
 import { SoftErrorContext } from "../../contexts/SoftErrorContext";
 import { IBackgroundBookmark } from "../../types/IBackgroundBookmark";
+import { SettingsContext } from "../../contexts/SettingsContext";
 
 const pngList = ["bg_transparent"];
 interface IBackgroundList {
@@ -40,9 +41,11 @@ const BackgroundPicker: React.FC<BackgroundPickerProps> = ({
         useState<IBackgroundBookmark>([]);
 
     const softError = useContext(SoftErrorContext);
+    const settings = useContext(SettingsContext);
 
-    if (!softError) throw new Error("Context not found");
+    if (!softError || !settings) throw new Error("Context not found");
     const { setErrorInformation } = softError;
+    const { deleted, skippedFools } = settings;
 
     const scrollToSelectedBackground = () => {
         if (show && background?.filename) {
@@ -138,6 +141,8 @@ const BackgroundPicker: React.FC<BackgroundPickerProps> = ({
         if (type === "bookmarks" && backgroundBookmarks.length === 0) return;
         if (filterValue === "all" && type === "cards") return;
 
+        if (!deleted && !skippedFools) return;
+
         return (
             <div
                 className="flex-wrap center flex-vertical picker-type-div"
@@ -221,7 +226,7 @@ const BackgroundPicker: React.FC<BackgroundPickerProps> = ({
                         value={filterValue}
                     >
                         <option value="all">{t("group.all")}</option>
-                        {Object.keys(backgroundList.background).map((type) => {
+                        {(deleted || skippedFools) && Object.keys(backgroundList.background).map((type) => {
                             return (
                                 <option key={type} value={type}>
                                     {`${t(`group.${type}`)} ${

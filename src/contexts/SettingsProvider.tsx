@@ -28,6 +28,9 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     const [allowRefresh, setAllowRefresh] = useState<boolean>(false);
     const [audio, setAudio] = useState<boolean>(false);
     const [loading, setLoading] = useState<number>(0);
+    const [deleted, setDeleted] = useState<boolean>(false);
+    const [deleting, setDeleting] = useState<boolean>(false);
+    const [skippedFools, setSkippedFools] = useState<boolean>(false);
     const [settingsLoaded, setSettingsLoaded] = useState<boolean>(false);
 
     useEffect(() => {
@@ -69,6 +72,14 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
         const easySwitchEnabled = localStorage.getItem("easySwitchEnabled");
         if (easySwitchEnabled === "true") {
             setEasySwitch(true);
+        }
+        const deleted = localStorage.getItem("deleted");
+        if (deleted === "true") {
+            setDeleted(true);
+        }
+        const skippedFools = localStorage.getItem("skippedFools");
+        if (skippedFools === "true") {
+            setSkippedFools(true);
         }
         const storedNameTags = localStorage.getItem("nameTags");
         if (storedNameTags) {
@@ -123,6 +134,12 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
                 setAudio,
                 loading,
                 setLoading,
+                deleted,
+                setDeleted,
+                deleting,
+                setDeleting,
+                skippedFools,
+                setSkippedFools,
                 settingsLoaded,
             }}
         >

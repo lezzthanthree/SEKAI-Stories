@@ -13,15 +13,18 @@ const Sidebar: React.FC = () => {
     if (!scene || !settings) return;
 
     const { startingMessage } = scene;
-    const { openedSidebar } = settings;
+    const { openedSidebar, deleting } = settings;
 
     return (
         <div id="sidebar">
-            {openedSidebar == "background" && <BackgroundSidebar />}
-            {openedSidebar == "text" && <TextSidebar />}
-            {openedSidebar == "model" && <ModelSidebar />}
-            {openedSidebar == "experimental" && <Experimental />}
-
+            {!deleting && (
+                <>
+                    {openedSidebar == "background" && <BackgroundSidebar />}
+                    {openedSidebar == "text" && <TextSidebar />}
+                    {openedSidebar == "model" && <ModelSidebar />}
+                    {openedSidebar == "experimental" && <Experimental />}
+                </>
+            )}
             {startingMessage && <p>{startingMessage}</p>}
         </div>
     );

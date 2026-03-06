@@ -8,7 +8,8 @@ export function ErrorFallback({ error }: { error: Error }) {
     const settings = useContext(SettingsContext);
     if (!scene || !settings) throw new Error("Context not prepared.");
     const { sceneJson } = scene;
-    const { setAllowRefresh, showExperimental } = settings;
+    const { setAllowRefresh, showExperimental, deleted, skippedFools } =
+        settings;
 
     useEffect(() => {
         localStorage.setItem("autoSave", JSON.stringify(sceneJson));
@@ -85,7 +86,11 @@ export function ErrorFallback({ error }: { error: Error }) {
             >
                 <div className="window__content">
                     <div className="window__divider center">
-                        <img src="/img/gomen.png" id="error-img" />
+                        <img
+                            src="/img/gomen.png"
+                            id="error-img"
+                            className={deleted && !skippedFools ? "tear" : ""}
+                        />
                     </div>
                     <h2 className="text-center">「。。。ごめん。。。」</h2>
                     <p className="text-center">
@@ -96,6 +101,15 @@ export function ErrorFallback({ error }: { error: Error }) {
                         <p className="text-center">
                             Did you somehow forget a variable?
                         </p>
+                    ) : deleted && !skippedFools ? (
+                        <>
+                            <p className="text-center">
+                                We're really sorry for the inconvenience.
+                            </p>
+                            <p className="text-center">
+                                Please refresh the page and try again.
+                            </p>
+                        </>
                     ) : (
                         <>
                             <p className="text-center">

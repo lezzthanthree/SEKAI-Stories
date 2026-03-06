@@ -5,6 +5,11 @@ import { useTranslation } from "react-i18next";
 import { SettingsContext } from "../../contexts/SettingsContext";
 import { SceneContext } from "../../contexts/SceneContext";
 
+const SelfAwareEntity: React.FC = () => {
+    throw new Error("I'm sorry...");
+    return <></>;
+};
+
 const ClearButton: React.FC = () => {
     const { t } = useTranslation();
     const scene = useContext(SceneContext);
@@ -14,13 +19,19 @@ const ClearButton: React.FC = () => {
 
     const [resetShow, setResetShow] = useState(false);
     const { reset, setReset } = scene;
-    const { blankCanvas, setBlankCanvas } = settings;
+    const { blankCanvas, setBlankCanvas, deleting, setDeleting } = settings;
+    const [crash, setCrash] = useState(false);
 
     const handleBlankCanvas = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.checked;
         localStorage.setItem("blankCanvas", String(value));
         setBlankCanvas(value);
     };
+
+    if (crash) {
+        return <SelfAwareEntity />;
+    }
+
     return (
         <>
             <div id="clear">
@@ -34,25 +45,49 @@ const ClearButton: React.FC = () => {
             {resetShow && (
                 <Window
                     show={setResetShow}
-                    confirmFunction={() => setReset(reset + 1)}
+                    confirmFunction={() => {
+                        if (deleting) {
+                            setCrash(true);
+                            setDeleting(false);
+                            return;
+                        }
+                        setReset(reset + 1);
+                    }}
                     confirmLabel={t("global.clear-ok")}
                     danger={true}
                 >
-                    <div className="window__content">
-                        <div className="window__divider center">
-                            <h3 className="text-center">{t("clear.message")}</h3>
+                    {deleting ? (
+                        <div className="window__content">
+                            <div className="window__divider flex-vertical">
+                                <h1>System Error</h1>
+                                <p>
+                                    A system error has occured while deleting
+                                    the recent canvas. The only way to fix this
+                                    is by refreshing your browser.
+                                </p>
+                                <p className=" margin-top-10">
+                                    Any data from the recent canvas will be
+                                    lost. Do you wish to continue?
+                                </p>
+                            </div>
                         </div>
-                        <div className="windown__divider center">
-                            {
+                    ) : (
+                        <div className="window__content">
+                            <div className="window__divider center">
+                                <h3 className="text-center">
+                                    {t("clear.message")}
+                                </h3>
+                            </div>
+                            <div className="windown__divider center">
                                 <Checkbox
                                     id="stop-show"
                                     label={t("clear.start-blank")}
                                     checked={blankCanvas}
                                     onChange={handleBlankCanvas}
                                 />
-                            }
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </Window>
             )}
         </>

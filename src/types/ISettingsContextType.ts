@@ -37,4 +37,10 @@ export default interface ISettingsContextType {
     loading: number;
     setLoading: Dispatch<SetStateAction<number>>;
     settingsLoaded: boolean;
+    deleted: boolean;
+    setDeleted: Dispatch<SetStateAction<boolean>>;
+    deleting: boolean;
+    setDeleting: Dispatch<SetStateAction<boolean>>;
+    skippedFools: boolean;
+    setSkippedFools: Dispatch<SetStateAction<boolean>>;
 }

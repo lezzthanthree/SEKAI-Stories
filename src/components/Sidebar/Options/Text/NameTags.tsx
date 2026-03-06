@@ -1,4 +1,10 @@
-import React, { Dispatch, SetStateAction, useContext, useMemo } from "react";
+import React, {
+    Dispatch,
+    SetStateAction,
+    useContext,
+    useMemo,
+    useState,
+} from "react";
 import { SceneContext } from "../../../../contexts/SceneContext";
 import { SettingsContext } from "../../../../contexts/SettingsContext";
 import RadioButton from "../../../UI/RadioButton";
@@ -11,30 +17,21 @@ interface NameTagsProps {
     setEasyNameTagSelected: Dispatch<SetStateAction<string>>;
 }
 
+const mizukiName = "Mizuki";
+
 const NameTags: React.FC<NameTagsProps> = ({
     easyNameTagSelected,
     setEasyNameTagSelected,
 }) => {
     const { t, i18n } = useTranslation();
 
-    const easyNameTagPlaceholders = useMemo(
-        () => [
-            t("character.miku"),
-            t("character.rin"),
-            t("character.len"),
-            t("character.luka"),
-            t("character.meiko"),
-            t("character.kaito"),
-        ],
-        [i18n.language],
-    );
-
     const scene = useContext(SceneContext);
     const settings = useContext(SettingsContext);
     const error = useContext(SoftErrorContext);
+    const [cycle, setCycle] = useState<number>(0);
 
     if (!scene || !settings || !error) throw new Error("Context not loaded");
-    const { text, setText } = scene;
+    const { text, setText, reset, setReset } = scene;
     const {
         easySwitch,
         setEasySwitch,
@@ -42,12 +39,60 @@ const NameTags: React.FC<NameTagsProps> = ({
         setNameTags,
         nameTagInputs,
         setNameTagInputs,
+        deleted,
+        skippedFools,
+        setSkippedFools,
     } = settings;
     const { setErrorInformation } = error;
+
+    const easyNameTagPlaceholders = useMemo(() => {
+        if (!deleted && !skippedFools) {
+            return [
+                t("character.mizuki"),
+                t("character.mizuki"),
+                t("character.mizuki"),
+                t("character.mizuki"),
+                t("character.mizuki"),
+                t("character.mizuki"),
+            ];
+        }
+        return [
+            t("character.miku"),
+            t("character.rin"),
+            t("character.len"),
+            t("character.luka"),
+            t("character.meiko"),
+            t("character.kaito"),
+        ];
+    }, [i18n.language, deleted, skippedFools]);
 
     if (!text) return <p>{t("please-wait")}</p>;
 
     const handleNameTagChange = async (changedNameTag: string) => {
+        if (!deleted && !skippedFools) {
+            if (!deleted && !skippedFools) {
+                text.nameTag.forEach((t) => {
+                    t.text = t.text + mizukiName[cycle];
+                    t.updateText(true);
+                });
+                setText({
+                    ...text,
+                    nameTagString: changedNameTag,
+                });
+                if (/skip/gim.test(changedNameTag) && !skippedFools) {
+                    setErrorInformation(
+                        "April Fools scene skipped. Will be reverting to default～",
+                    );
+                    setSkippedFools(true);
+                    setReset(reset + 1);
+                    localStorage.setItem("skippedFools", "true");
+                    return;
+                }
+                setCycle((cycle + 1) % 6);
+                return;
+            }
+        }
+
         text.nameTag.forEach((t) => {
             t.text = changedNameTag;
             t.updateText(true);

@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import AddModelSelect from "../../../Window/AddModelSelect";
 import { Cubism4InternalModel } from "@sekai-world/pixi-live2d-display-mulmotion";
 import IModel from "../../../../types/IModel";
+import { SettingsContext } from "../../../../contexts/SettingsContext";
 
 interface SelectedLayerProps {
     isLoading: boolean;
@@ -33,10 +34,12 @@ const SelectedLayer: React.FC<SelectedLayerProps> = ({
     const { t } = useTranslation();
     const scene = useContext(SceneContext);
     const softError = useContext(SoftErrorContext);
+    const settings = useContext(SettingsContext);
+
     const [showAddModelScreen, setShowAddModelScreen] =
         useState<boolean>(false);
 
-    if (!scene || !softError) {
+    if (!scene || !softError || !settings) {
         throw new Error("Context not found");
     }
     const {
@@ -56,10 +59,12 @@ const SelectedLayer: React.FC<SelectedLayerProps> = ({
 
     const { setErrorInformation } = softError;
 
+    const { deleted, skippedFools } = settings;
+
     if (!models || !currentModel) return <p>{t("please-wait")}</p>;
 
     const handleLayerChange = async (
-        event: React.ChangeEvent<HTMLSelectElement>
+        event: React.ChangeEvent<HTMLSelectElement>,
     ) => {
         const key = event?.target.value;
         setCurrentKey(key);
@@ -72,7 +77,7 @@ const SelectedLayer: React.FC<SelectedLayerProps> = ({
     const handleAddLayer = async (from: string) => {
         const modelName = "none";
         const texture = await PIXI.Texture.fromURL(
-            "/img/Background_New_Layer.png"
+            "/img/Background_New_Layer.png",
         );
         const sprite = new PIXI.Sprite(texture);
         const modelContainer = new PIXI.Container();
@@ -123,7 +128,7 @@ const SelectedLayer: React.FC<SelectedLayerProps> = ({
         modelWrapper?.addChildAt(modelContainer, layers);
         modelContainer.pivot.set(
             modelContainer.width / 2,
-            modelContainer.height / 2
+            modelContainer.height / 2,
         );
         modelContainer.position.set(960, 540);
         const blurFilter = new PIXI.BlurFilter(0);
@@ -175,13 +180,20 @@ const SelectedLayer: React.FC<SelectedLayerProps> = ({
     };
 
     const handleDeleteLayer = async () => {
+        if (!deleted && !skippedFools) {
+            const selection = ["Just Mizuki.", "ミズキだけ。"];
+            setErrorInformation(
+                selection[Math.floor(Math.random() * selection.length)],
+            );
+            return;
+        }
         const modelsObjects = Object.entries(scene.models ?? {});
         if (modelsObjects.length === 1) {
             if (currentModel.modelName.includes("kisaragi")) {
                 setErrorInformation(" ");
             } else {
                 setErrorInformation(
-                    t("model.selected-layer.delete-model-warn")
+                    t("model.selected-layer.delete-model-warn"),
                 );
             }
             return;

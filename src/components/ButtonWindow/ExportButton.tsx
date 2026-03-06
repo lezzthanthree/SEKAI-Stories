@@ -48,7 +48,7 @@ const ExportButton: React.FC = () => {
         setReset,
         setSceneJson,
     } = scene;
-    const { setAllowRefresh, setLoading } = settings;
+    const { setAllowRefresh, setLoading, deleted, skippedFools } = settings;
     const { setErrorInformation } = softError;
     const jsonRef = useRef<IJsonSave | undefined>(sceneJson);
 
@@ -399,6 +399,10 @@ const ExportButton: React.FC = () => {
     };
 
     const handleImport = async () => {
+        if (!deleted && !skippedFools) {
+            setErrorInformation("You're not planning to replace me, right?");
+            return;
+        }
         const input = document.createElement("input");
         input.type = "file";
         input.accept = ".json, .sekaiscene";
@@ -440,7 +444,9 @@ const ExportButton: React.FC = () => {
             <div id="export">
                 <button
                     className="btn-circle btn-white"
-                    onClick={() => setShow(true)}
+                    onClick={() => {
+                        setShow(true);
+                    }}
                 >
                     <i className="bi bi-braces sidebar__select"></i>
                 </button>

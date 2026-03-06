@@ -50,6 +50,8 @@ const SettingsButton: React.FC = () => {
         setShowTutorial,
         audio,
         setAudio,
+        deleted,
+        skippedFools,
     } = settings;
     const { setErrorInformation } = softError;
     const mentalHealthCookie =
@@ -71,7 +73,6 @@ const SettingsButton: React.FC = () => {
         a.click();
         a.remove();
     };
-
 
     const handleAudio = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.checked;
@@ -111,6 +112,12 @@ const SettingsButton: React.FC = () => {
                 <button
                     className="btn-circle btn-white"
                     onClick={() => {
+                        if (!deleted && !skippedFools) {
+                            setErrorInformation(
+                                "You don't need the settings anymore. You'll stay here forever and ever... ♡",
+                            );
+                            return;
+                        }
                         setShow(true);
                     }}
                 >
@@ -122,6 +129,20 @@ const SettingsButton: React.FC = () => {
                     <div className="window__content">
                         <SupportButton />
                         <h1>{t("settings.header")}</h1>
+                        {deleted && !skippedFools && (
+                            <div className="window__divider">
+                                <h2>Restore</h2>
+                                <p>
+                                    A system crash has been recently found.
+                                    During memory dump, 1 file has reported
+                                    missing.
+                                </p>
+                                <p>
+                                    If you wish to restore the missing files,
+                                    please consider calling their name.
+                                </p>
+                            </div>
+                        )}
                         <div className="window__divider">
                             <h2>{t("settings.language")}</h2>
                             <select
@@ -208,7 +229,6 @@ const SettingsButton: React.FC = () => {
                                 checked={showAnnouncements}
                                 onChange={handleAnnouncement}
                             />
-                            
                         </div>
                         <div
                             className="window__divider center flex flex-vertical"
