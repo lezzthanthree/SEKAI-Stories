@@ -20,6 +20,7 @@ import IChoicesText from "../types/IChoicesText";
 interface SceneProviderProps {
     children: React.ReactNode;
 }
+const audio = new Audio("/sound/interference.wav");
 
 export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
     const softError = useContext(SoftErrorContext);
@@ -77,14 +78,14 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
     const [lighting, setLighting] = useState<ILighting | undefined>(undefined);
 
     const runCanvas = async () => {
+        audio.pause();
         let sceneSelected = null;
         if (reset == 0 && !skippedFools && !deleted) {
             sceneSelected = "just-mizuki";
         }
-        if (reset == 1 && !skippedFools && !deleted) {
+        if (reset >= 1 && !skippedFools && !deleted) {
             sceneSelected = "deleting";
             setDeleted(true);
-            const audio = new Audio("/sound/interference.wav");
             audio.loop = true;
             audio.play();
             setDeleting(true);

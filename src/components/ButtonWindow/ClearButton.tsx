@@ -61,7 +61,7 @@ const ClearButton: React.FC = () => {
                             <div className="window__divider flex-vertical">
                                 <h1>System Error</h1>
                                 <p>
-                                    A system error has occured while deleting
+                                    A system error has occurred while deleting
                                     the recent canvas. The only way to fix this
                                     is by refreshing your browser.
                                 </p>
