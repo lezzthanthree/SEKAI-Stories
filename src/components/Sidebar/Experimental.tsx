@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { SceneContext } from "../../contexts/SceneContext";
 import { SoftErrorContext } from "../../contexts/SoftErrorContext";
 import { SettingsContext } from "../../contexts/SettingsContext";
+import { Checkbox } from "../UI/Checkbox";
 
 const Crash: React.FC = () => {
     throw new Error("Can you hear the ominous bells tolling?");
@@ -18,7 +19,17 @@ const Experimental: React.FC = () => {
 
     if (!scene || !softError || !settings) throw new Error("Context not found");
     const { setErrorInformation } = softError;
-    const { loading, setLoading } = settings;
+    const {
+        loading,
+        setLoading,
+        deleted,
+        setDeleted,
+        deleting,
+        setDeleting,
+        skippedFools,
+        setSkippedFools,
+    } = settings;
+    const { reset, setReset } = scene;
 
     return (
         <div>
@@ -86,6 +97,59 @@ const Experimental: React.FC = () => {
                         CRASH
                     </button>
                     {crash && <Crash />}
+                </div>
+            </div>
+            <div className="option">
+                <h2>April Fools</h2>
+                <div className="option__content">
+                    <button
+                        className="btn-regular btn-100 btn-blue"
+                        onClick={() => {
+                            setReset(0);
+                        }}
+                    >
+                        Reset 0
+                    </button>
+                    <p>Reset: {reset}</p>
+                    <Checkbox
+                        id="visible"
+                        label="deleted"
+                        checked={deleted}
+                        onChange={(e) => {
+                            setDeleted(e.target.checked);
+                            localStorage.setItem(
+                                "deleted",
+                                `${e.target.checked}`,
+                            );
+                            setReset(reset + 1);
+                        }}
+                    />
+                    <Checkbox
+                        id="visible"
+                        label="deleting"
+                        checked={deleting}
+                        onChange={(e) => {
+                            setDeleting(e.target.checked);
+                            localStorage.setItem(
+                                "deleting",
+                                `${e.target.checked}`,
+                            );
+                            setReset(reset + 1);
+                        }}
+                    />
+                    <Checkbox
+                        id="visible"
+                        label="skippedFools"
+                        checked={skippedFools}
+                        onChange={(e) => {
+                            setSkippedFools(e.target.checked);
+                            localStorage.setItem(
+                                "skippedFools",
+                                `${e.target.checked}`,
+                            );
+                            setReset(reset + 1);
+                        }}
+                    />
                 </div>
             </div>
         </div>

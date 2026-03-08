@@ -51,7 +51,7 @@ const Content: React.FC = () => {
             <ContentBackground />
 
             {showTutorial && <Tutorial show={setShowTutorial} />}
-            {!hide && !deleting && <SidebarSelect />}
+            {!hide &&  <SidebarSelect />}
 
             <div className="absolute bottom-left flex-vertical">
                 {!deleting && (

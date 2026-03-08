@@ -22,9 +22,9 @@ const Sidebar: React.FC = () => {
                     {openedSidebar == "background" && <BackgroundSidebar />}
                     {openedSidebar == "text" && <TextSidebar />}
                     {openedSidebar == "model" && <ModelSidebar />}
-                    {openedSidebar == "experimental" && <Experimental />}
                 </>
             )}
+            {openedSidebar == "experimental" && <Experimental />}
             {startingMessage && <p>{startingMessage}</p>}
         </div>
     );
