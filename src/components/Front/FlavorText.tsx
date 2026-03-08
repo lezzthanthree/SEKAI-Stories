@@ -1,9 +1,58 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { SettingsContext } from "../../contexts/SettingsContext";
 
 /* 
     For reference of the jokes in English flavor text, scroll below
 */
+
+const noMizukiRandomText = [
+    'File error: "characters/mizuki.chr". The file is missing or corrupt.',
+    "Nene is playing maimai. The map is Xaleid◆scopiX.",
+    "Rui with his ThinkPad laptop.",
+    "Tsukasa is laughing in the hallway like a kid again.",
+    'Emu breaks the fourth wall, staring at you and says "Wonderhoy!"',
+    "Ichika is fangirling over Miku. Again.",
+    "Saki. Saki on fire?",
+    "Honami is driving without her driver license.",
+    "Shiho is forming a new band with her little Phennies.",
+    "Shizuku is giving Shiho some make up.",
+    "In a parallel universe, where Minori is the leader of ASRUN.",
+    "Haruka becomes the wife of Minori.",
+    "Airi lost her fang.",
+    "Setsuna has been mistakenly called Kanade for the 1888th time.",
+    'File error: "characters/mizuki.chr". The file is missing or corrupt.',
+    "Come here, Mafuyu-chan.",
+    "Ena threw a large basin on Akito.",
+    "Ena fights against AI Art.",
+    "Toya is enjoying Tsukasa's loud laugh.",
+    "Kohane has been bitten by her pet snake.",
+    "An woke up and started speaking in English.",
+    "Akito is spotted unconscious after eating Ena's favorite cheesecake.",
+    "ABSOLUTE CINEMA",
+    "The Disapperance of Hatsune Miku",
+    "Listening to その音が鳴るなら",
+    "Do not overdose yourself with shipping~",
+    "Please take only the recommended shipping dosage.",
+    "Just Monika.",
+    "What if Movie Miku appeared on my screen all of the sudden?",
+    "MinoHaru is canon.",
+    "AnHane is canon.",
+    'File error: "characters/mizuki.chr". The file is missing or corrupt.',
+    "Won won!?",
+    "WONDERHOY!",
+    "Lovely, Fairy, Momoi Airi!",
+    "Meet SEKAI Stories's cousin, SIFAS Dialogue Sandbox!",
+    "私は雨。(turns into ame-chan)",
+    "恋をして",
+    "██ ██ ██ ██ /  ██ ██ ██",
+    "kurukurukurukurukurikaesu",
+    "saa anyo anyo kocchi oide",
+    "Burn Your Dread.",
+    "Bonds of people is the true power.",
+    "It's pronounced 'DEKO-NINA'.",
+    "Untitled.",
+];
 
 const randomText = {
     en: [
@@ -167,13 +216,29 @@ const randomText = {
 };
 
 const FlavorText: React.FC = () => {
+    const settings = useContext(SettingsContext);
+    if (!settings) throw new Error("Context not found");
+
     const [text, setText] = useState<string>("");
     const { i18n } = useTranslation();
+    const { deleted, skippedFools, settingsLoaded } = settings;
     const lng = i18n.language as keyof typeof randomText;
 
     randomText["zhHK"] = randomText["zhTW"];
 
     useEffect(() => {
+        if (!deleted && !skippedFools) {
+            setText("Just Mizuki.");
+            return;
+        }
+        if (deleted && !skippedFools) {
+            setText(
+                noMizukiRandomText[
+                    Math.floor(Math.random() * noMizukiRandomText.length)
+                ],
+            );
+            return;
+        }
         const languageRandomText = randomText[lng]
             ? randomText[lng]
             : randomText.en;
@@ -182,7 +247,7 @@ const FlavorText: React.FC = () => {
                 Math.floor(Math.random() * languageRandomText.length)
             ],
         );
-    }, [lng]);
+    }, [lng, settingsLoaded]);
     return <p id="flavor-text">{text}</p>;
 };
 
