@@ -148,11 +148,7 @@ const Character: React.FC<CharacterProps> = ({
                             ? staticCharacterData
                             : sekaiCharacterData,
                     ).map((character) => {
-                        console.log(
-                            character,
-                            `deleted: ${deleted}`,
-                            `skippedFools: ${skippedFools}`,
-                        );
+                        
                         if (
                             character === "mizuki" &&
                             deleted &&

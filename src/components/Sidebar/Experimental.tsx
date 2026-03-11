@@ -105,6 +105,14 @@ const Experimental: React.FC = () => {
                     <button
                         className="btn-regular btn-100 btn-blue"
                         onClick={() => {
+                            setReset(reset - 1);
+                        }}
+                    >
+                        Reset -1
+                    </button>
+                    <button
+                        className="btn-regular btn-100 btn-blue"
+                        onClick={() => {
                             setReset(0);
                         }}
                     >

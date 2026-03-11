@@ -25,5 +25,5 @@ createRoot(document.getElementById("root")!).render(
                 </SceneProvider>
             </SettingsProvider>
         </SoftErrorProvider>
-    </I18nextProvider>
+    </I18nextProvider>,
 );

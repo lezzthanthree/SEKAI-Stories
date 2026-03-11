@@ -6,7 +6,7 @@ import { SettingsContext } from "../../contexts/SettingsContext";
 import { SceneContext } from "../../contexts/SceneContext";
 
 const SelfAwareEntity: React.FC = () => {
-    throw new Error("I'm sorry...");
+    throw new Error("A self aware entity has been found.");
     return <></>;
 };
 

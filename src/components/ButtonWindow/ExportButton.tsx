@@ -48,7 +48,13 @@ const ExportButton: React.FC = () => {
         setReset,
         setSceneJson,
     } = scene;
-    const { setAllowRefresh, setLoading, deleted, skippedFools } = settings;
+    const {
+        setAllowRefresh,
+        setLoading,
+        deleted,
+        skippedFools,
+        setSkippedFools,
+    } = settings;
     const { setErrorInformation } = softError;
     const jsonRef = useRef<IJsonSave | undefined>(sceneJson);
 
@@ -405,10 +411,51 @@ const ExportButton: React.FC = () => {
         }
         const input = document.createElement("input");
         input.type = "file";
-        input.accept = ".json, .sekaiscene";
-        input.onchange = (e) => {
+        input.accept = ".json, .sekaiscene, .chr";
+        input.onchange = async (e) => {
             const file = (e.target as HTMLInputElement).files?.[0];
             if (!file) return;
+            if (file.name.endsWith(".chr") && !skippedFools) {
+                if (file.name.includes("monika")) {
+                    setErrorInformation(
+                        "I see what you're doing... I am not allowing that to happen.",
+                    );
+                    return;
+                }
+                if (!file.name.includes("mizuki")) {
+                    setErrorInformation("Hey... That's not me!");
+                    return;
+                }
+                setLoadingMsg("Initiating import...");
+                setLoading(0);
+                await new Promise((resolve) => setTimeout(resolve, 3000));
+
+                setLoadingMsg("Checking character data integrity...");
+                setLoading(20);
+                await new Promise((resolve) => setTimeout(resolve, 4000));
+
+                setLoadingMsg("Character file 100% intact.");
+                setLoading(40);
+                await new Promise((resolve) => setTimeout(resolve, 1000));
+
+                setLoadingMsg("Checking character folder...");
+                setLoading(60);
+                await new Promise((resolve) => setTimeout(resolve, 2000));
+
+                setLoadingMsg(
+                    "1 missing file... Copying character file to folder...",
+                );
+                setLoading(80);
+                await new Promise((resolve) => setTimeout(resolve, 2000));
+
+                localStorage.setItem("skippedFools", "true");
+                setSkippedFools(true);
+                setReset(reset + 1);
+                setLoading(100);
+                setLoadingMsg("");
+                return;
+            }
+
             const reader = new FileReader();
             reader.onload = async (event) => {
                 const jsonString = event.target?.result;

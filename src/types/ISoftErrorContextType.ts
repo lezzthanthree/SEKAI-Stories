@@ -5,4 +5,6 @@ export default interface ISoftErrorContextType {
     setErrorInformation: Dispatch<SetStateAction<string>>;
     showErrorInformation: boolean;
     setShowErrorInformation: Dispatch<SetStateAction<boolean>>;
+    aprilFoolsMessage: boolean;
+    setAprilFoolsMessage: Dispatch<SetStateAction<boolean>>;
 }

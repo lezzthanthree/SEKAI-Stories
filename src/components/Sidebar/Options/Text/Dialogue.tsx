@@ -14,6 +14,7 @@ import Window from "../../../UI/Window";
 import { mentalCheck } from "../../../../utils/MentalCheck";
 import { SettingsContext } from "../../../../contexts/SettingsContext";
 import RadioButton from "../../../UI/RadioButton";
+import { getBackground } from "../../../../utils/GetBackground";
 
 const symbols = {
     star: "☆",
@@ -43,8 +44,6 @@ interface DialogueProps {
 }
 
 const Dialogue: React.FC<DialogueProps> = ({
-    bell,
-    setBell,
     mentalFound,
     setMentalFound,
     lockFontSizeState,
@@ -56,8 +55,8 @@ const Dialogue: React.FC<DialogueProps> = ({
     const settings = useContext(SettingsContext);
     const error = useContext(SoftErrorContext);
     if (!scene || !error || !settings) throw new Error("Context not loaded");
-    const { text, setText, reset, setReset } = scene;
-    const { setErrorInformation } = error;
+    const { text, setText, reset, setReset, background, setBackground } = scene;
+    const { setErrorInformation, setAprilFoolsMessage } = error;
     const { showMentalHealthWindow, deleted, skippedFools, setSkippedFools } =
         settings;
     const [showFontSizeInput, setShowFontSizeInput] = useState<boolean>(false);
@@ -85,7 +84,7 @@ const Dialogue: React.FC<DialogueProps> = ({
         });
     };
 
-    const handleDialogueChange = (
+    const handleDialogueChange = async (
         event: React.ChangeEvent<HTMLTextAreaElement>,
     ) => {
         const changedDialogue = event.target.value
@@ -94,7 +93,7 @@ const Dialogue: React.FC<DialogueProps> = ({
 
         if (/skip/gim.test(changedDialogue) && !skippedFools) {
             setErrorInformation(
-                "April Fools scene skipped. Will be reverting to default～",
+                "April Fools scene skipped. Will be reverting to default.",
             );
             setSkippedFools(true);
             setReset(reset + 1);
@@ -116,26 +115,10 @@ const Dialogue: React.FC<DialogueProps> = ({
         }
 
         if (deleted && !skippedFools && /mizuki/gim.test(changedDialogue)) {
-            setErrorInformation("...");
-            text.dialogue.forEach((t) => {
-                t.text = "";
-                t.updateText(true);
-            });
-            setText({
-                ...text,
-                dialogueString: "",
-            });
+            await handleAprilFoolsConversation();
             return;
         }
-        if (
-            /bell/gim.test(changedDialogue) &&
-            /mizuki/gim.test(text.nameTagString) &&
-            !bell
-        ) {
-            window.open("https://ominous-bells.vercel.app/");
-            setErrorInformation("Let Mizuki rest. She's happy now.");
-            setBell(true);
-        }
+
         const mentalResult = mentalCheck(changedDialogue);
         if (mentalResult && !mentalFound && showMentalHealthWindow) {
             setMentalWindow(true);
@@ -216,6 +199,35 @@ const Dialogue: React.FC<DialogueProps> = ({
             typeSelected: value,
         });
     };
+
+    const handleAprilFoolsConversation = async () => {
+        setAprilFoolsMessage(true);
+        text.dialogue.forEach((t) => {
+            t.text = "";
+            t.updateText(true);
+        });
+        text.nameTag.forEach((t) => {
+            t.text = "";
+            t.updateText(true);
+        });
+        setText({
+            ...text,
+            nameTagString: "",
+            dialogueString: "",
+        });
+
+        if (!background) return;
+        const backgroundImage = "/background_compressed/bg_black.jpg";
+        const backgroundSprite = await getBackground(backgroundImage);
+
+        background?.backgroundContainer.removeChildAt(0);
+        background?.backgroundContainer.addChildAt(backgroundSprite, 0);
+        setBackground({
+            ...background,
+            filename: backgroundImage,
+        });
+    };
+
     return (
         <>
             <div className="option__content">

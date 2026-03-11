@@ -83,6 +83,7 @@ const BackgroundPicker: React.FC<BackgroundPickerProps> = ({
     useEffect(() => {
         scrollToSelectedBackground();
     }, [show, background?.filename]);
+    
     const handleChangeBackground = async (bg: string) => {
         try {
             const isPNG = pngList.includes(bg);
