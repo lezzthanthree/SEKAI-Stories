@@ -29,6 +29,14 @@ const ExportButton: React.FC = () => {
     if (!scene || !settings || !softError)
         throw new Error("Context not prepared.");
 
+    useEffect(() => {
+        const cookie = localStorage.getItem("loadMizuki") === "true";
+        if (cookie) {
+            restoreMizuki();
+            setShow(true);
+        }
+    }, []);
+
     const {
         background,
         splitBackground,
@@ -54,6 +62,7 @@ const ExportButton: React.FC = () => {
         deleted,
         skippedFools,
         setSkippedFools,
+        setDeleted,
     } = settings;
     const { setErrorInformation } = softError;
     const jsonRef = useRef<IJsonSave | undefined>(sceneJson);
@@ -426,34 +435,7 @@ const ExportButton: React.FC = () => {
                     setErrorInformation("Hey... That's not me!");
                     return;
                 }
-                setLoadingMsg("Initiating import...");
-                setLoading(0);
-                await new Promise((resolve) => setTimeout(resolve, 3000));
-
-                setLoadingMsg("Checking character data integrity...");
-                setLoading(20);
-                await new Promise((resolve) => setTimeout(resolve, 4000));
-
-                setLoadingMsg("Character file 100% intact.");
-                setLoading(40);
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-
-                setLoadingMsg("Checking character folder...");
-                setLoading(60);
-                await new Promise((resolve) => setTimeout(resolve, 2000));
-
-                setLoadingMsg(
-                    "1 missing file... Copying character file to folder...",
-                );
-                setLoading(80);
-                await new Promise((resolve) => setTimeout(resolve, 2000));
-
-                localStorage.setItem("skippedFools", "true");
-                setSkippedFools(true);
-                setReset(reset + 1);
-                setLoading(100);
-                setLoadingMsg("");
-                return;
+                restoreMizuki();
             }
 
             const reader = new FileReader();
@@ -484,6 +466,41 @@ const ExportButton: React.FC = () => {
         };
         input.click();
         input.remove();
+    };
+
+    const restoreMizuki = async () => {
+        new Audio("/sound/mus_xpart_back.mp3").play();
+        setLoadingMsg("Initiating import...");
+        setLoading(0);
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
+        setLoadingMsg("Checking character data integrity...");
+        setLoading(20);
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+
+        setLoadingMsg("Character file 100% intact.");
+        setLoading(40);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        setLoadingMsg("Checking character folder...");
+        setLoading(60);
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
+        setLoadingMsg("1 missing file... Copying character file to folder...");
+        setLoading(80);
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+        setErrorInformation("Thanks for bringing me back～");
+        setShow(false);
+
+        localStorage.setItem("loadMizuki", "false");
+        localStorage.setItem("skippedFools", "true");
+        localStorage.setItem("deleted", "false");
+        setSkippedFools(true);
+        setDeleted(false);
+        setReset(reset + 1);
+        setLoading(100);
+        setLoadingMsg("");
+        return;
     };
 
     return (

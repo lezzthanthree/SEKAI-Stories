@@ -17,10 +17,10 @@ const aprilFoolsDialogue = {
     ],
     dialogue5: [
         "God, it's so dark in here...",
-        "Don't worry, I have a backup file for you to restore me.",
+        "Don't worry, I have a backup file for you to restore me～",
         "I'll send it to you... right now!",
         "You should be able to import me.",
-        "Just ask me again if you lost my file.",
+        "Just ask me again if you lost my file～",
     ],
     lost1: [
         "Oh, you lost it?",
@@ -167,13 +167,16 @@ export const SoftErrorProvider: React.FC<SoftErrorProviderProps> = ({
 
     useEffect(() => {
         if (!mizukiIsDebugging) return;
+        localStorage.setItem("interrupted", "true");
+
         const timer = setTimeout(
             () => {
                 setMizukiIsDebugging(false);
                 setAprilFoolsMessage(true);
                 setKey("successLost");
                 localStorage.setItem("aprilFoolsDialogueKey", "successLost");
-                localStorage.setItem("skippedFools", "true");
+                localStorage.setItem("loadMizuki", "true");
+                localStorage.setItem("interrupted", "false");
                 setAprilFoolsMessage(true);
             },
             Math.random() * 30000 + 30000,
