@@ -41,6 +41,8 @@ export default interface ISettingsContextType {
     setDeleted: Dispatch<SetStateAction<boolean>>;
     deleting: boolean;
     setDeleting: Dispatch<SetStateAction<boolean>>;
+    importing: boolean;
+    setImporting: Dispatch<SetStateAction<boolean>>;
     skippedFools: boolean;
     setSkippedFools: Dispatch<SetStateAction<boolean>>;
 }

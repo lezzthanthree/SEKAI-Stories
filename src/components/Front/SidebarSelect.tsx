@@ -3,9 +3,7 @@ import { SettingsContext } from "../../contexts/SettingsContext";
 
 const SidebarSelect: React.FC = () => {
     const settings = useContext(SettingsContext);
-
-    if (!settings) return;
-
+    if (!settings) throw new Error("Context not found");
     const { openedSidebar, setOpenedSidebar, showExperimental, deleting } =
         settings;
 

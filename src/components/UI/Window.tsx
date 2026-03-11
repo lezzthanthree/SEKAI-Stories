@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useAudioManager } from "../../hooks/useAudioManager";
+import { SettingsContext } from "../../contexts/SettingsContext";
 
 interface WindowProps {
     show: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,6 +27,9 @@ const Window: React.FC<WindowProps> = ({
     buttons,
     children,
 }) => {
+    const settings = useContext(SettingsContext);
+    if (!settings) throw new Error("Context not found");
+    const { importing } = settings;
     const { playSound } = useAudioManager();
 
     useEffect(() => {
@@ -76,7 +80,7 @@ const Window: React.FC<WindowProps> = ({
 
     return (
         <div
-            className={`screen ${className}`}
+            className={`screen ${className} ${importing ? " shake" : ""}`}
             id={id ?? id}
             onClick={(e) => {
                 e.stopPropagation();
@@ -84,7 +88,7 @@ const Window: React.FC<WindowProps> = ({
             }}
         >
             <div
-                className="window"
+                className={"window"}
                 ref={window}
                 onClick={(e) => e.stopPropagation()}
             >

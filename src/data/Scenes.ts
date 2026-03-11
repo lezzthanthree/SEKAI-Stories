@@ -401,12 +401,13 @@ export const CheckSceneCategory = (
         "3-5": "memories-of-you",
         "7-27": "727",
         "8-27": "mizuki",
-    };
+    };  
 
     if (exact[`${month}-${day}`]) return exact[`${month}-${day}`];
 
     const range: Array<[number, number, number, string]> = [
         [2, 13, 19, "valentine"],
+        [4, 1, 7, "april-fools"],
         [4, 10, 30, "anniversary"],
     ];
 

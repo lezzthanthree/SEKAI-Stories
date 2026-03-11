@@ -9,7 +9,7 @@ const Canvas: React.FC = () => {
     if (!scene || !settings) throw new Error("Context not found");
 
     const { guideline, setGuideline } = scene;
-    const { deleting } = settings;
+    const { deleting, importing } = settings;
 
     const handleGuidelineToggle = () => {
         if (!guideline) return;
@@ -25,7 +25,7 @@ const Canvas: React.FC = () => {
             width={1920}
             id="canvas"
             onClick={handleGuidelineToggle}
-            className={deleting ? "tear shake" : ""}
+            className={deleting ? "tear" : importing ? "shake" : ""}
         />
     );
 };

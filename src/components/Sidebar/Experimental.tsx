@@ -28,6 +28,8 @@ const Experimental: React.FC = () => {
         setDeleting,
         skippedFools,
         setSkippedFools,
+        importing,
+        setImporting,
     } = settings;
     const { reset, setReset } = scene;
 
@@ -156,6 +158,18 @@ const Experimental: React.FC = () => {
                                 `${e.target.checked}`,
                             );
                             setReset(reset + 1);
+                        }}
+                    />
+                    <Checkbox
+                        id="visible"
+                        label="importing"
+                        checked={importing}
+                        onChange={(e) => {
+                            setImporting(e.target.checked);
+                            localStorage.setItem(
+                                "importing",
+                                `${e.target.checked}`,
+                            );
                         }}
                     />
                 </div>

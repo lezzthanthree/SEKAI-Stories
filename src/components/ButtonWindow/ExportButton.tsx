@@ -63,6 +63,7 @@ const ExportButton: React.FC = () => {
         skippedFools,
         setSkippedFools,
         setDeleted,
+        setImporting,
     } = settings;
     const { setErrorInformation } = softError;
     const jsonRef = useRef<IJsonSave | undefined>(sceneJson);
@@ -436,6 +437,7 @@ const ExportButton: React.FC = () => {
                     return;
                 }
                 restoreMizuki();
+                return;
             }
 
             const reader = new FileReader();
@@ -469,6 +471,8 @@ const ExportButton: React.FC = () => {
     };
 
     const restoreMizuki = async () => {
+        setImporting(true);
+
         new Audio("/sound/mus_xpart_back.mp3").play();
         setLoadingMsg("Initiating import...");
         setLoading(0);
@@ -500,7 +504,7 @@ const ExportButton: React.FC = () => {
         setReset(reset + 1);
         setLoading(100);
         setLoadingMsg("");
-        return;
+        setImporting(false);
     };
 
     return (
