@@ -7,7 +7,7 @@ const Announcements: React.FC = () => {
 
     if (!context) return;
 
-    const { setShowAnnouncements } = context;
+    const { setShowAnnouncements, skippedFools } = context;
 
     const handleAnnouncements = () => {
         setShowAnnouncements(false);
@@ -21,9 +21,31 @@ const Announcements: React.FC = () => {
 
     return (
         <div id="announcements" onClick={handleAnnouncements}>
-            <h2>Notice</h2>
-            <p>There's a strange bug currently found here in SEKAI Stories.</p>
-            <p>Please try to ignore this bug. We're sorry for the inconvenience.</p>
+            {skippedFools ? (
+                <>
+                    <h2>Happy April Fools!</h2>
+                    <p>
+                        You have successfully brought Mizuki back to the character
+                        folder!
+                    </p>
+                    <p>
+                        If you use this application on a different device,
+                        entering 'skip' into the Dialogue Box will allow you to
+                        bypass the April Fools sequence.
+                    </p>
+                </>
+            ) : (
+                <>
+                    <h2>Notice</h2>
+                    <p>
+                        A strange bug has been discovered here in SEKAI Stories.
+                    </p>
+                    <p>
+                        Please try to ignore this issue while we work on a fix.
+                        We apologize for the inconvenience.
+                    </p>
+                </>
+            )}
             <p>Tap this section to close.</p>
         </div>
     );

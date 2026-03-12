@@ -64,6 +64,7 @@ const ExportButton: React.FC = () => {
         setSkippedFools,
         setDeleted,
         setImporting,
+        setShowAnnouncements,
     } = settings;
     const { setErrorInformation } = softError;
     const jsonRef = useRef<IJsonSave | undefined>(sceneJson);
@@ -505,6 +506,7 @@ const ExportButton: React.FC = () => {
         setLoading(100);
         setLoadingMsg("");
         setImporting(false);
+        setShowAnnouncements(true);
     };
 
     return (
