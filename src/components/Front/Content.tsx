@@ -170,7 +170,7 @@ const Content: React.FC = () => {
             }, 100);
             const click = setInterval(() => {
                 playSound(audio[Math.floor(Math.random() * audio.length)]);
-            }, 400);
+            }, 1000);
 
             return () => {
                 clearInterval(interval);
