@@ -46,16 +46,6 @@ const NameTags: React.FC<NameTagsProps> = ({
     const { setErrorInformation } = error;
 
     const easyNameTagPlaceholders = useMemo(() => {
-        if (!deleted && !skippedFools) {
-            return [
-                t("character.mizuki"),
-                t("character.mizuki"),
-                t("character.mizuki"),
-                t("character.mizuki"),
-                t("character.mizuki"),
-                t("character.mizuki"),
-            ];
-        }
         return [
             t("character.miku"),
             t("character.rin"),
@@ -64,7 +54,7 @@ const NameTags: React.FC<NameTagsProps> = ({
             t("character.meiko"),
             t("character.kaito"),
         ];
-    }, [i18n.language, deleted, skippedFools]);
+    }, [i18n.language]);
 
     if (!text) return <p>{t("please-wait")}</p>;
 
@@ -124,7 +114,7 @@ const NameTags: React.FC<NameTagsProps> = ({
         let changedNameTag = "";
         changedNameTag = nameTags[value];
         text.nameTag.forEach((t) => {
-            t.text = changedNameTag;
+            t.text = !deleted && !skippedFools ? "Mizuki" : changedNameTag;
             t.updateText(true);
         });
         setText({
@@ -182,7 +172,11 @@ const NameTags: React.FC<NameTagsProps> = ({
                                         `nameTag${index + 1}`,
                                     );
                                 }}
-                                placeholder={easyNameTagPlaceholders[index]}
+                                placeholder={
+                                    !deleted && !skippedFools
+                                        ? "Mizuki"
+                                        : easyNameTagPlaceholders[index]
+                                }
                             />
                         </div>
                     ))}
