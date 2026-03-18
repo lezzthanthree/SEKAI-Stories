@@ -153,7 +153,10 @@ export const SoftErrorProvider: React.FC<SoftErrorProviderProps> = ({
             next === 2 &&
             ["dialogue5", "lost1", "lost2"].includes(key);
 
-        if (triggerDownload) downloadChr();
+        if (triggerDownload) {
+            downloadChr();
+            localStorage.setItem("fileDownload", "true");
+        }
         localStorage.setItem("interrupted", "true");
 
         if (next >= dialogue.length) {

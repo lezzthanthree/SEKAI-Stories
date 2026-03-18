@@ -494,7 +494,10 @@ const ExportButton: React.FC = () => {
         setLoadingMsg("1 missing file... Copying character file to folder...");
         setLoading(80);
         await new Promise((resolve) => setTimeout(resolve, 4000));
-        setErrorInformation("Thanks for bringing me back～");
+
+        const fileDownloaded = localStorage.getItem("fileDownload") === "true";
+
+        setErrorInformation(fileDownloaded ? "Thanks for bringing me back～" : "I... I don't know how you did it, but thanks, I guess?");
         setShow(false);
 
         localStorage.setItem("loadMizuki", "false");
