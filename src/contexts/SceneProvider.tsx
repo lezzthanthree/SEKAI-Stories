@@ -92,7 +92,9 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
             localStorage.setItem("deleted", "true");
         }
         if (deleted && !skippedFools) {
-            sceneSelected = "deleted";
+            const random = Math.random();
+
+            sceneSelected = random < 0.7 ? "letters" : "deleted";
         }
 
         const {

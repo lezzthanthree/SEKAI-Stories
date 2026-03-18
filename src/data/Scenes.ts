@@ -282,7 +282,7 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             sceneText: "ŧÈīß¨¸Ăà¿ĺãÿıįŸÌóżŻĔŘśúðĚÔ½øŰćŁ",
         },
     ],
-    deleted: [
+    letters: [
         {
             background: "/background_low_jpg/bg_black.jpg",
             text: "m     ",
@@ -337,6 +337,8 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             pngName: "transparent",
             sceneText: "",
         },
+    ],
+    deleted: [
         {
             background: "/background_special/Background_Uranohoshi_Rooftop.jpg",
             text: "I'm ○○○-sama's little demon number four...\nM-Momoi Airi...",
@@ -401,7 +403,7 @@ export const CheckSceneCategory = (
         "3-5": "memories-of-you",
         "7-27": "727",
         "8-27": "mizuki",
-    };  
+    };
 
     if (exact[`${month}-${day}`]) return exact[`${month}-${day}`];
 
