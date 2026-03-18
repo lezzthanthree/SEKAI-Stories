@@ -69,12 +69,17 @@ const dialogue = [
 const backgrounds = [
     "/background_low_jpg/bg_black.jpg",
     "/background_low_jpg/bg_white.jpg",
-    "/background_low_jpg/bg_blue.jpg",
-    "/background_low_jpg/bg_magenta.jpg",
     "/background_low_jpg/bg_a000702.jpg",
     "/background_low_jpg/bg_e000403.jpg",
     "/background_low_jpg/bg_e001701.jpg",
-    "/background_special/Background_Backrooms.jpg",
+    "/background_special/Background_Loop_1.jpg",
+    "/background_special/Background_Loop_2.jpg",
+    "/background_special/Background_Loop_3.jpg",
+    "/background_special/Background_Loop_4.jpg",
+    "/background_special/Background_Loop_5.jpg",
+    "/background_special/Background_Loop_6.jpg",
+    "/background_special/Background_Loop_7.jpg",
+    "/background_special/Background_Loop_8.jpg",
 ];
 
 const Content: React.FC = () => {
