@@ -32,7 +32,7 @@ const ExportButton: React.FC = () => {
     useEffect(() => {
         const cookie = localStorage.getItem("loadMizuki") === "true";
         if (cookie) {
-            restoreMizuki();
+            restoreMizuki(true);
             setShow(true);
         }
     }, []);
@@ -427,6 +427,9 @@ const ExportButton: React.FC = () => {
             const file = (e.target as HTMLInputElement).files?.[0];
             if (!file) return;
             if (file.name.endsWith(".chr") && !skippedFools) {
+                const fileDownloaded =
+                    localStorage.getItem("fileDownload") === "true";
+
                 if (file.name.includes("monika")) {
                     setErrorInformation(
                         "I see what you're doing... I am not allowing that to happen.",
@@ -434,10 +437,12 @@ const ExportButton: React.FC = () => {
                     return;
                 }
                 if (!file.name.includes("mizuki")) {
-                    setErrorInformation("Hey... That's not me!");
+                    setErrorInformation(
+                        fileDownloaded ? "Hey... That's not me!" : "...",
+                    );
                     return;
                 }
-                restoreMizuki();
+                restoreMizuki(fileDownloaded);
                 return;
             }
 
@@ -471,7 +476,7 @@ const ExportButton: React.FC = () => {
         input.remove();
     };
 
-    const restoreMizuki = async () => {
+    const restoreMizuki = async (fileDownloaded: boolean) => {
         setImporting(true);
 
         new Audio("/sound/mus_xpart_back.mp3").play();
@@ -495,9 +500,11 @@ const ExportButton: React.FC = () => {
         setLoading(80);
         await new Promise((resolve) => setTimeout(resolve, 4000));
 
-        const fileDownloaded = localStorage.getItem("fileDownload") === "true";
-
-        setErrorInformation(fileDownloaded ? "Thanks for bringing me back～" : "I... I don't know how you did it, but thanks, I guess?");
+        setErrorInformation(
+            fileDownloaded
+                ? "Thanks for bringing me back～"
+                : "I... I don't know how you did it, but thanks, I guess?",
+        );
         setShow(false);
 
         localStorage.setItem("loadMizuki", "false");
