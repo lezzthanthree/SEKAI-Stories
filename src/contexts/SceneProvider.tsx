@@ -16,6 +16,7 @@ import { SettingsContext } from "./SettingsContext";
 import { IFilter } from "../types/IFilter";
 import { ILighting } from "../types/ILighting";
 import IChoicesText from "../types/IChoicesText";
+import { ILoopingTheRooms } from "../types/ILoopingTheRooms";
 
 interface SceneProviderProps {
     children: React.ReactNode;
@@ -65,6 +66,9 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
     const [sceneText, setSceneText] = useState<ISceneText | undefined>(
         undefined,
     );
+    const [loopingTheRooms, setLoopingTheRooms] = useState<
+        ILoopingTheRooms | undefined
+    >(undefined);
     const [filter, setFilter] = useState<IFilter | undefined>(undefined);
     const [guideline, setGuideline] = useState<IGuideline | undefined>(
         undefined,
@@ -111,6 +115,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
             sceneText,
             filter,
             guideline,
+            loopingTheRooms,
         } = await LoadScene({
             app,
             setStartingMessage,
@@ -129,6 +134,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         setText(text);
         setChoicesText(choicesText);
         setSceneText(sceneText);
+        setLoopingTheRooms(loopingTheRooms);
         setFilter(filter);
         setGuideline(guideline);
         setStartingMessage("");
@@ -178,6 +184,8 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
                 setChoicesText,
                 sceneText,
                 setSceneText,
+                loopingTheRooms,
+                setLoopingTheRooms,
                 filter,
                 setFilter,
                 sceneJson,

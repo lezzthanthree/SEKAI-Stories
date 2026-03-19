@@ -113,7 +113,7 @@ const Content: React.FC = () => {
     if (!scene || !settings || !softError) {
         throw new Error("Context is not loaded properly.");
     }
-    const { background, text } = scene;
+    const { background, text, models, loopingTheRooms } = scene;
     const {
         hide,
         setHide,
@@ -130,6 +130,11 @@ const Content: React.FC = () => {
     useEffect(() => {
         if (importing) {
             let backgroundSettingUp = false;
+            if (models) {
+                Object.values(models).forEach((m) => {
+                    m.root.visible = false;
+                });
+            }
             const interval = setInterval(async () => {
                 setOpenedSidebar(
                     sidebarMenu[Math.floor(Math.random() * sidebarMenu.length)],
@@ -171,6 +176,16 @@ const Content: React.FC = () => {
                     } finally {
                         backgroundSettingUp = false;
                     }
+                }
+                if (loopingTheRooms) {
+                    loopingTheRooms.sprites.forEach((sprite) => {
+                        sprite.visible = false;
+                    });
+                    loopingTheRooms.sprites[
+                        Math.floor(
+                            Math.random() * loopingTheRooms.sprites.length,
+                        )
+                    ].visible = true;
                 }
             }, 100);
             const click = setInterval(() => {

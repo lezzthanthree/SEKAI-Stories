@@ -10,6 +10,7 @@ import { ISplitBackground } from "./ISplitBackground";
 import { IFilter } from "./IFilter";
 import { ILighting } from "./ILighting";
 import IChoicesText from "./IChoicesText";
+import { ILoopingTheRooms } from "./ILoopingTheRooms";
 export default interface ISceneContextType {
     app: PIXI.Application | undefined;
     setApp: Dispatch<SetStateAction<PIXI.Application | undefined>>;
@@ -37,6 +38,8 @@ export default interface ISceneContextType {
     setSceneText: Dispatch<SetStateAction<ISceneText | undefined>>;
     choicesText: IChoicesText | undefined;
     setChoicesText: Dispatch<SetStateAction<IChoicesText | undefined>>;
+    loopingTheRooms: ILoopingTheRooms | undefined;
+    setLoopingTheRooms: Dispatch<SetStateAction<ILoopingTheRooms | undefined>>;
     filter: IFilter | undefined;
     setFilter: Dispatch<SetStateAction<IFilter | undefined>>;
     sceneJson: IJsonSave | undefined;

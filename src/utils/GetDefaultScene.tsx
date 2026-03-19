@@ -26,6 +26,7 @@ import {
     sceneCenterTextsSetupData,
     sceneTopLeftTexts,
 } from "../data/TextSetups";
+import { ILoopingTheRooms } from "../types/ILoopingTheRooms";
 
 interface GetDefaultSceneProps {
     app: PIXI.Application | undefined;
@@ -385,6 +386,36 @@ const LoadGuideline = async (
     };
 };
 
+const LoadLoopingTheRooms = async (
+    app: PIXI.Application,
+    childAt: number,
+): Promise<ILoopingTheRooms> => {
+    const loopingContainer = new PIXI.Container();
+    const sprites: PIXI.Sprite[] = [];
+    const textures = [
+        "/img/loop/placeholder_1.png",
+        "/img/loop/placeholder_2.png",
+        "/img/loop/placeholder_3.png",
+        "/img/loop/placeholder_4.png",
+    ];
+
+    textures.forEach(async (texture) => {
+        const assetTexture = await Assets.load(texture);
+        const sprite = new PIXI.Sprite(assetTexture);
+        sprite.visible = false;
+        sprites.push(sprite);
+        loopingContainer.addChild(sprite);
+    });
+
+    app.stage.addChildAt(loopingContainer, childAt);
+
+    return {
+        container: loopingContainer,
+        sprites: sprites,
+        visible: false,
+    };
+};
+
 export const LoadScene = async ({
     app,
     setStartingMessage,
@@ -483,6 +514,9 @@ export const LoadScene = async ({
     setStartingMessage("Adding guidelines...");
     const guideline = await LoadGuideline(initApplication, 4);
 
+    setStartingMessage("Adding special event...");
+    const loopingTheRooms = await LoadLoopingTheRooms(initApplication, 5);
+
     setLoading(100);
     return {
         app: initApplication,
@@ -498,5 +532,6 @@ export const LoadScene = async ({
         sceneText: sceneText,
         filter: filter,
         guideline: guideline,
+        loopingTheRooms: loopingTheRooms,
     };
 };
