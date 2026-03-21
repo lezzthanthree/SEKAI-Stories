@@ -104,6 +104,17 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             sceneText: "❤︎",
         },
     ],
+    "april-fools": [
+        {
+            background: "/background_special/Background_Kisaragi.png",
+            text: "",
+            nameTag: "",
+            modelX: 1000,
+            modelY: 640,
+            pngName: "mizuki_kisaragi",
+            sceneText: "",
+        },
+    ],
     halloween: [
         {
             background: "/background_special/Background_Cheat_to_Happiness.jpg",
@@ -426,5 +437,5 @@ export const CheckSceneCategory = (
 
     if (month in months) return months[month];
 
-    return "default";
+    return "april-fools";
 };

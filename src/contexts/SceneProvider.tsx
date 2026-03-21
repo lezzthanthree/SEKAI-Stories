@@ -98,7 +98,8 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         if (deleted && !skippedFools) {
             const random = Math.random();
 
-            sceneSelected = random < 0.7 ? "letters" : "deleted";
+            sceneSelected =
+                random < 0.7 ? "letters" : blankCanvas ? "blank" : "deleted";
         }
 
         const {
