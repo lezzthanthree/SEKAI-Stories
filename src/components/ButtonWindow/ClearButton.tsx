@@ -19,7 +19,13 @@ const ClearButton: React.FC = () => {
 
     const [resetShow, setResetShow] = useState(false);
     const { reset, setReset } = scene;
-    const { blankCanvas, setBlankCanvas, deleting, setDeleting } = settings;
+    const {
+        blankCanvas,
+        setBlankCanvas,
+        deleting,
+        setDeleting,
+        setSceneLoaded,
+    } = settings;
     const [crash, setCrash] = useState(false);
 
     const handleBlankCanvas = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +57,7 @@ const ClearButton: React.FC = () => {
                             setDeleting(false);
                             return;
                         }
+                        setSceneLoaded(false);
                         setReset(reset + 1);
                     }}
                     confirmLabel={t("global.clear-ok")}

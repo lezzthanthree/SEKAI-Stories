@@ -68,6 +68,10 @@ const dialogue = [
 ];
 const backgrounds = [
     "/background_low_jpg/bg_black.jpg",
+    "/background_low_jpg/bg_black.jpg",
+    "/background_low_jpg/bg_black.jpg",
+    "/background_low_jpg/bg_white.jpg",
+    "/background_low_jpg/bg_white.jpg",
     "/background_low_jpg/bg_white.jpg",
     "/background_low_jpg/bg_a000702.jpg",
     "/background_low_jpg/bg_e000403.jpg",
@@ -113,7 +117,7 @@ const Content: React.FC = () => {
     if (!scene || !settings || !softError) {
         throw new Error("Context is not loaded properly.");
     }
-    const { background, text, models, loopingTheRooms } = scene;
+    const { background, text, models, loopingTheRooms, setBackground } = scene;
     const {
         hide,
         setHide,
@@ -123,6 +127,8 @@ const Content: React.FC = () => {
         setOpenedSidebar,
         setOpenModelOption,
         setOpenTextOption,
+
+        effects,
         importing,
     } = settings;
     const { showErrorInformation } = softError;
@@ -135,59 +141,76 @@ const Content: React.FC = () => {
                     m.root.visible = false;
                 });
             }
-            const interval = setInterval(async () => {
-                setOpenedSidebar(
-                    sidebarMenu[Math.floor(Math.random() * sidebarMenu.length)],
-                );
-                setOpenModelOption(
-                    modelMenu[Math.floor(Math.random() * modelMenu.length)],
-                );
-                setOpenTextOption(
-                    textMenu[Math.floor(Math.random() * textMenu.length)],
-                );
-                if (!text) return;
-                text.nameTag.forEach((t) => {
-                    t.text =
-                        nameTag[Math.floor(Math.random() * nameTag.length)];
-                    t.updateText(true);
-                });
-                text.dialogue.forEach((t) => {
-                    t.text =
-                        dialogue[Math.floor(Math.random() * dialogue.length)];
-                    t.updateText(true);
-                });
-                if (background && !backgroundSettingUp) {
-                    backgroundSettingUp = true;
-                    try {
-                        const randomBG =
-                            backgrounds[
-                                Math.floor(Math.random() * backgrounds.length)
-                            ];
-                        const sprite = await getBackground(randomBG);
-
-                        if (
-                            background.backgroundContainer.children.length > 0
-                        ) {
-                            background.backgroundContainer.removeChildAt(0);
-                        }
-                        background.backgroundContainer.addChildAt(sprite, 0);
-                    } catch (e) {
-                        console.error("Background glitch failed", e);
-                    } finally {
-                        backgroundSettingUp = false;
-                    }
-                }
-                if (loopingTheRooms) {
-                    loopingTheRooms.sprites.forEach((sprite) => {
-                        sprite.visible = false;
+            const interval = setInterval(
+                async () => {
+                    setOpenedSidebar(
+                        sidebarMenu[
+                            Math.floor(Math.random() * sidebarMenu.length)
+                        ],
+                    );
+                    setOpenModelOption(
+                        modelMenu[Math.floor(Math.random() * modelMenu.length)],
+                    );
+                    setOpenTextOption(
+                        textMenu[Math.floor(Math.random() * textMenu.length)],
+                    );
+                    if (!text) return;
+                    text.nameTag.forEach((t) => {
+                        t.text =
+                            nameTag[Math.floor(Math.random() * nameTag.length)];
+                        t.updateText(true);
                     });
-                    loopingTheRooms.sprites[
-                        Math.floor(
-                            Math.random() * loopingTheRooms.sprites.length,
-                        )
-                    ].visible = true;
-                }
-            }, 100);
+                    text.dialogue.forEach((t) => {
+                        t.text =
+                            dialogue[
+                                Math.floor(Math.random() * dialogue.length)
+                            ];
+                        t.updateText(true);
+                    });
+                    if (background && !backgroundSettingUp) {
+                        backgroundSettingUp = true;
+                        try {
+                            const randomBG =
+                                backgrounds[
+                                    Math.floor(
+                                        Math.random() * backgrounds.length,
+                                    )
+                                ];
+                            const sprite = await getBackground(randomBG);
+
+                            if (
+                                background.backgroundContainer.children.length >
+                                0
+                            ) {
+                                background.backgroundContainer.removeChildAt(0);
+                            }
+                            background.backgroundContainer.addChildAt(
+                                sprite,
+                                0,
+                            );
+                            setBackground({
+                                ...background,
+                                filename: randomBG,
+                            });
+                        } catch (e) {
+                            console.error("Background glitch failed", e);
+                        } finally {
+                            backgroundSettingUp = false;
+                        }
+                    }
+                    if (loopingTheRooms) {
+                        loopingTheRooms.sprites.forEach((sprite) => {
+                            sprite.visible = false;
+                        });
+                        loopingTheRooms.sprites[
+                            Math.floor(
+                                Math.random() * loopingTheRooms.sprites.length,
+                            )
+                        ].visible = true;
+                    }
+                },
+                effects ? 50 : 2000,
+            );
             const click = setInterval(() => {
                 playSound(audio[Math.floor(Math.random() * audio.length)]);
             }, 1000);

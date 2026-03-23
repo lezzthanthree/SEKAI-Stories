@@ -39,6 +39,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         setDeleting,
         skippedFools,
         setDeleted,
+        setSceneLoaded,
     } = settings;
     const [app, setApp] = useState<PIXI.Application | undefined>(undefined);
     const [models, setModels] = useState<Record<string, IModel> | undefined>(
@@ -142,6 +143,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         setLighting(lighting);
         setLayers(1);
         setInitialState(true);
+        setSceneLoaded(true);
     };
 
     useEffect(() => {

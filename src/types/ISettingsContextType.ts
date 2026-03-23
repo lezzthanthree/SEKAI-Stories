@@ -43,6 +43,10 @@ export default interface ISettingsContextType {
     setDeleting: Dispatch<SetStateAction<boolean>>;
     importing: boolean;
     setImporting: Dispatch<SetStateAction<boolean>>;
+    effects: boolean;
+    setEffects: Dispatch<SetStateAction<boolean>>;
     skippedFools: boolean;
     setSkippedFools: Dispatch<SetStateAction<boolean>>;
+    sceneLoaded: boolean;
+    setSceneLoaded: Dispatch<SetStateAction<boolean>>;
 }

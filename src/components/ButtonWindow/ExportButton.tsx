@@ -22,20 +22,14 @@ const ExportButton: React.FC = () => {
     const settings = useContext(SettingsContext);
     const softError = useContext(SoftErrorContext);
     const [validModelCount, setValidModelCount] = useState<number>(0);
+    const [showPhotosensitiveWarning, setShowPhotosensitiveWarning] =
+        useState<boolean>(false);
 
     const { t } = useTranslation();
 
     const [show, setShow] = useState<boolean>(false);
     if (!scene || !settings || !softError)
         throw new Error("Context not prepared.");
-
-    useEffect(() => {
-        const cookie = localStorage.getItem("loadMizuki") === "true";
-        if (cookie) {
-            restoreMizuki(true);
-            setShow(true);
-        }
-    }, []);
 
     const {
         background,
@@ -65,8 +59,18 @@ const ExportButton: React.FC = () => {
         setDeleted,
         setImporting,
         setShowAnnouncements,
+        setEffects,
+        sceneLoaded,
+        settingsLoaded,
     } = settings;
     const { setErrorInformation } = softError;
+
+    useEffect(() => {
+        const cookie = localStorage.getItem("loadMizuki") === "true";
+        if (cookie && settingsLoaded && sceneLoaded) {
+            setShowPhotosensitiveWarning(true);
+        }
+    }, [settingsLoaded, sceneLoaded]);
     const jsonRef = useRef<IJsonSave | undefined>(sceneJson);
 
     useEffect(() => {
@@ -442,7 +446,7 @@ const ExportButton: React.FC = () => {
                     );
                     return;
                 }
-                restoreMizuki(fileDownloaded);
+                setShowPhotosensitiveWarning(true);
                 return;
             }
 
@@ -476,8 +480,10 @@ const ExportButton: React.FC = () => {
         input.remove();
     };
 
-    const restoreMizuki = async (fileDownloaded: boolean) => {
+    const restoreMizuki = async (effects: boolean = false) => {
         setImporting(true);
+        setEffects(effects);
+        const fileDownloaded = localStorage.getItem("fileDownload") === "true";
 
         new Audio("/sound/mus_xpart_back.mp3").play();
         setLoadingMsg("Initiating import...");
@@ -566,6 +572,46 @@ const ExportButton: React.FC = () => {
                             }
                             readOnly
                         />
+                    </div>
+                </Window>
+            )}
+            {showPhotosensitiveWarning && (
+                <Window
+                    show={setShowPhotosensitiveWarning}
+                    hideClose
+                    danger
+                    buttons={
+                        <>
+                            <button
+                                className="btn-regular btn-blue center"
+                                onClick={() => {
+                                    restoreMizuki(false);
+                                    setShowPhotosensitiveWarning(false);
+                                    setShow(false);
+                                }}
+                            >
+                                Reduced
+                            </button>
+                            <button
+                                className="btn-regular btn-red center"
+                                onClick={() => {
+                                    restoreMizuki(true);
+                                    setShowPhotosensitiveWarning(false);
+                                    setShow(false);
+                                }}
+                            >
+                                INTENSE
+                            </button>
+                        </>
+                    }
+                >
+                    <div className="window__content">
+                        <h1>Photosensitive Warning</h1>
+                        <p>
+                            The next few seconds will contain intense flashing
+                            lights.
+                        </p>
+                        <p>You can proceed with reduced effects if you wish.</p>
                     </div>
                 </Window>
             )}

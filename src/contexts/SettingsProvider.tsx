@@ -32,7 +32,9 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     const [deleting, setDeleting] = useState<boolean>(false);
     const [skippedFools, setSkippedFools] = useState<boolean>(false);
     const [settingsLoaded, setSettingsLoaded] = useState<boolean>(false);
+    const [sceneLoaded, setSceneLoaded] = useState<boolean>(false);
     const [importing, setImporting] = useState<boolean>(false);
+    const [effects, setEffects] = useState<boolean>(false);
 
     useEffect(() => {
         const showExperimental =
@@ -143,6 +145,10 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
                 setSkippedFools,
                 importing,
                 setImporting,
+                effects,
+                setEffects,
+                sceneLoaded,
+                setSceneLoaded,
                 settingsLoaded,
             }}
         >

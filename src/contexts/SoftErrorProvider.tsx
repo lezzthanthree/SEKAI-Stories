@@ -51,13 +51,13 @@ const aprilFoolsDialogue = {
     ],
     successLost: [
         "Got it! I placed my file on the characters folder!",
-        "Oh... you have to refresh it before it works～",
+        "Oh... you have to clear the canvas for it to work～",
     ],
     continue1: ["..."],
-    continue2: ["Go on now, you can refresh the page～"],
+    continue2: ["Go on now, you can clear the canvas～"],
     continue3: ["Hey..."],
     continue4: ["Uhmmmm..."],
-    continue5: ["I'll... just wait for you to refresh the page... hehe～"],
+    continue5: ["I'll... just wait for you to clear the canvas... hehe～"],
     successImport: ["*phew* Thank you for saving me there!"],
 };
 
