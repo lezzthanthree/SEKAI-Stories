@@ -1,3 +1,10 @@
+# 2026.04.10
+- Replaced lock button with revert on text menu
+- Added snapping on font size slider
+- Properly set line height on other dialogue box types
+- Allow user to set default dialogue box type
+- Change window animation behavior
+
 # 2026.03.05
 - March 5th trauma (My eyes feels heavy... )
 - Added custom choices text box
