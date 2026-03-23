@@ -226,10 +226,16 @@ const LoadText = async (
         nameTag,
         dialogue,
     );
+    const {
+        textContainer: ddlcTextContainer,
+        textDialogue: ddlcTextDialogue,
+        textNameTag: ddlcTextNameTag,
+    } = await SetupDialogueText(dialogueBoxesSetupData.ddlc, nameTag, dialogue);
 
     textContainer.addChildAt(defaultTextContainer, 0);
     textContainer.addChildAt(classicTextContainer, 1);
     textContainer.addChildAt(mySekaiTextContainer, 2);
+    textContainer.addChildAt(ddlcTextContainer, 3);
 
     app.stage.addChildAt(textContainer, childAt);
 
@@ -239,12 +245,19 @@ const LoadText = async (
             default: defaultTextContainer,
             classic: classicTextContainer,
             mySekai: mySekaiTextContainer,
+            ddlc: ddlcTextContainer,
         },
-        nameTag: [defaultTextNameTag, classicTextNameTag, mySekaiTextNameTag],
+        nameTag: [
+            defaultTextNameTag,
+            classicTextNameTag,
+            mySekaiTextNameTag,
+            ddlcTextNameTag,
+        ],
         dialogue: [
             defaultTextDialogue,
             classicTextDialogue,
             mySekaiTextDialogue,
+            ddlcTextDialogue,
         ],
         nameTagString: nameTag,
         dialogueString: dialogue,

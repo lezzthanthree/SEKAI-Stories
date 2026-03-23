@@ -150,6 +150,7 @@ const Dialogue: React.FC<DialogueProps> = ({
     ) => {
         const changedFontSize = Number(event.target.value);
         text.dialogue.forEach((t, i) => {
+            if (i == 3) return;
             t.style.fontSize = changedFontSize;
             if (i == 0) {
                 t.style.strokeThickness = Math.floor(
@@ -171,6 +172,7 @@ const Dialogue: React.FC<DialogueProps> = ({
         if (inputChange == null || isNaN(Number(inputChange))) return;
         const changedFontSize = Number(inputChange);
         text.dialogue.forEach((t, i) => {
+            if (i == 3) return;
             t.style.fontSize = changedFontSize;
             if (i == 0) {
                 t.style.strokeThickness = 8 + (changedFontSize / 44 - 1) * 2;
@@ -178,6 +180,7 @@ const Dialogue: React.FC<DialogueProps> = ({
                     55 + (changedFontSize / 44 - 1) * 40,
                 );
             }
+
             t.updateText(true);
         });
         setText({
@@ -188,8 +191,10 @@ const Dialogue: React.FC<DialogueProps> = ({
     const handleTextBoxTypeChange = (
         event: React.ChangeEvent<HTMLInputElement>,
     ) => {
+        if (text.typeSelected === "ddlc")
+            new Audio("/sound/deselect-ddlc.wav").play();
         const value = event.target.value;
-
+        if (value === "ddlc") new Audio("/sound/select-ddlc.wav").play();
         Object.entries(text.type).forEach(([type, container]) => {
             container.visible = value === type;
         });
@@ -253,43 +258,45 @@ const Dialogue: React.FC<DialogueProps> = ({
                     ))}
                 </select>
             </div>
-            <div className="option__content">
-                <div className="transform-icons">
-                    <h3>
-                        {t("text.dialogue.font-size")} ({text.fontSize} px)
-                    </h3>
-                    <div>
-                        <i
-                            className="bi bi-pencil-fill"
-                            onClick={() => setShowFontSizeInput(true)}
-                        ></i>
-                        <i
-                            className={
-                                lockFontSizeState
-                                    ? "bi bi-unlock-fill"
-                                    : "bi bi-lock-fill"
-                            }
-                            onClick={() => {
-                                setLockFontSizeState(!lockFontSizeState);
-                                localStorage.setItem(
-                                    "lockFontSize",
-                                    String(!lockFontSizeState),
-                                );
-                            }}
-                        ></i>
+            {text.typeSelected != "ddlc" && (
+                <div className="option__content">
+                    <div className="transform-icons">
+                        <h3>
+                            {t("text.dialogue.font-size")} ({text.fontSize} px)
+                        </h3>
+                        <div>
+                            <i
+                                className="bi bi-pencil-fill"
+                                onClick={() => setShowFontSizeInput(true)}
+                            ></i>
+                            <i
+                                className={
+                                    lockFontSizeState
+                                        ? "bi bi-unlock-fill"
+                                        : "bi bi-lock-fill"
+                                }
+                                onClick={() => {
+                                    setLockFontSizeState(!lockFontSizeState);
+                                    localStorage.setItem(
+                                        "lockFontSize",
+                                        String(!lockFontSizeState),
+                                    );
+                                }}
+                            ></i>
+                        </div>
                     </div>
+                    <input
+                        type="range"
+                        name="font-size"
+                        id="font-size"
+                        value={text.fontSize}
+                        min={10}
+                        max={120}
+                        onChange={handleFontSizeChange}
+                        {...(lockFontSizeState ? { disabled: true } : {})}
+                    />
                 </div>
-                <input
-                    type="range"
-                    name="font-size"
-                    id="font-size"
-                    value={text.fontSize}
-                    min={10}
-                    max={120}
-                    onChange={handleFontSizeChange}
-                    {...(lockFontSizeState ? { disabled: true } : {})}
-                />
-            </div>
+            )}
             <div className="option__content">
                 <h3>{t("text.dialogue.box-type.header")}</h3>
                 <div className="flex-horizontal center padding-top-bottom-10">
@@ -328,6 +335,23 @@ const Dialogue: React.FC<DialogueProps> = ({
                         {t("text.dialogue.box-type.mysekai")}
                     </label>
                 </div>
+                {skippedFools && (
+                    <div className="flex-horizontal center padding-top-bottom-10">
+                        <RadioButton
+                            name="box-type"
+                            value="ddlc"
+                            id="ddlc"
+                            onChange={handleTextBoxTypeChange}
+                            data={text.typeSelected}
+                        />
+                        <label
+                            className="width-100 radio__label"
+                            htmlFor="ddlc"
+                        >
+                            ????
+                        </label>
+                    </div>
+                )}
             </div>
             <div className="option__content">
                 <h3>{t("global.toggles")}</h3>

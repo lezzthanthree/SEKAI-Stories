@@ -99,6 +99,45 @@ export const dialogueBoxesSetupData: Record<string, IDialogueTextSetup> = {
         },
         visible: false,
     },
+    ddlc: {
+        bg: "/img/Dialogue_Background_DDLC.png",
+        nameTag: {
+            textStyle: {
+                fontFamily: "RifficFree-Bold",
+                fontSize: 40,
+                fill: 0xffffff,
+                stroke: 0xc436aa,
+                align: "center",
+                strokeThickness: 8,
+            },
+            textPosition: {
+                x: 522,
+                y: 785,
+            },
+            textAnchor: {
+                x: 0.5,
+                y: 0,
+            },
+        },
+        dialogue: {
+            textStyle: {
+                fontFamily: "Aller",
+                fontSize: 35,
+                fill: 0xffffff,
+                stroke: 0x000000,
+                strokeThickness: 6,
+                lineHeight: 44,
+                wordWrap: true,
+                breakWords: true,
+                wordWrapWidth: 1100,
+            },
+            textPosition: {
+                x: 410,
+                y: 882,
+            },
+        },
+        visible: false,
+    },
 };
 
 export const choicesTextsSetupData: Record<string, IChoicesTextSetup> = {

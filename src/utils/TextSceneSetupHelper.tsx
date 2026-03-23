@@ -25,6 +25,11 @@ export const SetupDialogueText = async (
         setup.nameTag.textPosition.x,
         setup.nameTag.textPosition.y + textAlignmentCookie,
     );
+    console.log(setup.nameTag.textAnchor);
+    textNameTag.anchor.set(
+        setup.nameTag.textAnchor?.x ?? 0,
+        setup.nameTag.textAnchor?.y ?? 0,
+    );
 
     const textDialogue = new PIXI.Text(dialogue, setup.dialogue.textStyle);
     textDialogue.position.set(

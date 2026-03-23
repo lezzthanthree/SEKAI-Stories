@@ -6,6 +6,7 @@ export default interface IText {
         default: PIXI.Container;
         classic: PIXI.Container;
         mySekai: PIXI.Container;
+        ddlc: PIXI.Container;
     };
     nameTag: PIXI.Text[];
     dialogue: PIXI.Text[];
