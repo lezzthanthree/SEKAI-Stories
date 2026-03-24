@@ -139,7 +139,8 @@ const SettingsButton: React.FC = () => {
                                 </p>
                                 <p>
                                     If you wish to restore the missing files,
-                                    please consider calling their name.
+                                    please consider calling the name of the
+                                    missing file.
                                 </p>
                             </div>
                         )}
