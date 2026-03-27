@@ -5,16 +5,24 @@ import UploadImageButton from "../../../UI/UploadButton";
 import { Checkbox } from "../../../UI/Checkbox";
 import { SceneContext } from "../../../../contexts/SceneContext";
 import { useTranslation } from "react-i18next";
+import { SettingsContext } from "../../../../contexts/SettingsContext";
+import { SoftErrorContext } from "../../../../contexts/SoftErrorContext";
 
 const Select: React.FC = () => {
     const { t } = useTranslation();
     const scene = useContext(SceneContext);
-    if (!scene) throw new Error("Context not found");
+    const settings = useContext(SettingsContext);
+    const error = useContext(SoftErrorContext);
+    if (!scene || !settings || !error) throw new Error("Context not found");
 
     const { background, setBackground, splitBackground, setSplitBackground } =
         scene;
+    const { deleted, skippedFools } = settings;
+    const { setErrorInformation } = error;
+
     if (!background || !background.backgroundContainer)
         return <p>{t("please-wait")}</p>;
+
     const handleUploadImage = async (file: File) => {
         const imgSrc = URL.createObjectURL(file);
         const backgroundImage = await getBackground(imgSrc).catch();
@@ -30,8 +38,14 @@ const Select: React.FC = () => {
     };
 
     const handleSplitImage = async (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
+        if (!deleted && !skippedFools) {
+            setErrorInformation(
+                "function handleSplitImage not defined: 'Do you still need another background when you have me? ♡'",
+            );
+            return;
+        }
         const value = event.target.checked;
 
         if (splitBackground?.splitContainer) {
