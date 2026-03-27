@@ -280,6 +280,10 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             modelScale: 1,
             pngName: "mizuki_monika",
             sceneText: "ŧÈīß¨¸Ăà¿ĺãÿıįŸÌóżŻĔŘśúðĚÔ½øŰćŁ",
+            choices: {
+                choice1: "ũŗÏųØĨ±òŠýģªĒñŧýô¥ÕĵÓÐŶħ",
+                choice2: "»ÿó¹ıľŰŹéáÐĕÓĆű",
+            },
         },
     ],
     deleting: [
