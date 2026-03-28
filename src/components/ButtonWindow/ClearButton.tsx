@@ -22,6 +22,8 @@ const ClearButton: React.FC = () => {
     const {
         blankCanvas,
         setBlankCanvas,
+        deleted,
+        skippedFools,
         deleting,
         setDeleting,
         setSceneLoaded,
@@ -76,6 +78,14 @@ const ClearButton: React.FC = () => {
                                     Any data from the recent canvas will be
                                     lost. Do you wish to continue?
                                 </p>
+                            </div>
+                        </div>
+                    ) : !deleted && !skippedFools ? (
+                        <div className="window__content">
+                            <div className="window__divider center">
+                                <h3 className="text-center">
+                                    ĪĄ¥ěžŽŶ×ĆÍŋĕœĜŮİÛ¯Ø ¹¨øÐäĨņŎãĢÉþŏ
+                                </h3>
                             </div>
                         </div>
                     ) : (
