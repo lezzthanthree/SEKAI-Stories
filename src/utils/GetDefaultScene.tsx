@@ -406,10 +406,14 @@ const LoadLoopingTheRooms = async (
     const loopingContainer = new PIXI.Container();
     const sprites: PIXI.Sprite[] = [];
     const textures = [
-        "/img/loop/placeholder_1.png",
-        "/img/loop/placeholder_2.png",
-        "/img/loop/placeholder_3.png",
-        "/img/loop/placeholder_4.png",
+        "/img/loop/loop_1.png",
+        "/img/loop/loop_2.png",
+        "/img/loop/loop_3.png",
+        "/img/loop/loop_4.png",
+        "/img/loop/loop_5.png",
+        "/img/loop/loop_6.png",
+        "/img/loop/loop_7.png",
+        "/img/loop/loop_8.png",
     ];
 
     textures.forEach(async (texture) => {
