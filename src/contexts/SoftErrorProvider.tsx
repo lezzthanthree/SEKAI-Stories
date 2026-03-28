@@ -170,6 +170,8 @@ export const SoftErrorProvider: React.FC<SoftErrorProviderProps> = ({
 
     useEffect(() => {
         if (!mizukiIsDebugging) return;
+        new Audio("/sound/goofy_aaaa_mizuki.mp3").play();
+        setAprilFoolsMessage(false);
         localStorage.setItem("interrupted", "true");
 
         const timer = setTimeout(
@@ -182,7 +184,7 @@ export const SoftErrorProvider: React.FC<SoftErrorProviderProps> = ({
                 localStorage.setItem("interrupted", "false");
                 setAprilFoolsMessage(true);
             },
-            Math.random() * 30000 + 30000,
+            Math.random() * 6000 + 3000,
         );
         return () => clearTimeout(timer);
     }, [mizukiIsDebugging]);
