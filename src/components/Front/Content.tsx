@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Canvas from "./Canvas";
 import SidebarSelect from "./SidebarSelect";
 import DownloadButton from "../ButtonWindow/DownloadButton";
@@ -74,9 +74,6 @@ const backgrounds = [
     "/background_low_jpg/bg_white.jpg",
     "/background_low_jpg/bg_white.jpg",
     "/background_low_jpg/bg_white.jpg",
-    "/background_low_jpg/bg_a000702.jpg",
-    "/background_low_jpg/bg_e000403.jpg",
-    "/background_low_jpg/bg_e001701.jpg",
     "/background_special/Background_Loop_1.jpg",
     "/background_special/Background_Loop_2.jpg",
     "/background_special/Background_Loop_3.jpg",
@@ -91,6 +88,7 @@ const Content: React.FC = () => {
     const scene = useContext(SceneContext);
     const settings = useContext(SettingsContext);
     const softError = useContext(SoftErrorContext);
+    const [count, setCount] = useState(0);
     const { playSound } = useAudioManager();
 
     window.addEventListener("scroll", () => {
@@ -203,11 +201,13 @@ const Content: React.FC = () => {
                         loopingTheRooms.sprites.forEach((sprite) => {
                             sprite.visible = false;
                         });
-                        loopingTheRooms.sprites[
-                            Math.floor(
-                                Math.random() * loopingTheRooms.sprites.length,
-                            )
-                        ].visible = true;
+                        setCount((prevCount) => {
+                            const nextIndex =
+                                prevCount % loopingTheRooms.sprites.length;
+                            loopingTheRooms.sprites[nextIndex].visible = true;
+                            return prevCount + 1;
+                        });
+                        console.log(count);
                     }
                 },
                 effects ? 50 : 2000,
