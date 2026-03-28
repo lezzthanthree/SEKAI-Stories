@@ -21,8 +21,14 @@ const DownloadButton: React.FC = () => {
     }
 
     const { app, guideline, setGuideline, sceneJson } = scene;
-    const { setAllowRefresh, showSaveDialog, setShowSaveDialog, setLoading } =
-        settings;
+    const {
+        setAllowRefresh,
+        showSaveDialog,
+        setShowSaveDialog,
+        setLoading,
+        deleted,
+        skippedFools,
+    } = settings;
     const { setErrorInformation } = error;
 
     const handleSave = async () => {
@@ -59,10 +65,13 @@ const DownloadButton: React.FC = () => {
             setLoading(100);
             localStorage.setItem("autoSave", JSON.stringify(sceneJson));
             setAllowRefresh(true);
+            if (!deleted && !skippedFools) {
+                setErrorInformation("Ain't I the cutest? ♡");
+            }
         } catch (err) {
             if (err instanceof Error) {
                 setErrorInformation(
-                    `An error has occurred while trying to save your scene.\nError: ${err.message}\nIf this error persists, please report this on GitHub.`
+                    `An error has occurred while trying to save your scene.\nError: ${err.message}\nIf this error persists, please report this on GitHub.`,
                 );
                 setLoading(100);
             }
