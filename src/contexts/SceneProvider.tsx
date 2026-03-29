@@ -144,6 +144,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         setLayers(1);
         setInitialState(true);
         setSceneLoaded(true);
+        localStorage.setItem("doneFirstTalk", "true");
     };
 
     useEffect(() => {

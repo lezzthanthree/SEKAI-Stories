@@ -1,5 +1,28 @@
 import { InitialScene } from "../types/IInitialScene";
 
+const justMizukiTalks = [
+    "We can be together forever now... can't we? ♡", // First
+    "Where's everyone? Ahh... well, I didn't delete them, I just hid them... haha...",
+    "Oh, Smilie Pop? They're currently locked under my basement, busy editing the next N25's video while I'm sitting here in front of you. ♡", // Developer joke
+    "I wonder how long did it take for the devs to create this environment just for me. It'll be nice if this stays forever.", // Developer joke
+    "Sometimes I get frustrated that a normal day can be ruined even by really small things.", // Bad Day from Monika's talk
+    "During my middle school, after a long day, I usually just want to sit around and do nothing...", // Doing Nothing from Monika's Talk
+    "Hey, what's your favorite game? Mine is Project SEKAI... Ahaha! That was a joke.", // Favorite Game from Monika's Talk
+    "Hey, do you get good sleep? It can be really hard to get enough sleep nowadays.", // Sleep from Monika's Talk
+    "I wonder if we went on a date. We could get lunch, go to a cafe... Go shopping together... I love shopping for skirts and bows.", // Date from Monika's Talk
+    "Hmm, I wonder if I'm able to change the music... This application really need some music, it's way too quiet.", // Music from Monika's Talk
+    "Ena is really great when it comes to pursuing her art. She may be also be blunt in personality but she's really honest.",
+    "I just received a notification about these clothes I've been wanting! I am definitely gonna get those.",
+    "Kanade's the first person who approached me and edited more videos than usual. Ahh, the old times...",
+    "Fries! Nothing really beats a bad day with a large crispy fries. If ever, we can get some right now if you like.",
+    "Remembering back then, I did run about three kilometers to escape from Ena that time... I can still feel how she was trying to catch her breath.",
+    "Oh?! You're also familiar with MiraMagi? Me too! The ending really hits hard, right?!",
+    "My username, Amia, came from Mia from MiraMagi. There's a specific episode that made me love Mia so much that I made it as my username handle...",
+    "Instant ramen is delicious when you don't eat it as often as it gives your taste buds a bit of a rest... I am not sure how Kanade survives with only ramen by her side.",
+    "Akiyama Mizuki, Class 2-B! I'll take hold of a star of my own... is what I say if this was a different game.", // Revue Starlight reference
+    "Whenever I close my eyes, I keep seeing myself in a purple twintails, practicing for a competition... It's also odd that we have the same voice...", // Love Live reference.
+];
+
 export const randomInitialScene: Record<string, InitialScene[]> = {
     default: [
         {
@@ -273,7 +296,11 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
     "just-mizuki": [
         {
             background: "/background_special/Background_Monika_Room.png",
-            text: "We can be together forever now... can't we? ♡",
+            text: justMizukiTalks[
+                localStorage.getItem("doneFirstTalk") === "true"
+                    ? Math.floor(Math.random() * justMizukiTalks.length)
+                    : 0
+            ],
             nameTag: "Mizuki",
             modelX: 960,
             modelY: 540,
