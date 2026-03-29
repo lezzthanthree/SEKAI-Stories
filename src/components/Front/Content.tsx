@@ -13,6 +13,7 @@ import ExportButton from "../ButtonWindow/ExportButton";
 import ClearButton from "../ButtonWindow/ClearButton";
 import ContentBackground from "./ContentBackground";
 import { getBackground } from "../../utils/GetBackground";
+import Fortnite from "../Window/Fortnite";
 
 const sidebarMenu = ["background", "text", "model"];
 const textMenu = [
@@ -123,9 +124,10 @@ const Content: React.FC = () => {
         setOpenedSidebar,
         setOpenModelOption,
         setOpenTextOption,
-
         effects,
         importing,
+        fortnite,
+        setFortnite
     } = settings;
     const { showErrorInformation } = softError;
 
@@ -252,6 +254,7 @@ const Content: React.FC = () => {
             {showErrorInformation && <SoftError />}
             <Canvas />
             <FlavorText />
+            {fortnite && <Fortnite show={setFortnite} />}
         </div>
     );
 };

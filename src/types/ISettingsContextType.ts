@@ -49,4 +49,6 @@ export default interface ISettingsContextType {
     setSkippedFools: Dispatch<SetStateAction<boolean>>;
     sceneLoaded: boolean;
     setSceneLoaded: Dispatch<SetStateAction<boolean>>;
+    fortnite: boolean;
+    setFortnite: Dispatch<SetStateAction<boolean>>;
 }

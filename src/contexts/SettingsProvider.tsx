@@ -34,6 +34,7 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     const [settingsLoaded, setSettingsLoaded] = useState<boolean>(false);
     const [sceneLoaded, setSceneLoaded] = useState<boolean>(false);
     const [importing, setImporting] = useState<boolean>(false);
+    const [fortnite, setFortnite] = useState(false);
     const [effects, setEffects] = useState<boolean>(false);
 
     useEffect(() => {
@@ -92,6 +93,12 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
         if (storedNameTagInputs) {
             setNameTagInputs(Number(storedNameTagInputs));
         }
+        const fortniteCookie = localStorage.getItem("gotFortnited") === "true";
+        if (!fortniteCookie && skippedFools === "true") {
+            const rollTheDice = Math.floor(Math.random() * 100);
+            setFortnite(rollTheDice < 3);
+            console.log(rollTheDice);
+        }
 
         setSettingsLoaded(true);
     }, []);
@@ -149,6 +156,8 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
                 setEffects,
                 sceneLoaded,
                 setSceneLoaded,
+                fortnite,
+                setFortnite,
                 settingsLoaded,
             }}
         >
