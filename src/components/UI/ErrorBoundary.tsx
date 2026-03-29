@@ -87,9 +87,12 @@ export function ErrorFallback({ error }: { error: Error }) {
                 <div className="window__content">
                     <div className="window__divider center">
                         <img
-                            src="/img/gomen.png"
+                            src={
+                                deleted && !skippedFools
+                                    ? "/img/gomen_glitched.png"
+                                    : "/img/gomen.png"
+                            }
                             id="error-img"
-                            className={deleted && !skippedFools ? "tear" : ""}
                         />
                     </div>
                     <h2 className="text-center">「。。。ごめん。。。」</h2>
