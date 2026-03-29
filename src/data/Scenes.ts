@@ -290,7 +290,7 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
         {
             background:
                 "/background_special/Background_Monika_Room_Glitched.png",
-            text: "Wait... No! Please don't go yet!",
+            text: "ĚĐźüđĵÕíŞý¨ńřÌü°ťŰî«ůśŏŊČŲőîĴ®ģřªĊÞŶŮšźÀŰőĸĪŔĐ¨ñųģŃĴŁž¿İĲŗŉ¤°Ŗ´ŧĻŰĘŇĆ»Û",
             nameTag: "ŘśúðĚ",
             modelX: 960,
             modelY: 540,
