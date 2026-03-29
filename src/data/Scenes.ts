@@ -137,7 +137,47 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             pngName: "mizuki_kisaragi",
             sceneText: "",
         },
+        {
+            background: "/background_compressed/bg_a002302.jpg",
+            text: "Me?! A school idol?",
+            nameTag: "Mizuki",
+            modelX: 960,
+            modelY: 540,
+            pngName: "mizuki_idol",
+            sceneText: "Scramble Crossing",
+        },
+        {
+            background: "/background_compressed/bg_g000601.jpg",
+            text: "Why the ×××× did you invite her!?",
+            nameTag: "Miku",
+            modelX: 960,
+            modelY: 540,
+            pngName: "miku_teto",
+            sceneText: "???",
+        },
+        {
+            background: "/background_special/Background_Monika_Room_Day.png",
+            text: "...",
+            nameTag: "",
+            modelX: 960,
+            modelY: 540,
+            modelScale: 1,
+            pngName: "transparent",
+            sceneText: "Empty Room",
+        },
     ],
+    imported: [
+        {
+            background: "/background_special/Background_Kisaragi.png",
+            text: "",
+            nameTag: "",
+            modelX: 1000,
+            modelY: 640,
+            pngName: "mizuki_kisaragi",
+            sceneText: "",
+        },
+    ],
+
     halloween: [
         {
             background: "/background_special/Background_Cheat_to_Happiness.jpg",

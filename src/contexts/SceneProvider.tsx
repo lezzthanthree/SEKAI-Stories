@@ -103,6 +103,11 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
                 random < 0.7 ? "letters" : blankCanvas ? "blank" : "deleted";
         }
 
+        if (skippedFools && !localStorage.getItem("importedSuccessfully")) {
+            sceneSelected = "imported";
+            localStorage.setItem("importedSuccessfully", "true");
+        }
+
         const {
             app: initApplication,
             model,
