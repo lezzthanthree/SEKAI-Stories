@@ -12,7 +12,6 @@ import SoftError from "../UI/SoftError";
 import ExportButton from "../ButtonWindow/ExportButton";
 import ClearButton from "../ButtonWindow/ClearButton";
 import ContentBackground from "./ContentBackground";
-import { useAudioManager } from "../../hooks/useAudioManager";
 import { getBackground } from "../../utils/GetBackground";
 
 const sidebarMenu = ["background", "text", "model"];
@@ -32,7 +31,6 @@ const modelMenu = [
     "mouth",
     "live2d",
 ];
-const audio = ["/sound/select.wav", "/sound/open.wav"];
 const nameTag = [
     "",
     "EĉñĒũªěŚąñÝðŻu",
@@ -89,7 +87,6 @@ const Content: React.FC = () => {
     const settings = useContext(SettingsContext);
     const softError = useContext(SoftErrorContext);
     const [count, setCount] = useState(0);
-    const { playSound } = useAudioManager();
 
     window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY;
@@ -212,13 +209,9 @@ const Content: React.FC = () => {
                 },
                 effects ? 50 : 2000,
             );
-            const click = setInterval(() => {
-                playSound(audio[Math.floor(Math.random() * audio.length)]);
-            }, 1000);
 
             return () => {
                 clearInterval(interval);
-                clearInterval(click);
             };
         }
     }, [importing]);
