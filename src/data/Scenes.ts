@@ -1,7 +1,9 @@
 import { InitialScene } from "../types/IInitialScene";
 
+const introduction =
+    "Yay, there you are! Ummm... welcome to this room I've created! ♡ ";
+
 const justMizukiTalks = [
-    "We can be together forever now... can't we? ♡", // First
     "Where's everyone? Ahh... well, I didn't delete them, I just... hid them... haha...",
     "Oh, the devs? They're currently locked under my basement, busy editing the next N25's video while I'm sitting here in front of you. ♡", // Developer joke
     "I wonder how long did it take for the devs to create this environment just for me. It'll be nice if this stays forever.", // Developer joke
@@ -340,11 +342,12 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
     "just-mizuki": [
         {
             background: "/background_special/Background_Monika_Room.png",
-            text: justMizukiTalks[
+            text:
                 Number(localStorage.getItem("doneFirstTalk")) >= 1
-                    ? Math.floor(Math.random() * justMizukiTalks.length)
-                    : 0
-            ],
+                    ? justMizukiTalks[
+                          Math.floor(Math.random() * justMizukiTalks.length)
+                      ]
+                    : introduction,
             nameTag: "Mizuki",
             modelX: 960,
             modelY: 540,
