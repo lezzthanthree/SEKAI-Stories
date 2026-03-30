@@ -14,6 +14,7 @@ import ClearButton from "../ButtonWindow/ClearButton";
 import ContentBackground from "./ContentBackground";
 import { getBackground } from "../../utils/GetBackground";
 import Fortnite from "../Window/Fortnite";
+import AprilFoolsEnd from "../Window/AprilFoolsEnd";
 
 const sidebarMenu = ["background", "text", "model"];
 const textMenu = [
@@ -134,15 +135,20 @@ const Content: React.FC = () => {
         effects,
         importing,
         fortnite,
+        skippedFools,
         setFortnite,
     } = settings;
     const [crash, setCrash] = useState(false);
+    const [aprilEnd, setAprilEnd] = useState(false);
 
     const { showErrorInformation } = softError;
     useEffect(() => {
         if (localStorage.getItem("hasEncountered") != "true") {
             localStorage.setItem("hasEncountered", "true");
             setCrash(true);
+        }
+        if (localStorage.getItem("sawWindow") == "true") {
+            setAprilEnd(false);
         }
     }, []);
     useEffect(() => {
@@ -242,7 +248,7 @@ const Content: React.FC = () => {
 
             {showTutorial && <Tutorial show={setShowTutorial} />}
             {!hide && <SidebarSelect />}
-
+            {aprilEnd && !skippedFools && <AprilFoolsEnd show={setAprilEnd} />}
             <div className="absolute bottom-left flex-vertical">
                 {!deleting && (
                     <>
