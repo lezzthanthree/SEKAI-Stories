@@ -61,22 +61,18 @@ export function ErrorFallback({ error }: { error: Error }) {
                         >
                             Save Data
                         </button>
+
                         <button
-                            className="btn-blue btn-regular"
                             onClick={() => {
                                 navigator.clipboard.writeText(message);
-                                alert("Copied to clipboard!");
-                            }}
-                        >
-                            Copy Traceback
-                        </button>
-                        <button
-                            onClick={() =>
+                                alert(
+                                    "Traceback copied to clipboard! Please paste this to the report issue page.",
+                                );
                                 window.open(
                                     "https://github.com/lezzthanthree/SEKAI-Stories/blob/master/README.md#report-an-issue",
                                     "_blank",
-                                )
-                            }
+                                );
+                            }}
                             className="btn-regular btn-pink"
                         >
                             Report Issue

@@ -6,7 +6,9 @@ import { SettingsContext } from "../../contexts/SettingsContext";
 import { SceneContext } from "../../contexts/SceneContext";
 
 const SelfAwareEntity: React.FC = () => {
-    throw new Error("A self aware entity has been found.");
+    throw new Error(
+        "A self aware entity has been found. Reverting SEKAI Stories back to the last deployed version...",
+    );
     return <></>;
 };
 
