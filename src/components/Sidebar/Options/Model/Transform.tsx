@@ -43,7 +43,7 @@ const Transform: React.FC<TransformProps> = ({ updateModelState }) => {
         }
     };
     const handleXTransform = async (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
         let x = Number(event?.target.value);
         if (x > 640 - SNAP && x < 640 + SNAP) {
@@ -59,7 +59,7 @@ const Transform: React.FC<TransformProps> = ({ updateModelState }) => {
     };
 
     const handleYTransform = async (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
         let y = Number(event?.target.value);
         if (y > 540 - SNAP && y < 540 + SNAP) {
@@ -73,7 +73,7 @@ const Transform: React.FC<TransformProps> = ({ updateModelState }) => {
     };
 
     const handleScaleTransform = async (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
         const scale = Number(event?.target.value);
         currentModel?.root.scale.set(scale, scale);
@@ -81,7 +81,7 @@ const Transform: React.FC<TransformProps> = ({ updateModelState }) => {
     };
 
     const handleRotationTransform = async (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
         const rotation = Number(event?.target.value);
         if (currentModel?.model) {
@@ -91,7 +91,7 @@ const Transform: React.FC<TransformProps> = ({ updateModelState }) => {
     };
 
     const handleBlurTransform = async (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: React.ChangeEvent<HTMLInputElement>,
     ) => {
         const blur = Number(event?.target.value);
         if (currentModel?.root && currentModel.root.filters) {
@@ -146,8 +146,6 @@ const Transform: React.FC<TransformProps> = ({ updateModelState }) => {
             }
         }
     };
-
-    if (currentModel.modelName.includes("kisaragi")) return <></>;
 
     return (
         <>
