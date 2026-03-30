@@ -48,9 +48,15 @@ export const GetModelDataFromStatic = async (
 export const GetModelDataFromSekai = async (
     modelList: ILive2DModelList,
 ): Promise<ILive2DModelData> => {
-    const model = await axios.get(
-        `${sekaiUrl}/model/${modelList.modelPath}/${modelList.modelFile}`,
-    );
+    const model = await axios
+        .get(`${sekaiUrl}/model/${modelList.modelPath}/${modelList.modelFile}`)
+        .catch((error) => {
+            throw new Error(
+                `SEKAI Stories received ${error.response?.status ? `a ${error.response?.status} code` : `an error`} from sekai.best! 
+                Could be the server is down or something's missing.
+                Please use SEKAI Stories's models instead.`,
+            );
+        });
     const [motionBaseName, motionData] = await GetMotionData(modelList);
     const modelData = model.data;
     modelData.url = `${sekaiUrl}/model/${modelList.modelPath}/`;
