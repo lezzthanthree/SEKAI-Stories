@@ -149,7 +149,15 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         setLayers(1);
         setInitialState(true);
         setSceneLoaded(true);
-        localStorage.setItem("doneFirstTalk", "true");
+        const doneFirstTalk = localStorage.getItem("doneFirstTalk");
+        if (!doneFirstTalk) {
+            localStorage.setItem("doneFirstTalk", "0");
+        } else {
+            localStorage.setItem(
+                "doneFirstTalk",
+                `${Number(doneFirstTalk) + 1}`,
+            );
+        }
     };
 
     useEffect(() => {

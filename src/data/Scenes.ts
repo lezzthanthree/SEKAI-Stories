@@ -337,7 +337,7 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
         {
             background: "/background_special/Background_Monika_Room.png",
             text: justMizukiTalks[
-                localStorage.getItem("doneFirstTalk") === "true"
+                Number(localStorage.getItem("doneFirstTalk")) >= 1
                     ? Math.floor(Math.random() * justMizukiTalks.length)
                     : 0
             ],

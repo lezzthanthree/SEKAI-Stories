@@ -83,6 +83,13 @@ const backgrounds = [
     "/background_special/Background_Loop_8.jpg",
 ];
 
+const Characters: React.FC = () => {
+    throw new Error(
+        "30 character data(s) missing. Restoring SEKAI Stories with 1 character(s).",
+    );
+    return <></>;
+};
+
 const Content: React.FC = () => {
     const scene = useContext(SceneContext);
     const settings = useContext(SettingsContext);
@@ -127,10 +134,17 @@ const Content: React.FC = () => {
         effects,
         importing,
         fortnite,
-        setFortnite
+        setFortnite,
     } = settings;
-    const { showErrorInformation } = softError;
+    const [crash, setCrash] = useState(false);
 
+    const { showErrorInformation } = softError;
+    useEffect(() => {
+        if (localStorage.getItem("hasEncountered") != "true") {
+            localStorage.setItem("hasEncountered", "true");
+            setCrash(true);
+        }
+    }, []);
     useEffect(() => {
         if (importing) {
             let backgroundSettingUp = false;
@@ -217,6 +231,10 @@ const Content: React.FC = () => {
             };
         }
     }, [importing]);
+
+    if (crash) {
+        return <Characters />;
+    }
 
     return (
         <div id="content" className="center" style={{ position: "relative" }}>

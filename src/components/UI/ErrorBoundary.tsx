@@ -34,6 +34,9 @@ export function ErrorFallback({ error }: { error: Error }) {
         a.remove();
     };
     const message = `
+        Message:
+        ${error.message}
+        
         System Information:
         User Agent: ${navigator.userAgent}
         Platform: ${navigator.platform}
@@ -41,8 +44,6 @@ export function ErrorFallback({ error }: { error: Error }) {
         Traceback:
         ${error.stack}
 
-        Message:
-        ${error.message}
     `
         .trim()
         .replace(/^ {8}/gm, "");
