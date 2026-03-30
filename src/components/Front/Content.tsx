@@ -85,7 +85,7 @@ const backgrounds = [
 
 const Characters: React.FC = () => {
     throw new Error(
-        "30 character data(s) missing. Restoring SEKAI Stories with 1 character(s).",
+        "25 character file(s) missing. Restoring SEKAI Stories with 1 character(s).",
     );
     return <></>;
 };

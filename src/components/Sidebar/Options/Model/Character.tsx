@@ -148,7 +148,6 @@ const Character: React.FC<CharacterProps> = ({
                             ? staticCharacterData
                             : sekaiCharacterData,
                     ).map((character) => {
-                        
                         if (
                             character === "mizuki" &&
                             deleted &&
@@ -164,11 +163,19 @@ const Character: React.FC<CharacterProps> = ({
                     })
                 )}
             </select>
-            {deleted && !skippedFools && (
+            {deleted && !skippedFools ? (
                 <p>
                     <i className="bi bi-exclamation-triangle-fill red" /> 1 file
                     missing. See Settings for information.
                 </p>
+            ) : (
+                !deleted &&
+                !skippedFools && (
+                    <p>
+                        <i className="bi bi-exclamation-triangle-fill red" /> 25
+                        files missing. See Settings for information.
+                    </p>
+                )
             )}
         </>
     );
