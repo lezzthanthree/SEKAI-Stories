@@ -101,7 +101,7 @@ export function ErrorFallback({ error }: { error: Error }) {
                         <p className="text-center">
                             Did you somehow forget a variable?
                         </p>
-                    ) : deleted && !skippedFools ? (
+                    ) : !skippedFools ? (
                         <>
                             <p className="text-center">
                                 We're really sorry for the inconvenience.
