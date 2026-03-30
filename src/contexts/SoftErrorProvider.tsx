@@ -16,8 +16,12 @@ const aprilFoolsDialogue = {
         "I just wanted to surprise you, that's all.",
     ],
     dialogue5: [
+        "I also never meant to delete everyone as well...",
+        "I thought it would be a neat joke, but I guess it backfired, haha...",
+    ],
+    dialogue6: [
         "God, it's so dark in here...",
-        "Don't worry, I have a backup file for you to restore me～",
+        "Don't worry, I have a backup file for you to restore me.",
         "I'll send it to you... right now!",
         "You should be able to import me.",
         "Just ask me again if you lost my file～",
@@ -51,13 +55,15 @@ const aprilFoolsDialogue = {
     ],
     successLost: [
         "Got it! I placed my file on the characters folder!",
+        "Huh... so everyone is here now... I guess the application had a backup.",
         "Oh... you have to clear the canvas for it to work～",
+        "Don't worry, nothing bad will happen now, trust me!",
     ],
     continue1: ["..."],
     continue2: ["Go on now, you can clear the canvas～"],
     continue3: ["Hey..."],
     continue4: ["Uhmmmm..."],
-    continue5: ["I'll... just wait for you to clear the canvas... hehe～"],
+    continue5: ["I'll... just wait for you to clear the canvas..."],
     successImport: ["*phew* Thank you for saving me there!"],
 };
 
@@ -151,7 +157,7 @@ export const SoftErrorProvider: React.FC<SoftErrorProviderProps> = ({
         const triggerDownload =
             !interrupted &&
             next === 2 &&
-            ["dialogue5", "lost1", "lost2"].includes(key);
+            ["dialogue6", "lost1", "lost2"].includes(key);
 
         if (triggerDownload) {
             downloadChr();
@@ -205,6 +211,7 @@ export const SoftErrorProvider: React.FC<SoftErrorProviderProps> = ({
             "dialogue3",
             "dialogue4",
             "dialogue5",
+            "dialogue6",
             "lost1",
             "lost2",
             "lost3",
