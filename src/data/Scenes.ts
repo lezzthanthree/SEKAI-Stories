@@ -2,15 +2,18 @@ import { InitialScene } from "../types/IInitialScene";
 
 const justMizukiTalks = [
     "We can be together forever now... can't we? ♡", // First
-    "Where's everyone? Ahh... well, I didn't delete them, I just hid them... haha...",
-    "Oh, Smilie Pop? They're currently locked under my basement, busy editing the next N25's video while I'm sitting here in front of you. ♡", // Developer joke
+    "Where's everyone? Ahh... well, I didn't delete them, I just... hid them... haha...",
+    "Oh, the devs? They're currently locked under my basement, busy editing the next N25's video while I'm sitting here in front of you. ♡", // Developer joke
     "I wonder how long did it take for the devs to create this environment just for me. It'll be nice if this stays forever.", // Developer joke
     "Sometimes I get frustrated that a normal day can be ruined even by really small things.", // Bad Day from Monika's talk
     "During my middle school, after a long day, I usually just want to sit around and do nothing...", // Doing Nothing from Monika's Talk
+    "Sometimes I think back to middle school... It almost hurts to think about. Seeing myself with Rui says a lot... But I know things have changed for me now～", // Middle School from Monika's Talk
     "Hey, what's your favorite game? Mine is Project SEKAI... Ahaha! That was a joke.", // Favorite Game from Monika's Talk
     "Hey, do you get good sleep? It can be really hard to get enough sleep nowadays.", // Sleep from Monika's Talk
     "I wonder if we went on a date. We could get lunch, go to a cafe... Go shopping together... I love shopping for skirts and bows.", // Date from Monika's Talk
     "Hmm, I wonder if I'm able to change the music... This application really need some music, it's way too quiet.", // Music from Monika's Talk
+    "Here's Mizuki's Fashion Tip of the Day! Just wear what you want to wear and don't let other people change what you like! Always be yourself～", // Monika's Writing Tip of the Day from Monika's Talk
+    "Okay, everyone! It's time to... wait, it's time to what...? Why did those words just come out of my mouth all of a sudden?", // Okay, everyone from Monika's Talk
     "Ena is really great when it comes to pursuing her art. She may be also be blunt in personality but she's really honest.",
     "I just received a notification about these clothes I've been wanting! I am definitely gonna get those.",
     "Kanade's the first person who approached me and edited more videos than usual. Ahh, the old times...",
@@ -19,6 +22,7 @@ const justMizukiTalks = [
     "Oh?! You're also familiar with MiraMagi? Me too! The ending really hits hard, right?!",
     "My username, Amia, came from Mia from MiraMagi. There's a specific episode that made me love Mia so much that I made it as my username handle...",
     "Instant ramen is delicious when you don't eat it as often as it gives your taste buds a bit of a rest... I am not sure how Kanade survives with only ramen by her side.",
+    "Isn't it annoying hearing some of your classmates talk behind your back the moment you walk away? Sometimes, it's really frustrating.",
     "Akiyama Mizuki, Class 2-B! I'll take hold of a star of my own... is what I say if this was a different game.", // Revue Starlight reference
     "Whenever I close my eyes, I keep seeing myself in a purple twintails, practicing for a competition... It's also odd that we have the same voice...", // Love Live reference.
 ];
