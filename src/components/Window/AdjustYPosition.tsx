@@ -18,17 +18,7 @@ interface AdjustYPositionProps {
     inTutorial?: boolean;
 }
 
-const randomMessage = [
-    "Just Mizuki.",
-    "Lorem ipsum dolor.",
-    "Kanade's Ramen.",
-    "Kitto todoku hazu.",
-    "Sample message.",
-    "missingno.",
-    "mizukey",
-    "SIFAS died for this.",
-    "C'mere, Mafuyu-chan",
-];
+const randomMessage = ["Just Mizuki."];
 
 const AdjustYPosition: React.FC<AdjustYPositionProps> = ({
     show,
