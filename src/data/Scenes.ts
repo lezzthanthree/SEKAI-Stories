@@ -171,6 +171,15 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             pngName: "transparent",
             sceneText: "Empty Room",
         },
+        {
+            background: "/background_special/Background_Akarin.jpg",
+            text: "Ehhhhhh!!!!????",
+            nameTag: "???",
+            modelX: 960,
+            modelY: 540,
+            pngName: "emu_gone",
+            sceneText: "???",
+        },
     ],
     imported: [
         {
@@ -183,7 +192,6 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             sceneText: "",
         },
     ],
-
     halloween: [
         {
             background: "/background_special/Background_Cheat_to_Happiness.jpg",
