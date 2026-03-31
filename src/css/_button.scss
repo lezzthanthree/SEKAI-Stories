@@ -7,7 +7,7 @@ button {
 
 button:disabled {
     opacity: 0.5;
-    cursor: not-allowed
+    cursor: not-allowed;
 }
 
 button.btn-regular {
@@ -84,4 +84,10 @@ button.btn-orange {
 
 button.btn-100 {
     width: 100%;
+}
+
+button.btn-hint {
+    background-color: $orange;
+    animation: loading-jump 0.8s ease-in-out 0s infinite both;
+    color: $black;
 }

@@ -282,6 +282,12 @@ button.btn-100 {
   width: 100%;
 }
 
+button.btn-hint {
+  background-color: #ffbb00;
+  animation: loading-jump 0.8s ease-in-out 0s infinite both;
+  color: #444466;
+}
+
 input[type=checkbox] {
   -webkit-appearance: none;
   -moz-appearance: none;

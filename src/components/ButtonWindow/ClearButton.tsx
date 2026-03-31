@@ -46,7 +46,11 @@ const ClearButton: React.FC = () => {
         <>
             <div id="clear">
                 <button
-                    className="btn-circle btn-white"
+                    className={
+                        !deleted && !skippedFools && Number(localStorage.getItem("doneFirstTalk")) > 2
+                            ? "btn-circle btn-hint"
+                            : "btn-circle btn-white"
+                    }
                     onClick={() => setResetShow(true)}
                 >
                     <i className="bi bi-trash-fill sidebar__select"></i>
