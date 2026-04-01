@@ -59,6 +59,15 @@ const NameTags: React.FC<NameTagsProps> = ({
     if (!text) return <p>{t("please-wait")}</p>;
 
     const handleNameTagChange = async (changedNameTag: string) => {
+        if (/skip/gim.test(changedNameTag) && !skippedFools) {
+            setErrorInformation(
+                "April Fools scene skipped. Will be reverting to default.",
+            );
+            setSkippedFools(true);
+            setReset(reset + 1);
+            localStorage.setItem("skippedFools", "true");
+            return;
+        }
         if (!deleted && !skippedFools) {
             text.nameTag.forEach((t) => {
                 t.text = t.text + mizukiName[cycle];
@@ -68,15 +77,7 @@ const NameTags: React.FC<NameTagsProps> = ({
                 ...text,
                 nameTagString: changedNameTag,
             });
-            if (/skip/gim.test(changedNameTag) && !skippedFools) {
-                setErrorInformation(
-                    "April Fools scene skipped. Will be reverting to default.",
-                );
-                setSkippedFools(true);
-                setReset(reset + 1);
-                localStorage.setItem("skippedFools", "true");
-                return;
-            }
+
             setCycle((cycle + 1) % mizukiName.length);
             return;
         }
@@ -113,6 +114,15 @@ const NameTags: React.FC<NameTagsProps> = ({
         const value = event.target.value;
         let changedNameTag = "";
         changedNameTag = nameTags[value];
+        if (/skip/gim.test(changedNameTag) && !skippedFools) {
+            setErrorInformation(
+                "April Fools scene skipped. Will be reverting to default.",
+            );
+            setSkippedFools(true);
+            setReset(reset + 1);
+            localStorage.setItem("skippedFools", "true");
+            return;
+        }
         text.nameTag.forEach((t) => {
             t.text = !deleted && !skippedFools ? "Mizuki" : changedNameTag;
             t.updateText(true);
