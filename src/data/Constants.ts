@@ -5,4 +5,5 @@ export const textTypeYPositions = [
     [775, 845],
     [730, 805],
     [745, 810],
+    [785, 882],
 ];
