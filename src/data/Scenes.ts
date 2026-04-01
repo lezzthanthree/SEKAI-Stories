@@ -26,7 +26,7 @@ const justMizukiTalks = [
     "Instant ramen is delicious when you don't eat it as often as it gives your taste buds a bit of a rest... I am not sure how Kanade survives with only ramen by her side.",
     "Isn't it annoying hearing some of your classmates talk behind your back the moment you walk away? Sometimes, it's really frustrating.",
     "Akiyama Mizuki, Class 2-B! I'll take hold of a star of my own... is what I say if this was a different game.", // Revue Starlight reference
-    "Whenever I close my eyes, I keep seeing myself in a purple twintails, practicing for a competition... It's also odd that we have the same voice...", // Love Live reference.
+    "Whenever I close my eyes, I keep seeing myself in purple twintails, practicing for a competition... It's also odd that we have the same voice...", // Love Live reference.
 ];
 
 export const randomInitialScene: Record<string, InitialScene[]> = {
