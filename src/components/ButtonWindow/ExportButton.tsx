@@ -426,11 +426,13 @@ const ExportButton: React.FC = () => {
         }
         const input = document.createElement("input");
         input.type = "file";
-        input.accept = ".json, .sekaiscene, .chr";
         input.onchange = async (e) => {
             const file = (e.target as HTMLInputElement).files?.[0];
             if (!file) return;
-            if (file.name.endsWith(".chr") && !skippedFools) {
+            if (
+                (file.name.endsWith(".chr") || file.name.includes(".chr")) &&
+                !skippedFools
+            ) {
                 const fileDownloaded =
                     localStorage.getItem("fileDownload") === "true";
 
@@ -446,6 +448,7 @@ const ExportButton: React.FC = () => {
                     );
                     return;
                 }
+
                 setShowPhotosensitiveWarning(true);
                 return;
             }
