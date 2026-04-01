@@ -139,7 +139,7 @@ const Content: React.FC = () => {
         setFortnite,
     } = settings;
     const [crash, setCrash] = useState(false);
-    const [aprilEnd, setAprilEnd] = useState(false);
+    const [aprilEnd, setAprilEnd] = useState(true);
 
     const { showErrorInformation } = softError;
     useEffect(() => {
