@@ -180,6 +180,15 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             pngName: "emu_gone",
             sceneText: "???",
         },
+        {
+            background: "/background_special/Background_BIRDBRAIN.jpg",
+            text: "××××!",
+            nameTag: "Mizuki",
+            modelX: 960,
+            modelY: 540,
+            pngName: "mizuki_birdbrain",
+            sceneText: "???",
+        },
     ],
     imported: [
         {
@@ -320,15 +329,6 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             modelY: 540,
             pngName: "mizuki_pursuing",
             sceneText: "I search for your heart, pursuing my true self",
-        },
-        {
-            background: "/background_special/Background_BIRDBRAIN.jpg",
-            text: "#$%@!",
-            nameTag: "Mizuki",
-            modelX: 960,
-            modelY: 540,
-            pngName: "mizuki_birdbrain",
-            sceneText: "???",
         },
     ],
     "memories-of-you": [
