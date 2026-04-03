@@ -41,7 +41,7 @@ const Fortnite: React.FC<FortniteProps> = ({ show }) => {
                 >
                     <div className="window__content">
                         <h3 className="text-center">
-                            <video autoPlay controls={false}>
+                            <video autoPlay controls={false} loop>
                                 <source src="/video/mizuki_default.mp4" />
                             </video>
                         </h3>
