@@ -51,4 +51,6 @@ export default interface ISettingsContextType {
     setSceneLoaded: Dispatch<SetStateAction<boolean>>;
     fortnite: boolean;
     setFortnite: Dispatch<SetStateAction<boolean>>;
+    aprilEnd: boolean;
+    setAprilEnd: Dispatch<SetStateAction<boolean>>;
 }

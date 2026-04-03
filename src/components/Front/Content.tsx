@@ -137,9 +137,10 @@ const Content: React.FC = () => {
         fortnite,
         skippedFools,
         setFortnite,
+        aprilEnd,
+        setAprilEnd,
     } = settings;
     const [crash, setCrash] = useState(false);
-    const [aprilEnd, setAprilEnd] = useState(true);
 
     const { showErrorInformation } = softError;
     useEffect(() => {

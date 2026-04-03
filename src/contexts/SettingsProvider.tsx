@@ -36,6 +36,7 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     const [importing, setImporting] = useState<boolean>(false);
     const [fortnite, setFortnite] = useState(false);
     const [effects, setEffects] = useState<boolean>(false);
+    const [aprilEnd, setAprilEnd] = useState(false);
 
     useEffect(() => {
         const showExperimental =
@@ -99,7 +100,10 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
             setFortnite(rollTheDice < 3);
             console.log(rollTheDice);
         }
-
+        const aprilEnd = localStorage.getItem("sawWindow");
+        if (aprilEnd != "true") {
+            setAprilEnd(true);
+        }
         setSettingsLoaded(true);
     }, []);
 
@@ -158,6 +162,8 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
                 setSceneLoaded,
                 fortnite,
                 setFortnite,
+                aprilEnd,
+                setAprilEnd,
                 settingsLoaded,
             }}
         >
