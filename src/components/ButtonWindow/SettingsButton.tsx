@@ -129,6 +129,54 @@ const SettingsButton: React.FC = () => {
                     <div className="window__content">
                         <SupportButton />
                         <h1>{t("settings.header")}</h1>
+                        {skippedFools && (
+                            <div
+                                className="window__divider"
+                                onClick={() => {
+                                    localStorage.setItem("deleted", "false");
+                                    localStorage.setItem(
+                                        "hasEncountered",
+                                        "false",
+                                    );
+                                    localStorage.setItem("sawWindow", "false");
+                                    localStorage.setItem(
+                                        "skippedFools",
+                                        "false",
+                                    );
+                                    localStorage.setItem(
+                                        "aprilFoolsDialogueKey",
+                                        "dialogue1",
+                                    );
+                                    localStorage.setItem(
+                                        "importedSuccessfully",
+                                        "false",
+                                    );
+                                    localStorage.setItem(
+                                        "interrupted",
+                                        "false",
+                                    );
+                                    localStorage.setItem("loadMizuki", "false");
+                                    localStorage.setItem(
+                                        "fileDownload",
+                                        "false",
+                                    );
+                                    localStorage.setItem("doneFirstTalk", "-1");
+                                    window.location.reload();
+                                }}
+                            >
+                                <h2>April Fools</h2>
+                                <p>
+                                    I can still delete everyone if you wish～
+                                    <p>
+                                        (This will refresh the site. Save your
+                                        work before restarting.)
+                                    </p>
+                                </p>
+                                <button className="btn-100 btn-regular btn-blue tear">
+                                    Restart Sequence
+                                </button>
+                            </div>
+                        )}
                         {deleted && !skippedFools && (
                             <div className="window__divider">
                                 <h2>Restore</h2>

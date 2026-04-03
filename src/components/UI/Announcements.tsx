@@ -29,6 +29,10 @@ const Announcements: React.FC = () => {
                         character folder!
                     </p>
                     <p>
+                        If you wish to see the event again, you can open
+                        Settings and click the "Restart Sequence"!
+                    </p>
+                    <p>
                         The devs would love to hear your feedback regarding the
                         event and the application!
                     </p>
