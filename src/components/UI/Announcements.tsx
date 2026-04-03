@@ -25,14 +25,26 @@ const Announcements: React.FC = () => {
                 <>
                     <h2>Happy April Fools!</h2>
                     <p>
-                        You have successfully brought Mizuki back to the character
-                        folder!
+                        You have successfully brought Mizuki back to the
+                        character folder!
                     </p>
                     <p>
-                        If you use this application on a different device,
-                        entering 'skip' into the Dialogue Box will allow you to
-                        bypass the April Fools sequence.
+                        The devs would love to hear your feedback regarding the
+                        event and the application!
                     </p>
+                    <button
+                        className="btn-regular btn-blue"
+                        onClick={(e) => {
+                            e.stopPropagation();
+
+                            window.open(
+                                "https://forms.gle/BC4Pmv5HLZThrTaY8",
+                                "_blank",
+                            );
+                        }}
+                    >
+                        Feedback Form
+                    </button>
                 </>
             ) : (
                 <>
