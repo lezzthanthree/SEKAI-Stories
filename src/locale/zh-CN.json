@@ -39,7 +39,8 @@
                 "off": "无光照",
                 "bright": "明亮",
                 "silhouette": "剪影",
-                "custom-preset": "自定义预设"
+                "custom-preset": "自定义预设",
+                "sunset": "Sunset"
             }
         },
         "filters": {
@@ -65,7 +66,14 @@
             "header": "对话",
             "font-size": "文字大小",
             "enter-font-size": "输入文字大小",
-            "add-symbol": "添加"
+            "add-symbol": "添加",
+            "box-type": {
+                "header": "对话框类型",
+                "default": "三周年后",
+                "classic": "三周年前",
+                "mysekai": "「我的世界」"
+
+            }
         },
         "scene-text": {
             "header": "场景名称",
@@ -74,13 +82,27 @@
                 "middle": "中间",
                 "top-left": "顶部左侧"
             },
-            "hide-everything": "隐藏所有文字与人物模型"
+            "hide-everything": "隐藏所有文字与人物模型",
+            "box-type": {
+                "header": "对话框类型",
+                "default": "三周年后",
+                "classic": "三周年前"
+            }
         },
         "y-offset": {
             "header": "Y轴偏移",
             "details": "如果画布中文字的位置不正确，那么你可能需要调整这个选项"
         },
-        "toggles": "切换"
+        "toggles": "切换",
+        "choices-text": {
+            "header": "选项方框",
+            "box-type": {
+                "header": "选项方框类型",
+                "default": "三周年后",
+                "classic": "三周年前"
+            },
+            "dialogue-box-visible": "显示选项方框"
+        }
     },
     "model": {
         "header": "人物模型",
@@ -115,7 +137,8 @@
             "pose": "动作",
             "select-pose": "选择一个动作",
             "expression": "表情",
-            "select-expression": "选择一个表情"
+            "select-expression": "选择一个表情",
+            "run-both": "同时运行"
         },
         "transform": {
             "header": "变换",
@@ -155,7 +178,8 @@
                 "confirm-description": "已复制神态信息"
             },
             "show-live2d-parts": "显示Live 2D部件",
-            "access-live2d-parts": "你将会查看这个模型的所有部分。确定要继续吗？"
+            "access-live2d-parts": "你将会查看这个模型的所有部分。确定要继续吗？",
+            "reapply-all": "重新套用所有参数"
         },
         "live2d-changed-warn": "你可以自定义Live2D的参数。如果继续会丢弃它们",
         "long-wait": "如果模型的加载时间过长，那么你可以考虑使用SEKAI Stories获取模型",
@@ -309,6 +333,14 @@
                     "header": "拆分位置",
                     "paragraph": "你也可以使用“拆分位置”，在一个画布中显示两个不同的背景"
                 }
+            },
+            "filters": {
+                "header": "滤镜",
+                "paragraph": "把不同的滤镜套用到整个画面上。"
+            },
+            "lighting": {
+                "header": "灯光",
+                "paragraph": "把前景的色调改成适合你背景的颜色。"
             }
         },
         "text-menu": {
@@ -328,6 +360,10 @@
             "scene-text": {
                 "header": "场景名称",
                 "paragraph": "你故事的场景和时间应该在故事的开头显示"
+            },
+            "choices-text": {
+                "header": "选项方框",
+                "paragraph": "这里显示两个选择的选项方框。 这些方框通常在新更新后初音的第一个场景中看到。"
             }
         },
         "model-menu": {
