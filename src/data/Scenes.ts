@@ -29,6 +29,14 @@ const justMizukiTalks = [
     "Whenever I close my eyes, I keep seeing myself in purple twintails, practicing for a competition... It's also odd that we have the same voice...", // Love Live reference.
 ];
 
+const date= new Date();
+const [month, day] = [date.getMonth() + 1, date.getDate()];
+if (month === 3 && day === 31) {
+    justMizukiTalks.push("Happy Transgender Day of Visibility! I hope everyone is able to be their true selves and live happily～");  
+    justMizukiTalks.push("Oh wow, I feel so visible today!");
+    
+}
+
 export const randomInitialScene: Record<string, InitialScene[]> = {
     default: [
         {
