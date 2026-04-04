@@ -20,7 +20,7 @@ const justMizukiTalks = [
     "I just received a notification about these clothes I've been wanting! I am definitely gonna get those.",
     "Kanade's the first person who approached me and edited more videos than usual. Ahh, the old times...",
     "Fries! Nothing really beats a bad day with a large crispy fries. If ever, we can get some right now if you like.",
-    "Remembering back then, I did run about three kilometers to escape from Ena that time... I can still feel how she was trying to catch her breath.",
+    "Remembering back then, I did run about three kilometers to escape from Ena that time... I can still feel how she was trying to catch her breath.", 
     "Oh?! You're also familiar with MiraMagi? Me too! The ending really hits hard, right?!",
     "My username, Amia, came from Mia from MiraMagi. There's a specific episode that made me love Mia so much that I made it as my username handle...",
     "Instant ramen is delicious when you don't eat it as often as it gives your taste buds a bit of a rest... I am not sure how Kanade survives with only ramen by her side.",
@@ -31,10 +31,18 @@ const justMizukiTalks = [
 
 const date= new Date();
 const [month, day] = [date.getMonth() + 1, date.getDate()];
-if (month === 3 && day === 31) {
-    justMizukiTalks.push("Happy Transgender Day of Visibility! I hope everyone is able to be their true selves and live happily～");  
-    justMizukiTalks.push("Oh wow, I feel so visible today!");
-    
+switch (`${month}-${day}`) {
+    case "3-31":
+            justMizukiTalks.push("Happy Transgender Day of Visibility! I hope everyone is able to be their true selves and live happily～");  
+            justMizukiTalks.push("Oh wow, I feel so visible today... Feels odd.");
+        break;
+    case "11-20":
+            justMizukiTalks.push("Happy Transgender Day of Remembrance... I hope everyone is able to find peace in their hearts and live happily～");
+            justMizukiTalks.push("I feel a bit sad for those that aren't with us anymore... But I hope they're in a better place now.");
+            justMizukiTalks.push("If the bullying got worse, I might be remembered on this day too... I'm fortunate enough to have groupmates that are kind to me, but I do worry about those who aren't as lucky as I am..."); // Comment if too dark
+        break;
+    default:
+        break;
 }
 
 export const randomInitialScene: Record<string, InitialScene[]> = {
