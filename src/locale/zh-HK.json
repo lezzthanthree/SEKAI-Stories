@@ -8,7 +8,7 @@
         "cancel": "取消",
         "next": "下一個",
         "input": "輸入",
-        "adjust": null,
+        "adjust": "調較",
         "enter-value": "輸入數值",
         "visible": "顯示",
         "import": "匯入",
@@ -39,7 +39,8 @@
                 "off": "熄燈",
                 "bright": "照射燈",
                 "silhouette": "剪影",
-                "custom-preset": "自訂"
+                "custom-preset": "自訂",
+                "sunset": "日落"
             }
         },
         "filters": {
@@ -47,11 +48,11 @@
             "flashback": "「過去」濾鏡",
             "sick": "「頭暈眼花」濾鏡",
             "drooping-lines": "「尷尬」濾鏡",
-            "pov": null,
+            "pov": "「第一人稱視角」濾鏡",
             "pov-settings": {
-                "zoom": null,
-                "povx": null,
-                "povy": null
+                "zoom": "縮放",
+                "povx": "X軸偏移",
+                "povy": "Y軸偏移"
             }
         }
     },
@@ -65,7 +66,12 @@
             "header": "對話",
             "font-size": "文字大細",
             "enter-font-size": "輸入文字大細",
-            "add-symbol": "新增"
+            "add-symbol": "新增",
+            "box-type": {
+                "header": "對話框類型",
+                "default": "三週年後",
+                "classic": "三週年前"
+            }
         },
         "scene-text": {
             "header": "場景名稱",
@@ -74,13 +80,27 @@
                 "middle": "中間",
                 "top-left": "頂部左邊"
             },
-            "hide-everything": "隱藏所有文字同人物model"
+            "hide-everything": "隱藏所有文字同人物model",
+            "box-type": {
+                "header": "對話框類型",
+                "default": "三週年後",
+                "classic": "三週年前"
+            }
         },
         "y-offset": {
             "header": "Y軸偏移",
             "details": "如果畫布入面文字嘅位置唔啱，你可能要調整呢個選項"
         },
-        "toggles": "切換"
+        "toggles": "切換",
+        "choices-text": {
+            "header": "選項方框",
+            "box-type": {
+                "header": "選項方框類型",
+                "default": "三週年後",
+                "classic": "三週年前"
+            },
+            "dialogue-box-visible": "顯示選項方框"
+        }
     },
     "model": {
         "header": "人物模型",
@@ -115,7 +135,8 @@
             "pose": "動作",
             "select-pose": "揀一個動作",
             "expression": "神情",
-            "select-expression": "揀一個神情"
+            "select-expression": "揀一個神情",
+            "run-both": "同時執行"
         },
         "transform": {
             "header": "變換",
@@ -123,7 +144,7 @@
             "y-position": "Y軸位置",
             "scale": "大小",
             "rotation": "旋轉角度",
-            "blur": null,
+            "blur": "模糊度",
             "layering": "圖層順序"
         },
         "mouth": {
@@ -155,7 +176,8 @@
                 "confirm-description": "已經複製咗表情資訊"
             },
             "show-live2d-parts": "顯示Live 2D部件",
-            "access-live2d-parts": "你會睇到呢個模嘅所有Live2D參數。你確定要繼續？"
+            "access-live2d-parts": "你會睇到呢個模嘅所有Live2D參數。你確定要繼續？",
+            "reapply-all": "重新套用所有參數"
         },
         "live2d-changed-warn": "已經自定義咗Live2D嘅參數。如果繼續會重置參數。你確定要繼續？",
         "long-wait": "如果個模嘅載入時間太耐，你可以考慮用《世界計劃》故事生成器嚟攞模型",
@@ -177,7 +199,10 @@
         "ko-fi-details": "捐款係個好好嘅選擇！作者都會喺捐款網站嗰度發佈呢個網站嘅更新",
         "github-details": "呢個網站係完全開源嘅！你可以喺Github度報告問題或者開pull request嚟做出貢獻！",
         "special-thanks-header": "特別鳴謝",
-        "special-thanks-description": "我要喺度感謝Sekai Viewer嘅創作者允許我訪問佢哋嘅model!"
+        "special-thanks-description": "我要喺度感謝Sekai Viewer嘅創作者允許我訪問佢哋嘅model!",
+        "report-button": "彙報問題",
+        "report-details": "如果你喺使用過程中遇到咗任何bug或者問題，請喺我哋嘅GitHub上面彙報。",
+        "report-header": "揾到bug？"
     },
     "loadings": {
         "please-wait": "請稍候...",
@@ -232,7 +257,8 @@
         "ln": "Leo/need",
         "vs": "虛擬歌手",
         "split": "拆分位置",
-        "temp": "其他"
+        "temp": "其他",
+        "cards": "Cards"
     },
     "settings": {
         "header": "設定",
@@ -248,7 +274,9 @@
         "tutorial": "教學",
         "show-tutorial": "再show多次",
         "save-dialog": "顯示儲存選單",
-        "blank-canvas": "由空白畫布開始"
+        "blank-canvas": "由空白畫布開始",
+        "announcement": "公告",
+        "mental-health-window": "顯示心理健康警告"
     },
     "import-export": {
         "header": "匯入/匯出",
@@ -268,12 +296,17 @@
         "no-autosave": "搵唔到自動儲存資料，下次記得自己儲存一次先閂咗佢",
         "no-valid-models": "請先新增一個Live2D角色模型",
         "not-an-image": "喂，唔係相嚟架喎",
-        "default-scene-fail": "如果載入預設場景嗰陣出錯。\n請㩒「清除」按鈕、重新整理瀏覽器或者清除網站Cookies資訊。\n如果問題仍然存在，請喺我嘅GitHub度報告呢個問題，唔該晒！",
+        "default-scene-fail": "如果載入預設場景嗰陣出錯，\n請㩒「清除」按鈕、重新整理瀏覽器或者清除網站Cookies資訊。\n如果問題仍然存在，請喺我嘅GitHub度報告呢個問題！",
         "name-tag-inputs-limit": "名稱字數超咗限制",
         "background-bookmark": "你唔可以收藏你自己上傳嘅背景",
         "hide-everything-warning": "「場景名稱」選單下面嘅「隱藏晒所有文字同人物model」選項已開啓\n請將呢個選項關閉先再進行操作"
     },
-    "mental-health": {},
+    "mental-health": {
+        "button": "帶我去，唔該！",
+        "details": "如果你覺得身心靈唔舒服，或者你經歷緊一段艱難嘅時期，請記得你唔孤單嘅。你可以噉下面的按鈕來尋找資源和那些願意提供幫助的人。\n明愛向晴熱線：18288\n 撒瑪利亞防止自殺會熱線：2389 2222\n香港心理衛生會熱線：2382 0000\n生命熱線：2383 0000\n同·一線24小時性小眾支援熱線（東華三院）: 2217 5959\n英語情緒支援熱線（香港撒瑪利亞防止自殺會）: 2389 2223",
+        "header": "嗌出嚟啦，冇問題嘅",
+        "settings-details": "你亦可以喺設定入面閂咗呢個提示"
+    },
     "tutorial": {
         "initial-setup": {
             "paragraph-1": "調整位置，直到你睇唔到任何紅色嘅地方",
@@ -298,6 +331,14 @@
                     "header": "拆分位置",
                     "paragraph": "你都可以用「拆分位置」，喺一個專案入面顯示兩個唔同嘅背景"
                 }
+            },
+            "filters": {
+                "header": "濾鏡",
+                "paragraph": "將成個畫面套用唔同嘅濾鏡。"
+            },
+            "lighting": {
+                "header": "燈光",
+                "paragraph": "將前景的色調改成適合你背景的顏色。"
             }
         },
         "text-menu": {
@@ -317,6 +358,10 @@
             "scene-text": {
                 "header": "場景名稱",
                 "paragraph": "你故事嘅場景同時間會喺故事嘅開頭顯示"
+            },
+            "choices-text": {
+                "header": "選項方框",
+                "paragraph": "呢度會顯示兩個選項嘅選項方框。 呢啲選項方框通常在新更新之後見到初音的第一個場景中看到。" 
             }
         },
         "model-menu": {
