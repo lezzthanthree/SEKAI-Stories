@@ -8,7 +8,7 @@
         "cancel": "取消",
         "next": "下一個",
         "input": "輸入",
-        "adjust": null,
+        "adjust": "調整",
         "enter-value": "輸入數值",
         "visible": "顯示",
         "import": "匯入",
@@ -21,7 +21,7 @@
             "button": "選擇",
             "split-location": "拆分位置",
             "upload": "上傳",
-            "upload-info": "為確保影像完整性，不會被拉伸或裁剪，請使用16:9的圖片"
+            "upload-info": "為確保影像不會被拉伸或裁剪，請使用16:9的圖片"
         },
         "lighting": {
             "header": "燈光",
@@ -39,7 +39,8 @@
                 "off": "關燈",
                 "bright": "明亮",
                 "silhouette": "剪影",
-                "custom-preset": "自訂"
+                "custom-preset": "自訂",
+                "sunset": "日落"
             }
         },
         "filters": {
@@ -47,11 +48,11 @@
             "flashback": "「回憶」濾鏡",
             "sick": "「頭暈眼花」濾鏡",
             "drooping-lines": "「尷尬」濾鏡",
-            "pov": null,
+            "pov": "「第一人稱視角」濾鏡",
             "pov-settings": {
-                "zoom": null,
-                "povx": null,
-                "povy": null
+                "zoom": "縮放",
+                "povx": "X軸偏移",
+                "povy": "Y軸偏移"
             }
         }
     },
@@ -65,7 +66,13 @@
             "header": "對話",
             "font-size": "文字大小",
             "enter-font-size": "輸入文字大小",
-            "add-symbol": "新增"
+            "add-symbol": "新增",
+            "box-type": {
+                "header": "對話框類型",
+                "default": "三週年後",
+                "classic": "三週年前",
+                "mysekai": "「我的世界」"
+            }
         },
         "scene-text": {
             "header": "場景名稱",
@@ -74,13 +81,27 @@
                 "middle": "中間",
                 "top-left": "頂部左側"
             },
-            "hide-everything": "隱藏所有文字與人物模型"
+            "hide-everything": "隱藏所有文字與人物模型",
+            "box-type": {
+                "header": "對話框類型",
+                "default": "三週年後",
+                "classic": "三週年前"
+            }
         },
         "y-offset": {
             "header": "Y軸偏移",
             "details": "如果文字的位置不正確，那麼你可能需要調整這個選項"
         },
-        "toggles": "切換"
+        "toggles": "切換",
+        "choices-text": {
+            "header": "選項方框",
+            "box-type": {
+                "header": "選項方框類型",
+                "default": "三週年後",
+                "classic": "三週年前"
+            },
+            "dialogue-box-visible": "顯示選項方框"
+        }
     },
     "model": {
         "header": "人物模型",
@@ -115,7 +136,8 @@
             "pose": "動作",
             "select-pose": "選擇一個動作",
             "expression": "神情",
-            "select-expression": "選擇一個神情"
+            "select-expression": "選擇一個神情",
+            "run-both": "同時執行"
         },
         "transform": {
             "header": "變換",
@@ -123,7 +145,7 @@
             "y-position": "Y軸位置",
             "scale": "大小",
             "rotation": "旋轉角度",
-            "blur": null,
+            "blur": "模糊度",
             "layering": "圖層順序"
         },
         "mouth": {
@@ -155,7 +177,8 @@
                 "confirm-description": "已複製表情資訊"
             },
             "show-live2d-parts": "顯示Live 2D部件",
-            "access-live2d-parts": "你將會檢視這個模型的所有Live2D參數。確定要繼續嗎？"
+            "access-live2d-parts": "你將會檢視這個模型的所有Live2D參數。確定要繼續嗎？",
+            "reapply-all": "重新套用所有參數"
         },
         "live2d-changed-warn": "已自定義Live2D的參數。如果繼續將會重置參數。確定要繼續嗎？",
         "long-wait": "如果模型的載入時間過長，那麼你可以考慮使用《世界計劃》故事生成器獲取模型",
@@ -177,7 +200,10 @@
         "ko-fi-details": "捐款是個很好的選擇！作者也會在捐款網站那裡釋出我這個網站的更新",
         "github-details": "這個網站是完全開源的！你可以在Github上報告問題或開啟合併請求來做出貢獻！",
         "special-thanks-header": "特別感謝",
-        "special-thanks-description": "我要在這裡感謝Sekai Viewer的創作者允許我訪問他們的模型!"
+        "special-thanks-description": "我要在這裡感謝Sekai Viewer的創作者允許我訪問他們的模型!",
+        "report-button": "報告問題",
+        "report-details": "如果你在使用過程中遇到了任何錯誤或問題，請在我們的GitHub上報告它們。",
+        "report-header": "找到問題？"
     },
     "loadings": {
         "please-wait": "正在載入...",
@@ -232,7 +258,8 @@
         "ln": "Leo/need",
         "vs": "虛擬歌手",
         "split": "拆分位置",
-        "temp": "其他"
+        "temp": "其他",
+        "cards": "Cards"
     },
     "settings": {
         "header": "設定",
@@ -248,7 +275,9 @@
         "tutorial": "教程",
         "show-tutorial": "再次顯示",
         "save-dialog": "顯示儲存選單",
-        "blank-canvas": "從空白開始"
+        "blank-canvas": "從空白開始",
+        "announcement": "公告",
+        "mental-health-window": "顯示心理健康警告"
     },
     "import-export": {
         "header": "匯入/匯出",
@@ -273,7 +302,12 @@
         "background-bookmark": "你不能收藏你自己上傳的背景",
         "hide-everything-warning": "在「場景名稱」選單下的「隱藏所有文字與人物模型」選項已經被打開\n請先把這個選項關閉掉再進行操作"
     },
-    "mental-health": {},
+    "mental-health": {
+        "button": "請帶我去！",
+        "details": "你的感受很重要。你並不孤單。如果你正在經歷一段艱難時刻，你可以點擊下面的按鈕來尋找資源和那些願意提供幫助的人。",
+        "header": "尋求幫助是可以的",
+        "settings-details": "你可以在設定裡關閉這個提示"
+    },
     "tutorial": {
         "initial-setup": {
             "paragraph-1": "調整位置，直到你看不到任何紅色的地方",
@@ -298,6 +332,14 @@
                     "header": "拆分位置",
                     "paragraph": "你也可以使用「拆分位置」，在一個專案中顯示兩個不同的背景"
                 }
+            },
+            "filters": {
+                "header": "濾鏡",
+                "paragraph": "把不同的濾鏡套用到整個畫面上。"
+            },
+            "lighting": {
+                "header": "燈光",
+                "paragraph": "把前景的色調改成適合你背景的顏色。"
             }
         },
         "text-menu": {
@@ -317,6 +359,10 @@
             "scene-text": {
                 "header": "場景名稱",
                 "paragraph": "你故事的場景和時間應該在故事的開頭顯示"
+            },
+            "choices-text": {
+                "header": "選項方框",
+                "paragraph": "這裡顯示兩個選擇的選項方框。 這些方框通常在新更新後初音的第一個場景中看到。"
             }
         },
         "model-menu": {
