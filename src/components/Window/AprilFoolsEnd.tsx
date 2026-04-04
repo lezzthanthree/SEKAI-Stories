@@ -58,8 +58,8 @@ const AprilFoolsEnd: React.FC<AprilFoolsEndProps> = ({ show }) => {
                             <p>
                                 <u>Hint:</u> Since you deleted her into
                                 existence, your next action is to type "mizuki"
-                                in the dialogue box to progress. Keep doing that and
-                                you will receive a file. Use the{" "}
+                                in the dialogue box to progress. Keep doing that
+                                and you will receive a file. Use the{" "}
                                 <i className="bi bi-braces" /> Import/Export
                                 Button to restore her back.
                             </p>
@@ -68,7 +68,7 @@ const AprilFoolsEnd: React.FC<AprilFoolsEndProps> = ({ show }) => {
                             You can always skip the entire sequence at anytime
                             by typing "skip" into the Name Tag or the Dialogue.
                         </p>
-                        <p>This event will end on April 5th, 00:00 JST.</p>
+                        <p>This event will end on April 6th, 00:00 JST.</p>
                     </div>
                 </div>
             </Window>
