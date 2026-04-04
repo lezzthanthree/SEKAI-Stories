@@ -303,12 +303,8 @@ const Dialogue: React.FC<DialogueProps> = ({
                 >
                     <div className="window__content">
                         <h1> {t("mental-health.header")}</h1>
-                        <p style={{ whiteSpace: "pre-line" }}>
-                            {t("mental-health.details")}
-                        </p>
-                        <p style={{ whiteSpace: "pre-line" }}>
-                            {t("mental-health.settings-details")}
-                        </p>
+                        <p>{t("mental-health.details")}</p>
+                        <p> {t("mental-health.settings-details")}</p>
                     </div>
                 </Window>
             )}
