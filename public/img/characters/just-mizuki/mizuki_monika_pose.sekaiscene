@@ -1,0 +1,63 @@
+{
+  "lastModified": "2026-03-23T14:14:46.672Z",
+  "background": "/img/Background_Between_Worlds.jpg",
+  "splitBackground": {
+    "first": "/background_compressed/bg_e000303.jpg",
+    "second": "/background_compressed/bg_e000403.jpg"
+  },
+  "lighting": {
+    "red": 1,
+    "green": 1,
+    "blue": 1,
+    "brightness": 1,
+    "saturation": 1
+  },
+  "text": {
+    "nameTag": "<name>",
+    "dialogue": "<insert text here>"
+  },
+  "models": [
+    {
+      "from": "sekai",
+      "character": "mizuki",
+      "modelName": "v2_20mizuki_school01_02",
+      "modelTransform": {
+        "x": 960,
+        "y": 1042,
+        "scale": 0.75,
+        "rotation": 0,
+        "blur": 0
+      },
+      "modelExpression": 56,
+      "modelPose": 27,
+      "modelParametersChanged": {
+        "ParamAdjust": 0,
+        "ParamSize": 8.77,
+        "ParamSize2": 0,
+        "ParamAngleX": -1.3,
+        "ParamAngleZ": 2.35,
+        "ParamMouthForm": 0.28,
+        "ParamMouthOpenY": 0,
+        "ParamMouthForm2": 0,
+        "ParamMouthScaleX": -0.17,
+        "ParamUpperBody": -6.09,
+        "ParamEyeRSmile": -0.36,
+        "ParamEyeLSmile": -0.36,
+        "ParamMouthShadow": 0,
+        "ParamBodyAngleX": 0,
+        "ParamUpperBodyZ": -2.22,
+        "ParamArmR1": -36.13,
+        "ParamArmR2": 43.48,
+        "ParamArmR3": -40,
+        "ParamArmR4": 32.43,
+        "ParamArmR7": 10,
+        "ParamArmL1": -45.22,
+        "ParamArmL2": 43.48,
+        "ParamArmL3": -40,
+        "ParamArmL4": 32.43,
+        "ParamArmL7": 10
+      },
+      "modelIdle": false
+    }
+  ]
+}
