@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 public/live2d/model/*/*/motions/
+package-lock.json
