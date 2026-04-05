@@ -68,7 +68,7 @@ const AprilFoolsEnd: React.FC<AprilFoolsEndProps> = ({ show }) => {
                             You can always skip the entire sequence at anytime
                             by typing "skip" into the Name Tag or the Dialogue.
                         </p>
-                        <p>This event will end on April 6th, 00:00 JST.</p>
+                        <p>This event will end on April 7th, 00:00 JST.</p>
                     </div>
                 </div>
             </Window>
