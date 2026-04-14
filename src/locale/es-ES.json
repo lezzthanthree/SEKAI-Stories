@@ -332,8 +332,8 @@
                     "paragraph": "Agrega tu propio sprite PNG."
                 },
                 "hide-layer": {
-                    "header": "encabezamiento.",
-                    "paragraph": "parrafo."
+                    "header": "encabezamiento",
+                    "paragraph": "parrafo"
                 },
                 "remove-layer": {
                     "header": "Eliminar capa",
