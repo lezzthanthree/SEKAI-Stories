@@ -8,7 +8,7 @@
         "cancel": "Cancelar",
         "next": "Siguiente",
         "input": "Insertar",
-        "adjust": "ajustar",
+        "adjust": "Ajustar",
         "enter-value": "Agrega un valor.",
         "visible": "Visible",
         "import": "Importar",
@@ -47,9 +47,9 @@
             "flashback": "Flashback",
             "sick": "Enfermo",
             "drooping-lines": "Lineas",
-            "pov": Punto de vista,
+            "pov": "Punto De Vista",
             "pov-settings": {
-                "zoom": "Enfocar",
+                "zoom": "Acercar",
                 "povx": null,
                 "povy": null
             }
@@ -123,7 +123,7 @@
             "y-position": "Posición-Y",
             "scale": "Tamaño",
             "rotation": "Rotación",
-            "blur": "difuminar",
+            "blur": "Desenfoque",
             "layering": "Orden de las capas"
         },
         "mouth": {
