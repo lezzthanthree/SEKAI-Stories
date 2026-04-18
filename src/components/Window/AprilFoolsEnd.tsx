@@ -13,13 +13,8 @@ const AprilFoolsEnd: React.FC<AprilFoolsEndProps> = ({ show }) => {
 
     if (!settings || !scene) throw new Error("Context not found");
 
-    const { setReset, reset } = scene;
-    const { setSkippedFools, deleted } = settings;
     const handleSkip = () => {
-        localStorage.setItem("skippedFools", "true");
-        localStorage.setItem("sawWindow", "true");
-        setSkippedFools(true);
-        setReset(reset + 1);
+        window.location.href = "https://sekai-stories.pages.dev";
         show(false);
     };
 
@@ -39,36 +34,34 @@ const AprilFoolsEnd: React.FC<AprilFoolsEndProps> = ({ show }) => {
                             className="btn-regular btn-white center"
                             onClick={handleSkip}
                         >
-                            Skip
+                            Go back
                         </button>
                     </>
                 }
             >
                 <div className="window__content">
                     <div className="window__divider center">
-                        <h1 className="text-center">Happy April Fools!</h1>
+                        <h1 className="text-center">Hey there!</h1>
                     </div>
                     <div className="window__divider">
                         <p>
-                            As April Fools comes to an end, you can skip the
-                            entire sequence right here or try the "Just Mizuki"
-                            special event!
+                            This page was made for April Fools 2026! It is
+                            archived here for you to see and experience if you
+                            missed it.
                         </p>
-                        {deleted && (
-                            <p>
-                                <u>Hint:</u> Since you deleted her into
-                                existence, your next action is to type "mizuki"
-                                in the dialogue box to progress. Keep doing that
-                                and you will receive a file. Use the{" "}
-                                <i className="bi bi-braces" /> Import/Export
-                                Button to restore her back.
-                            </p>
-                        )}
                         <p>
-                            You can always skip the entire sequence at anytime
-                            by typing "skip" into the Name Tag or the Dialogue.
+                            If you want to experience the event, simply click
+                            "See event".
                         </p>
-                        <p>This event will end on April 7th, 00:00 JST.</p>
+                        <p>
+                            If you want to skip the event, click "Go back" and
+                            you will be redirected to the main website.
+                        </p>
+                        <p>
+                            You can click the Settings button if you wish to go
+                            out.
+                        </p>
+                        <p>This event has ended on April 7th, 00:00 JST.</p>
                     </div>
                 </div>
             </Window>

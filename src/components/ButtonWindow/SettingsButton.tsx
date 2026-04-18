@@ -112,12 +112,6 @@ const SettingsButton: React.FC = () => {
                 <button
                     className="btn-circle btn-white"
                     onClick={() => {
-                        if (!deleted && !skippedFools) {
-                            setErrorInformation(
-                                "You don't need the settings anymore. You'll stay here forever and ever... ♡",
-                            );
-                            return;
-                        }
                         setShow(true);
                     }}
                 >
@@ -129,6 +123,7 @@ const SettingsButton: React.FC = () => {
                     <div className="window__content">
                         <SupportButton />
                         <h1>{t("settings.header")}</h1>
+
                         {skippedFools && (
                             <div
                                 className="window__divider"
@@ -192,104 +187,122 @@ const SettingsButton: React.FC = () => {
                                 </p>
                             </div>
                         )}
-                        <div className="window__divider">
-                            <h2>{t("settings.language")}</h2>
-                            <select
-                                name="language"
-                                id="language"
-                                value={lng}
-                                onChange={handleChangeLanguage}
-                            >
-                                {Object.entries(languageNames).map(
-                                    ([code, name]) => (
-                                        <option key={code} value={code}>
-                                            {name}
-                                        </option>
-                                    ),
-                                )}
-                            </select>
-                            <Translators lng={lng} />
-                            <a
-                                href="https://github.com/lezzthanthree/SEKAI-Stories/blob/master/README-localization.md"
-                                target="_blank"
-                            >
-                                Contribute for translation!
-                            </a>
-                        </div>
-                        <div className="window__divider">
-                            <h2>{t("settings.auto-save")}</h2>
-                            <p>{t("settings.auto-save-description")}</p>
-                            <button
-                                className="btn-blue btn-extend-width btn-regular"
-                                onClick={handleGetAutoSaveData}
-                            >
-                                {t("settings.auto-save-button")}
-                            </button>
-                        </div>
-                        <div className="window__divider">
-                            <h2>{t("settings.tutorial")}</h2>
-                            <button
-                                className="btn-blue btn-extend-width btn-regular"
-                                onClick={() => {
-                                    setShowTutorial(true);
-                                    setShow(false);
-                                }}
-                            >
-                                {t("settings.show-tutorial")}
-                            </button>
-                        </div>
-                        <div className="window__divider">
-                            <h2>{t("global.toggles")}</h2>
-                            <Checkbox
-                                id="audio"
-                                label={t("settings.audio")}
-                                checked={audio}
-                                onChange={handleAudio}
-                            />
-                            <Checkbox
-                                id="saveDialog"
-                                label={t("settings.save-dialog")}
-                                checked={showSaveDialog}
-                                onChange={handleSaveDialog}
-                            />
-                            <Checkbox
-                                id="blankCanvas"
-                                label={t("settings.blank-canvas")}
-                                checked={blankCanvas}
-                                onChange={handleBlankCanvas}
-                            />
-                            <Checkbox
-                                id="expand"
-                                label={t("settings.expand")}
-                                checked={openAll}
-                                onChange={handleExpand}
-                            />
-                            {mentalHealthCookie && (
-                                <Checkbox
-                                    id="mentalHealth"
-                                    label={t("settings.mental-health-window")}
-                                    checked={showMentalHealthWindow}
-                                    onChange={handleMentalHealthWindow}
-                                />
-                            )}
-                            <Checkbox
-                                id="announcement"
-                                label={t("settings.announcement")}
-                                checked={showAnnouncements}
-                                onChange={handleAnnouncement}
-                            />
-                        </div>
-                        <div
-                            className="window__divider center flex flex-vertical"
-                            onClick={() => {
-                                setStillAlive(stillAlive + 1);
+                        <h2>Return to Main Page</h2>
+                        <p>Goodbye!</p>
+                        <button
+                            className="btn-100 btn-regular btn-blue"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                window.location.href =
+                                    "https://sekai-stories.pages.dev";
                             }}
                         >
-                            <p>{"v" + packageJson.version}</p>
-                            {stillAlive > 5 && stillAlive < 39 && (
-                                <p>{39 - stillAlive} more...</p>
-                            )}
-                        </div>
+                            Go to SEKAI Stories
+                        </button>
+                        {(deleted || skippedFools) && (
+                            <>
+                                <div className="window__divider">
+                                    <h2>{t("settings.language")}</h2>
+                                    <select
+                                        name="language"
+                                        id="language"
+                                        value={lng}
+                                        onChange={handleChangeLanguage}
+                                    >
+                                        {Object.entries(languageNames).map(
+                                            ([code, name]) => (
+                                                <option key={code} value={code}>
+                                                    {name}
+                                                </option>
+                                            ),
+                                        )}
+                                    </select>
+                                    <Translators lng={lng} />
+                                    <a
+                                        href="https://github.com/lezzthanthree/SEKAI-Stories/blob/master/README-localization.md"
+                                        target="_blank"
+                                    >
+                                        Contribute for translation!
+                                    </a>
+                                </div>
+                                <div className="window__divider">
+                                    <h2>{t("settings.auto-save")}</h2>
+                                    <p>{t("settings.auto-save-description")}</p>
+                                    <button
+                                        className="btn-blue btn-extend-width btn-regular"
+                                        onClick={handleGetAutoSaveData}
+                                    >
+                                        {t("settings.auto-save-button")}
+                                    </button>
+                                </div>
+                                <div className="window__divider">
+                                    <h2>{t("settings.tutorial")}</h2>
+                                    <button
+                                        className="btn-blue btn-extend-width btn-regular"
+                                        onClick={() => {
+                                            setShowTutorial(true);
+                                            setShow(false);
+                                        }}
+                                    >
+                                        {t("settings.show-tutorial")}
+                                    </button>
+                                </div>
+                                <div className="window__divider">
+                                    <h2>{t("global.toggles")}</h2>
+                                    <Checkbox
+                                        id="audio"
+                                        label={t("settings.audio")}
+                                        checked={audio}
+                                        onChange={handleAudio}
+                                    />
+                                    <Checkbox
+                                        id="saveDialog"
+                                        label={t("settings.save-dialog")}
+                                        checked={showSaveDialog}
+                                        onChange={handleSaveDialog}
+                                    />
+                                    <Checkbox
+                                        id="blankCanvas"
+                                        label={t("settings.blank-canvas")}
+                                        checked={blankCanvas}
+                                        onChange={handleBlankCanvas}
+                                    />
+                                    <Checkbox
+                                        id="expand"
+                                        label={t("settings.expand")}
+                                        checked={openAll}
+                                        onChange={handleExpand}
+                                    />
+                                    {mentalHealthCookie && (
+                                        <Checkbox
+                                            id="mentalHealth"
+                                            label={t(
+                                                "settings.mental-health-window",
+                                            )}
+                                            checked={showMentalHealthWindow}
+                                            onChange={handleMentalHealthWindow}
+                                        />
+                                    )}
+                                    <Checkbox
+                                        id="announcement"
+                                        label={t("settings.announcement")}
+                                        checked={showAnnouncements}
+                                        onChange={handleAnnouncement}
+                                    />
+                                </div>
+                                <div
+                                    className="window__divider center flex flex-vertical"
+                                    onClick={() => {
+                                        setStillAlive(stillAlive + 1);
+                                    }}
+                                >
+                                    <p>{"v" + packageJson.version}</p>
+                                    {stillAlive > 5 && stillAlive < 39 && (
+                                        <p>{39 - stillAlive} more...</p>
+                                    )}
+                                </div>
+                            </>
+                        )}
                     </div>
                 </Window>
             )}

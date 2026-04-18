@@ -33,21 +33,19 @@ const Announcements: React.FC = () => {
                         Settings and click the "Restart Sequence"!
                     </p>
                     <p>
-                        The devs would love to hear your feedback regarding the
-                        event and the application!
+                        You can now go back to the main website and enjoy the
+                        application as normal.
                     </p>
+
                     <button
                         className="btn-regular btn-blue"
                         onClick={(e) => {
                             e.stopPropagation();
-
-                            window.open(
-                                "https://forms.gle/BC4Pmv5HLZThrTaY8",
-                                "_blank",
-                            );
+                            window.location.href =
+                                "https://sekai-stories.pages.dev";
                         }}
                     >
-                        Feedback Form
+                        Return to Main Website
                     </button>
                 </>
             ) : (
