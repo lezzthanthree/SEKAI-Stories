@@ -35,25 +35,31 @@
                 "select-preset": "选择预设",
                 "default": "默认",
                 "warm": "温暖",
+                "sunset": "日落",
                 "night": "夜晚",
                 "off": "无光照",
                 "bright": "明亮",
                 "silhouette": "剪影",
-                "custom-preset": "自定义预设",
-                "sunset": "Sunset"
+                "custom-preset": "自定义预设"
             }
         },
         "filters": {
             "header": "滤镜",
             "flashback": "“过去”滤镜",
+            "monochrome": "“黑白”滤镜",
+            "monochrome-settings": {
+                "contrast": "对比度"
+            },
             "sick": "“头晕眼花”滤镜",
+            "vignette": "“渐晕”滤镜",
             "drooping-lines": "“尴尬”滤镜",
             "pov": "视角/视野",
             "pov-settings": {
                 "zoom": "缩放",
                 "povx": "X轴位置",
                 "povy": "Y轴位置"
-            }
+            },
+            "sekai-transition": "SEKAI转换"
         }
     },
     "text": {
@@ -89,20 +95,20 @@
                 "classic": "三周年前"
             }
         },
+        "choices-text": {
+            "header": "选择文本",
+            "box-type": {
+                "header": "选项框类型",
+                "default": "三周年后",
+                "classic": "三周年前"
+            },
+            "dialogue-box-visible": "显示对话框"
+        },
         "y-offset": {
             "header": "Y轴偏移",
             "details": "如果画布中文字的位置不正确，那么你可能需要调整这个选项"
         },
-        "toggles": "切换",
-        "choices-text": {
-            "header": "选项方框",
-            "box-type": {
-                "header": "选项方框类型",
-                "default": "三周年后",
-                "classic": "三周年前"
-            },
-            "dialogue-box-visible": "显示选项方框"
-        }
+        "toggles": "切换"
     },
     "model": {
         "header": "人物模型",
@@ -116,14 +122,28 @@
                 "sekai-description": "选择Sekai Viewer上提供的模型",
                 "static": "SEKAI Stories",
                 "static-description": "当Sekai Viewer无法访问时的备用选项，如果Sekai Viewer可以使用，那么我建议你使用Sekai Viewer",
+                "roleplay-sprites": "角色立绘",
+                "roleplay-sprites-description": "从你的角色立绘中选择",
                 "upload-image": "上传图片",
-                "upload-image-description": "上传你自己的自定义精灵图。"
+                "upload-image-description": "上传你自己的自定义图片"
             },
             "delete-model-warn": "这是最后一个图层了，无法再删除了"
         },
         "character": {
             "header": "角色",
-            "select-character": "选择一个角色"
+            "select-character": "选择一个角色",
+            "roleplay": {
+                "new": "新建",
+                "new-description": "命名这个角色",
+                "delete-warn": "这个角色包含立绘。继续操作会删除它们！",
+                "no-sprite-warn": "这个角色不包含任何立绘。添加一个以开始"
+            }
+        },
+        "sprite": {
+            "header": "立绘",
+            "select-sprite": "选择立绘",
+            "add-sprite": "添加立绘",
+            "add-sprite-description": "给这个立绘一个名字"
         },
         "costume": {
             "header": "服装",
@@ -146,6 +166,7 @@
             "y-position": "Y轴位置",
             "scale": "大小",
             "rotation": "旋转角度",
+            "opacity": "不透明度",
             "blur": "模糊",
             "layering": "图层顺序"
         },
@@ -166,6 +187,7 @@
                 "select-parameter": "选择参数",
                 "tooltip": "你可以使用方向键来选择或调整参数"
             },
+            "reapply-all": "重新套用所有参数",
             "idle": "闲置动画",
             "import-export": {
                 "header": "导入/导出",
@@ -178,8 +200,7 @@
                 "confirm-description": "已复制神态信息"
             },
             "show-live2d-parts": "显示Live 2D部件",
-            "access-live2d-parts": "你将会查看这个模型的所有部分。确定要继续吗？",
-            "reapply-all": "重新套用所有参数"
+            "access-live2d-parts": "你将会查看这个模型的所有部分。确定要继续吗？"
         },
         "live2d-changed-warn": "你可以自定义Live2D的参数。如果继续会丢弃它们",
         "long-wait": "如果模型的加载时间过长，那么你可以考虑使用SEKAI Stories获取模型",
@@ -265,6 +286,8 @@
     "settings": {
         "header": "设置",
         "language": "语言",
+        "starting-box-type": "启动时盒子类型",
+        "starting-box-type-description": "这会在清除画布之后生效",
         "auto-save": "自动保存",
         "auto-save-description": "你的画布每3分钟都会自动保存一次，如果自动保存出现问题，你可以把最新的画布下载为JSON格式的文件，注意哦，这个JSON文件里不会包含你自定义的背景和图片",
         "auto-save-button": "获取最新的存档",
@@ -301,7 +324,27 @@
         "default-scene-fail": "如果在加载默认场景时出错。\n请点击“清除”按钮、刷新浏览器或清除网站Cookies信息。\n如果问题仍然存在，请在我的GitHub仓库里报告这个问题，谢谢！",
         "name-tag-inputs-limit": "名称输入的字数超过了限制",
         "background-bookmark": "你不能收藏你自己上传的背景",
-        "hide-everything-warning": "在“场景名称”菜单下的“隐藏所有文字与人物模型”选项已经被打开了\n请先把这个选项关闭掉再进行操作"
+        "hide-everything-warning": "在“场景名称”菜单下的“隐藏所有文字与人物模型”选项已经被打开了\n请先把这个选项关闭掉再进行操作",
+        "low-opacity-visible": "这个模型的不透明度几乎为零。\n这不是个错误，只是想让你知道~",
+        "character-name-empty": "角色名不能为空",
+        "character-name-invalid": "这个角色名不被允许。请选择另一个",
+        "character-name-exists": "这个角色名已经存在了",
+        "sprite-name-empty": "立绘名不能为空",
+        "sprite-name-invalid": "这个立绘名不被允许。请选择另一个",
+        "sprite-name-exists": "这个立绘名已经存在了",
+        "nonexistent-character": "这个立绘不存在",
+        "nonexistent-sprite": "这个立绘不存在"
+    },
+    "error-boundary": {
+        "unexpected": "一个未知错误出现了",
+        "inconvenience": "对你造成的不便真的很抱歉",
+        "clear-cookies": "请清除cookies，刷新页面，然后重试",
+        "report-issue": "如果错误持续出现，请在GitHub上报告问题",
+        "automatic-save": "你的作品已经自动保存",
+        "save-data": "尽可能快地保存",
+        "save-data-button": "保存数据",
+        "report-issue-button": "报告问题",
+        "copied-to-clipboard": "报错信息已复制。请在提交报告时粘贴。"
     },
     "mental-health": {
         "header": "你可以寻求帮助",
@@ -321,6 +364,10 @@
             "paragraph-2": "不必担心你之后会找不到这个教程，你之后可以随时在设置里再次打开这个教程",
             "confirm-first-time": "我第一次使用这个网站"
         },
+        "video": {
+            "header": "你可以在YouTube上观看整个教程！",
+            "youtube": "打开YouTube"
+        },
         "menu-navigation": {
             "header": "这些会帮助你不在菜单和菜单中间迷路"
         },
@@ -334,13 +381,13 @@
                     "paragraph": "你也可以使用“拆分位置”，在一个画布中显示两个不同的背景"
                 }
             },
-            "filters": {
-                "header": "滤镜",
-                "paragraph": "把不同的滤镜套用到整个画面上。"
-            },
             "lighting": {
                 "header": "灯光",
                 "paragraph": "把前景的色调改成适合你背景的颜色。"
+            },
+            "filters": {
+                "header": "滤镜",
+                "paragraph": "把不同的滤镜套用到整个画面上。"
             }
         },
         "text-menu": {
@@ -376,8 +423,8 @@
                     "paragraph": "你可以在这里添加你自己的Live2D模型及上传你自己的图片"
                 },
                 "upload-sprite": {
-                    "header": "上传PNG动作",
-                    "paragraph": "上传你自己的PNG动作"
+                    "header": "上传PNG立绘",
+                    "paragraph": "上传你自己的PNG立绘"
                 },
                 "hide-layer": {
                     "header": "隐藏图层",
