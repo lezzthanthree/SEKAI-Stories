@@ -337,7 +337,7 @@
     },
     "error-boundary": {
         "unexpected": "一个未知错误出现了",
-        "inconvenience": "对你造成的不便真的很抱歉",
+        "inconvenience": "给你造成不便真的很抱歉",
         "clear-cookies": "请清除cookies，刷新页面，然后重试",
         "report-issue": "如果错误持续出现，请在GitHub上报告问题",
         "automatic-save": "你的作品已经自动保存",
