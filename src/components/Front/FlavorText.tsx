@@ -65,6 +65,8 @@ const randomText = {
         "It's a amazing!",
         "This was a triumph.",
         "Bonds of people is the true power.",
+        "11037",
+        "Mukuro Ikusaba. The sixteenth student, lying hidden somewhere in this school. The one they call the Ultimate Despair. Watch out for her.",
         "It's pronounced 'DEKO-NINA'.",
         "Stream Moe Shop!",
         "Stream Jamie Paige!",
@@ -273,6 +275,9 @@ export default FlavorText;
         -> Persona 4 Song Reference: "Beauty of Destiny"
     "Meet SEKAI Stories's cousin SIFAS Dialogue Sandbox!"
         -> lezzthanthree's Love Live! SIFAS Story Generator
+    "11037"
+    "Mukuro Ikusaba. The sixteenth student, lying hidden somewhere in this school. The one they call the Ultimate Despair. Watch out for her."
+        -> Danganronpa References
     '"Smilie, how many more Lo〇e Li〇e! VA jokes are you going to make!?"'
         -> Smilie is lezzthanthree's other name.
         -> Lo〇e Li〇e! = Love Live!
