@@ -26,3 +26,4 @@ dist-ssr
 public/live2d/model/*/*/motions/
 src/character_sekai_temp.json
 */sssekai
+*/_background.json

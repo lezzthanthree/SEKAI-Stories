@@ -15,6 +15,7 @@ WORKSPACE = Path("./sssekai")  # put this in .gitignore
 ASSETSTUDIO_URL = "https://github.com/RazTools/Studio/releases/download/v1.36.00/net8.0-e1d7f5301aa015a3386e245312205969f763c9ae.zip"
 ASSETSTUDIO_ZIP = WORKSPACE / "AssetStudio.zip"
 ASSETSTUDIO_DIR = WORKSPACE / "AssetStudio"
+APP_HASH_URL = "https://raw.githubusercontent.com/YangTheParrot/sekai-apphash/refs/heads/master/jp/apphash.json"
 BUNDLES_DIR = WORKSPACE / "bundles/scenario/background"
 EXPORT_DIR = BUNDLES_DIR / "export"
 TEXTURE_DIR = EXPORT_DIR / "Texture2D"
@@ -60,9 +61,7 @@ def download_assetstudio():
 
 
 def get_app_hash():
-    details = requests.get(
-        "https://raw.githubusercontent.com/YangTheParrot/sekai-apphash/refs/heads/master/jp/apphash.json"
-    )
+    details = requests.get(APP_HASH_URL)
     app["region"] = details.json()["production_android"]["app_region"]
     app["hash"] = details.json()["production_android"]["app_hash"]
     app["version"] = details.json()["production_android"]["app_version"]
@@ -185,7 +184,7 @@ def convert_img_to_lowres(new_backgrounds=[], only_save_json=False):
         match prefix:
             case "bg_a" if re.match(r"bg_a0000[0-9]{2}$", filename):
                 data["background"]["cards"].append(filename)
-            case "bg_a" :
+            case "bg_a":
                 data["background"]["general"].append(filename)
             case "bg_b":
                 data["background"]["mmj"].append(filename)
