@@ -448,6 +448,28 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             },
         },
     ],
+    temporary: [
+        {
+            background: "/background_special/Background_Dojima.png",
+            text: "Every day's great at your Junes!",
+            nameTag: "Emu",
+            modelX: 960,
+            modelY: 660,
+            pngName: "emu",
+            sceneText: "Dojima Residence",
+        },
+        {
+            background: "/background_compressed/bg_d000802.jpg",
+            text: "Persona 4 Revival coming this next year, February 18th!? I can't wait!",
+            nameTag: "Nene",
+            modelX: 960,
+            modelY: 660,
+            pngName: "nene_nanami",
+            sceneText: "3:00 AM",
+            sceneTextVariant: "topLeft",
+            sceneTextEnabled: true,
+        },
+    ],
 };
 
 export const CheckSceneCategory = (blank: boolean): string => {
@@ -483,5 +505,5 @@ export const CheckSceneCategory = (blank: boolean): string => {
 
     if (month in months) return months[month];
 
-    return "default";
+    return "temporary";
 };

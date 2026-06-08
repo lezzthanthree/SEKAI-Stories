@@ -7,9 +7,11 @@ export interface InitialScene {
     modelScale?: number;
     pngName: string;
     sceneText: string;
-    choicesEnabled?: boolean;
+    sceneTextVariant?: string;
+    sceneTextEnabled?: boolean;
     choices?: {
         choice1: string;
         choice2: string;
     };
+    choicesEnabled?: boolean;
 }

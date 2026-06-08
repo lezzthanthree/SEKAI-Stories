@@ -321,9 +321,16 @@ const LoadSceneText = async (
     app: PIXI.Application,
     childAt: number,
     scene: string,
+    sceneTextVariant: string | undefined = "middle",
+    sceneTextEnabled: boolean,
     startingBoxType: "default" | "classic",
 ): Promise<ISceneText> => {
     const sceneTextContainer = new PIXI.Container();
+
+    const defaultVisible = startingBoxType == "default";
+    const classicVisible = startingBoxType == "classic";
+    const topLeftVisible = sceneTextVariant == "topLeft";
+    const middleVisible = sceneTextVariant == "middle";
 
     const {
         sceneText: defaultSceneTextMiddle,
@@ -331,7 +338,7 @@ const LoadSceneText = async (
     } = await SetupSceneText(
         sceneCenterTextsSetupData.default,
         scene,
-        startingBoxType == "default",
+        defaultVisible && middleVisible,
     );
     const {
         sceneText: classicSceneTextMiddle,
@@ -339,33 +346,41 @@ const LoadSceneText = async (
     } = await SetupSceneText(
         sceneCenterTextsSetupData.classic,
         scene,
-        startingBoxType == "classic",
+        classicVisible && middleVisible,
     );
     const {
         sceneText: defaultSceneTextTopLeft,
         sceneTextContainer: defaultSceneTextTopLeftContainer,
-    } = await SetupSceneText(sceneTopLeftTexts.default, scene, false);
+    } = await SetupSceneText(
+        sceneTopLeftTexts.default,
+        scene,
+        defaultVisible && topLeftVisible,
+    );
     const {
         sceneText: classicSceneTextTopLeft,
         sceneTextContainer: classicSceneTextTopLeftContainer,
-    } = await SetupSceneText(sceneTopLeftTexts.classic, scene, false);
+    } = await SetupSceneText(
+        sceneTopLeftTexts.classic,
+        scene,
+        classicVisible && topLeftVisible,
+    );
 
     const defaultSceneTextBox = new PIXI.Container();
     defaultSceneTextBox.addChildAt(defaultSceneTextMiddleContainer, 0);
     defaultSceneTextBox.addChildAt(defaultSceneTextTopLeftContainer, 1);
-    defaultSceneTextBox.visible = startingBoxType == "default";
+    defaultSceneTextBox.visible = defaultVisible;
 
     const classicSceneTextBox = new PIXI.Container();
     classicSceneTextBox.addChildAt(classicSceneTextMiddleContainer, 0);
     classicSceneTextBox.addChildAt(classicSceneTextTopLeftContainer, 1);
-    classicSceneTextBox.visible = startingBoxType == "classic";
+    classicSceneTextBox.visible = classicVisible;
 
     sceneTextContainer.addChildAt(defaultSceneTextBox, 0);
     sceneTextContainer.addChildAt(classicSceneTextBox, 1);
 
     app.stage.addChildAt(sceneTextContainer, childAt);
-
-    sceneTextContainer.visible = false;
+    console.log(sceneTextEnabled);
+    sceneTextContainer.visible = sceneTextEnabled;
 
     return {
         sceneTextContainer: sceneTextContainer,
@@ -390,9 +405,9 @@ const LoadSceneText = async (
             classicSceneTextTopLeft,
         ],
         textString: scene,
-        visible: false,
+        visible: sceneTextEnabled,
         typeSelected: startingBoxType,
-        variantSelected: "middle",
+        variantSelected: sceneTextVariant ?? "middle",
     };
 };
 
@@ -507,6 +522,8 @@ export const LoadScene = async ({
         initApplication,
         3,
         initialScene.sceneText,
+        initialScene.sceneTextVariant,
+        initialScene.sceneTextEnabled ?? false,
         startingBoxType,
     );
 
