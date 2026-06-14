@@ -29,7 +29,8 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
     if (!softError || !settings) throw new Error("Context not loaded");
 
     const { setErrorInformation } = softError;
-    const { blankCanvas, setLoading, settingsLoaded, startingBoxType } = settings;
+    const { blankCanvas, setLoading, settingsLoaded, startingBoxType } =
+        settings;
     const [app, setApp] = useState<PIXI.Application | undefined>(undefined);
     const [models, setModels] = useState<Record<string, IModel> | undefined>(
         undefined,

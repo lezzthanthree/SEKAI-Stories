@@ -379,7 +379,6 @@ const LoadSceneText = async (
     sceneTextContainer.addChildAt(classicSceneTextBox, 1);
 
     app.stage.addChildAt(sceneTextContainer, childAt);
-    console.log(sceneTextEnabled);
     sceneTextContainer.visible = sceneTextEnabled;
 
     return {

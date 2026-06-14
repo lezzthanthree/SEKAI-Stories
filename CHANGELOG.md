@@ -1,3 +1,7 @@
+# 2026.06.07
+- Updated Background and Model list
+- Added Persona 4 Temporary Default Scenes
+
 # 2026.05.21
 - Removed SEKAI Stories One-shot Announcement
 
