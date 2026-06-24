@@ -1,6 +1,6 @@
 export const staticUrl = "/live2d";
 export const sekaiUrl = "https://storage.sekai.best/sekai-live2d-assets/live2d";
-export const announcementKey = "2026.05.15";
+export const announcementKey = "2026.06.24";
 export const textTypeYPositions = [
     [775, 845],
     [745, 825],
@@ -26,5 +26,6 @@ export const characterEasterEggs: Record<string, string> = {
     omori: "Welcome to White Space. You have been living here for as long as you can remember.",
     chihiro: "Yay!",
     mikan: "*hics*\n\"It's all her fault\"\n\"She's the one with the problem...\"\nI'm done with that! You hear me!? I'm doooooooooooooone!\nIt's not fair... It's not fair not fair not fair notfair notfair notfair notfairnotfairnotfairnotfair!",
-    celeste: "Even if I'm put in check, it's just my nature not to give up!\nBecause... Because, because because because because!\nUntil the game's over, you'll never know what might happen!"
+    celeste:
+        "Even if I'm put in check, it's just my nature not to give up!\nBecause... Because, because because because because!\nUntil the game's over, you'll never know what might happen!",
 };
