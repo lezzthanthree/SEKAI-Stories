@@ -22,10 +22,13 @@ export const characterEasterEggs: Record<string, string> = {
     tenna: "It's TV Time!",
     ralsei: "K-Kris!!?",
     susie: "Dammit, Kris! Where the hell are we?!",
+    purple: 'I told you, I\'m not "Purple!"\nMy NAME... is "Seth"!',
     teto: "Teto, there's a dead human in our house!",
     omori: "Welcome to White Space. You have been living here for as long as you can remember.",
     chihiro: "Yay!",
     mikan: "*hics*\n\"It's all her fault\"\n\"She's the one with the problem...\"\nI'm done with that! You hear me!? I'm doooooooooooooone!\nIt's not fair... It's not fair not fair not fair notfair notfair notfair notfairnotfairnotfairnotfair!",
     celeste:
         "Even if I'm put in check, it's just my nature not to give up!\nBecause... Because, because because because because!\nUntil the game's over, you'll never know what might happen!",
+    monokuma: "Let's give it everything we've got! It's PUNISHMENT TIME!",
+    himiko: "Nyeh?",
 };
