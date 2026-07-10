@@ -597,6 +597,12 @@
             "modelFile": "v2_05_minori_april2026_t02.model3.json"
         },
         {
+            "modelName": "v2_05_minori_casual_t08",
+            "modelBase": "v2_05minori_casual",
+            "modelPath": "v2/main/05_minori/v2_05minori_casual",
+            "modelFile": "v2_05_minori_casual_t08.model3.json"
+        },
+        {
             "modelName": "v2_05_minori_casual_t06",
             "modelBase": "v2_05minori_casual",
             "modelPath": "v2/main/05_minori/v2_05minori_casual",
@@ -615,16 +621,34 @@
             "modelFile": "v2_05_minori_fancostume_t05.model3.json"
         },
         {
+            "modelName": "v2_05_minori_fancostume_t06",
+            "modelBase": "v2_05minori_fancostume",
+            "modelPath": "v2/main/05_minori/v2_05minori_fancostume",
+            "modelFile": "v2_05_minori_fancostume_t06.model3.json"
+        },
+        {
             "modelName": "v2_05_minori_fancostume_t03",
             "modelBase": "v2_05minori_fancostume",
             "modelPath": "v2/main/05_minori/v2_05minori_fancostume",
             "modelFile": "v2_05_minori_fancostume_t03.model3.json"
         },
         {
+            "modelName": "v2_05_minori_lesson_t06",
+            "modelBase": "v2_05minori_lesson",
+            "modelPath": "v2/main/05_minori/v2_05minori_lesson",
+            "modelFile": "v2_05_minori_lesson_t06.model3.json"
+        },
+        {
             "modelName": "v2_05_minori_lesson_t05",
             "modelBase": "v2_05minori_lesson",
             "modelPath": "v2/main/05_minori/v2_05minori_lesson",
             "modelFile": "v2_05_minori_lesson_t05.model3.json"
+        },
+        {
+            "modelName": "v2_05_minori_police_t05",
+            "modelBase": "v2_05minori_police",
+            "modelPath": "v2/main/05_minori/v2_05minori_police",
+            "modelFile": "v2_05_minori_police_t05.model3.json"
         },
         {
             "modelName": "v2_05_minori_popdrop_t01",
@@ -643,6 +667,12 @@
             "modelBase": "v2_05minori_school01",
             "modelPath": "v2/main/05_minori/v2_05minori_school01",
             "modelFile": "v2_05_minori_uniform_t04.model3.json"
+        },
+        {
+            "modelName": "v2_05_minori_uniform_t06",
+            "modelBase": "v2_05minori_school01",
+            "modelPath": "v2/main/05_minori/v2_05minori_school01",
+            "modelFile": "v2_05_minori_uniform_t06.model3.json"
         },
         {
             "modelName": "v2_05_minori_uniform_t05",
@@ -1709,6 +1739,12 @@
             "modelBase": "v2_13tsukasa_school01",
             "modelPath": "v2/main/13_tsukasa/v2_13tsukasa_school01",
             "modelFile": "v2_13_tsukasa_school_t08.model3.json"
+        },
+        {
+            "modelName": "v2_13_tsukasa_school_t09",
+            "modelBase": "v2_13tsukasa_school01",
+            "modelPath": "v2/main/13_tsukasa/v2_13tsukasa_school01",
+            "modelFile": "v2_13_tsukasa_school_t09.model3.json"
         },
         {
             "modelName": "v2_13_tsukasa_uniform_t05",
@@ -4085,6 +4121,12 @@
             "modelFile": "sub_nanamin_t01.model3.json"
         },
         {
+            "modelName": "15nene_child_t09",
+            "modelBase": "sub_nenechild",
+            "modelPath": "v1/sub/sub_nenechild",
+            "modelFile": "15nene_child_t09.model3.json"
+        },
+        {
             "modelName": "15nene_child_t07",
             "modelBase": "sub_nenechild",
             "modelPath": "v1/sub/sub_nenechild",
@@ -4557,6 +4599,12 @@
             "modelBase": "v2_sub_child_shizuku",
             "modelPath": "v2/sub/v2_sub_child_shizuku",
             "modelFile": "v2_sub_child10_shizuku_t04.model3.json"
+        },
+        {
+            "modelName": "sub_touyachild_t05",
+            "modelBase": "v2_sub_child_touya",
+            "modelPath": "v2/sub/v2_sub_child_touya",
+            "modelFile": "sub_touyachild_t05.model3.json"
         },
         {
             "modelName": "sub_egg_mametchi_t07",
