@@ -22,6 +22,7 @@ const randomText = {
         "Haruka becomes the wife of Minori.",
         "Airi lost her fang.",
         "Setsuna has been mistakenly called Kanade for the 1888th time.",
+        'K and OWN made music together titled "Kamui". [v=Z64pjmgHg4I]',
         "Mizuki is five kilometers away from your house.",
         "Mizuki stole the precious thing.",
         "Mizu-Mizu-Kii!",
