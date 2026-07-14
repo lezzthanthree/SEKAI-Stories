@@ -36,6 +36,8 @@ const symbols = {
 interface DialogueProps {
     bell: boolean;
     setBell: Dispatch<SetStateAction<boolean>>;
+    jarona: boolean;
+    setJarona: Dispatch<SetStateAction<boolean>>;
     mentalFound: boolean;
     setMentalFound: Dispatch<SetStateAction<boolean>>;
 }
@@ -45,6 +47,8 @@ const Dialogue: React.FC<DialogueProps> = ({
     setMentalFound,
     bell,
     setBell,
+    jarona,
+    setJarona,
 }) => {
     const { t } = useTranslation();
 
@@ -98,6 +102,12 @@ const Dialogue: React.FC<DialogueProps> = ({
             window.open("https://ominous-bells.vercel.app/");
             setErrorInformation("Let Mizuki rest. She's happy now.");
             setBell(true);
+        }
+        if (/flowery/gim.test(changedDialogue) && !jarona) {
+            new Audio(
+                `sound/${["jarona", "sorry"][Math.floor(Math.random() * 2)]}.mp3`,
+            ).play();
+            setJarona(true);
         }
         const mentalResult = mentalCheck(changedDialogue);
         if (mentalResult && !mentalFound && showMentalHealthWindow) {

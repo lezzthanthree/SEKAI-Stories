@@ -16,6 +16,7 @@ const TextSidebar: React.FC = () => {
     const settings = useContext(SettingsContext);
     const error = useContext(SoftErrorContext);
     const [bell, setBell] = useState<boolean>(false);
+    const [jarona, setJarona] = useState<boolean>(false);
     const [mentalFound, setMentalFound] = useState<boolean>(false);
     const [easyNameTagSelected, setEasyNameTagSelected] = useState<string>("");
 
@@ -51,9 +52,10 @@ const TextSidebar: React.FC = () => {
                 <Dialogue
                     bell={bell}
                     setBell={setBell}
+                    jarona={jarona}
+                    setJarona={setJarona}
                     mentalFound={mentalFound}
                     setMentalFound={setMentalFound}
-                    
                 />
             </SidebarOption>
             <SidebarOption
