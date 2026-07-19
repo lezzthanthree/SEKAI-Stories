@@ -432,6 +432,22 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             sceneText: "Kamiyama High School Rooftop",
         },
     ],
+    "weird-route": [
+        {
+            background: "/background_special/Background_Umi.jpg",
+            text: "The words... I've been waiting to hear...",
+            nameTag: "Mizuki",
+            modelX: 960,
+            modelY: 540,
+            pngName: "mizuki_weirdroute",
+            sceneText: "???",
+            choices: {
+                choice1: "Stop",
+                choice2: "Proceed",
+            },
+            choicesEnabled: true,
+        },
+    ],
     blank: [
         {
             background: "/background_special/blank_bg.png",
@@ -505,5 +521,5 @@ export const CheckSceneCategory = (blank: boolean): string => {
 
     if (month in months) return months[month];
 
-    return "default";
+    return "weird-route";
 };
