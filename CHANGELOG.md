@@ -1,3 +1,6 @@
+# 2026.07.20
+- Added Scene Text and Choices Text to the export JSON.
+
 # 2026.06.07
 - Updated Background and Model list
 - Added Persona 4 Temporary Default Scenes

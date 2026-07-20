@@ -17,6 +17,11 @@ export interface IJsonSave {
         nameTag: string;
         dialogue: string;
     };
+    sceneText?: string;
+    choicesText?: {
+        first?: string;
+        second?: string;
+    };
     models: {
         from: string;
         character: string;
