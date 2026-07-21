@@ -521,5 +521,5 @@ export const CheckSceneCategory = (blank: boolean): string => {
 
     if (month in months) return months[month];
 
-    return "weird-route";
+    return "default";
 };
