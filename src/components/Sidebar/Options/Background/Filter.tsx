@@ -10,6 +10,7 @@ import POVFilter from "./POVFilter";
 import Contrast from "./Contrast";
 import { toggleSekaiTransition } from "../../../../utils/SekaiTransition";
 import Vignette from "./Vignette";
+import BackgroundBlur from "./BackgroundBlur";
 
 const Filter: React.FC = () => {
     const scene = useContext(SceneContext);
@@ -17,7 +18,7 @@ const Filter: React.FC = () => {
 
     if (!scene) throw new Error("Context not found");
 
-    const { app, filter, setFilter } = scene;
+    const { app, filter, background, setFilter } = scene;
 
     const handleFlashback = async (
         event: React.ChangeEvent<HTMLInputElement>,
@@ -136,6 +137,33 @@ const Filter: React.FC = () => {
         });
     };
 
+    const handleBackgroundBlur = async (
+        event: React.ChangeEvent<HTMLInputElement>,
+    ) => {
+        if (!background?.backgroundContainer || !filter) return;
+
+        const value = event.target.checked;
+        const container = background.backgroundContainer;
+        let blurFilter: PIXI.BlurFilter | undefined;
+        const blur = 5;
+
+        if (value) {
+            blurFilter = new PIXI.BlurFilter(blur);
+            container.filters = [blurFilter];
+        } else {
+            container.filters = [];
+        }
+
+        setFilter({
+            ...filter,
+            backgroundBlur: {
+                show: value,
+                blurFilter,
+                blur,
+            },
+        });
+    };
+
     const handleDroop = async (event: React.ChangeEvent<HTMLInputElement>) => {
         if (!filter?.container) return;
 
@@ -221,6 +249,12 @@ const Filter: React.FC = () => {
                 <Contrast filter={filter} setFilter={setFilter} />
             )}
             <Checkbox
+                id="drooping-lines"
+                label={t("background.filters.drooping-lines")}
+                checked={filter?.droop?.show}
+                onChange={handleDroop}
+            />
+            <Checkbox
                 id="sick"
                 label={t("background.filters.sick")}
                 checked={filter?.sick?.show}
@@ -236,26 +270,29 @@ const Filter: React.FC = () => {
                 <Vignette filter={filter} setFilter={setFilter} />
             )}
             <Checkbox
-                id="drooping-lines"
-                label={t("background.filters.drooping-lines")}
-                checked={filter?.droop?.show}
-                onChange={handleDroop}
-            />
-            <Checkbox
                 id="pov"
                 label={t("background.filters.pov")}
                 checked={filter?.pov?.show}
                 onChange={handlePOV}
             />
+            {filter?.pov?.show && (
+                <POVFilter filter={filter} setFilter={setFilter} />
+            )}
+            <Checkbox
+                id="pov"
+                label={t("background.filters.background-blur")}
+                checked={filter?.backgroundBlur?.show}
+                onChange={handleBackgroundBlur}
+            />
+            {filter?.backgroundBlur?.show && (
+                <BackgroundBlur filter={filter} setFilter={setFilter} />
+            )}
             <Checkbox
                 id="sekaiTransition"
                 label={t("background.filters.sekai-transition")}
                 checked={filter?.sekaiTransition?.show}
                 onChange={handleSekaiTransition}
             />
-            {filter?.pov?.show && (
-                <POVFilter filter={filter} setFilter={setFilter} />
-            )}
         </div>
     );
 };
