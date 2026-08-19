@@ -141,8 +141,9 @@ const ModelSidebar: React.FC = () => {
 
             const modelName: string =
                 typeof model === "object" && "modelBase" in model
-                    ? model.modelBase
-                    : model;
+                    ? (model.modelName as string)
+                    : (model as string);
+
             const [live2DModel, modelData] = await loadModel(
                 modelName,
                 currentModel?.from,

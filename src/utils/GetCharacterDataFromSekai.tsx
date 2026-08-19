@@ -9,7 +9,7 @@ const typedSekaiCharacterData: SekaiCharacterData = characterData;
 
 export const GetCharacterDataFromSekai = async (
     character: string,
-    modelBase: string
+    modelName: string,
 ): Promise<ILive2DModelList> => {
     const characterData = typedSekaiCharacterData[character];
     if (!characterData) {
@@ -17,12 +17,12 @@ export const GetCharacterDataFromSekai = async (
     }
 
     const modelList = characterData.find(
-        (model) => model.modelBase === modelBase
+        (model) => model.modelName === modelName,
     );
 
     if (!modelList) {
         throw new Error(
-            `No models found for ${character} with base ${modelBase}`
+            `No models found for ${character} with name ${modelName}`,
         );
     }
     return modelList;
