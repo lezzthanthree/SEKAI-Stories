@@ -93,7 +93,7 @@ const Character: React.FC<CharacterProps> = ({
                 virtualEffectEntity: null,
                 modelName: isStatic
                     ? (firstFile as string)
-                    : (firstFile as ILive2DModelList).modelBase,
+                    : (firstFile as ILive2DModelList).modelName,
                 modelData,
                 visible: true,
                 idle: false,

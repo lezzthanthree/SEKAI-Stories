@@ -3,7 +3,9 @@ import { ILive2DModelList } from "../types/ILive2DModelList";
 import { sekaiUrl } from "../data/Constants";
 import { IMotionsExpressions } from "../types/IMotionExpression";
 
-// This code is mostly copied from SEKAI Viewer's Live2dLoader.
+// This code is mostly copied from SEKAI Viewer's Live2dLoader.\
+// https://github.com/Sekai-World/sekai-viewer/blob/dev/src/utils/live2dLoader.ts
+
 type ModelNameTransformer = (modelName: string) => string;
 const modelNameToMotionBaseName: Record<string, ModelNameTransformer> = {
     // eg. v2_clb01_21miku to v2_21miku
@@ -97,7 +99,7 @@ async function GetMotionUrl(
     // case 4: if not found, throw error
     if (!modelUrl) {
         throw new Error(
-            `Motion data not found for ${modelItem.modelBase}/${
+            `Motion data not found for ${modelItem.modelName}/${
                 modelItem.modelName
             }\nStatus codes encountered: ${JSON.stringify(statusCodeCounts)}\n
             If this keeps happening, please consider SEKAI Stories's models.`,

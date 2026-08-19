@@ -69,7 +69,7 @@ const Costume: React.FC<CostumeProps> = ({
     const handleCostumeChange = async (value: string) => {
         setIsLoading(true);
 
-        const modelBase = value;
+        const modelName = value;
 
         try {
             let live2DModel: Live2DModel;
@@ -79,20 +79,20 @@ const Costume: React.FC<CostumeProps> = ({
             if (isStatic) {
                 [live2DModel, modelData] = await prepareModel(
                     currentModel.character,
-                    modelBase,
+                    modelName,
                 );
             } else {
                 const model = await GetCharacterDataFromSekai(
                     currentSelectedCharacter,
-                    modelBase,
+                    modelName,
                 );
 
                 if (!model) {
                     setErrorInformation(
-                        `No model found for ${modelBase} in sekai data`,
+                        `No model found for ${modelName} in sekai data`,
                     );
                     throw new Error(
-                        `No model found for ${modelBase} in sekai data`,
+                        `No model found for ${modelName} in sekai data`,
                     );
                 }
 
@@ -109,7 +109,7 @@ const Costume: React.FC<CostumeProps> = ({
                 expression: 99999,
                 virtualEffect: false,
                 virtualEffectEntity: null,
-                modelName: modelBase,
+                modelName: modelName,
                 modelData: modelData,
                 visible: true,
                 idle: false,
@@ -157,12 +157,14 @@ const Costume: React.FC<CostumeProps> = ({
             >
                 {(currentModel.from === "static"
                     ? typedStaticCharacterData[currentSelectedCharacter]
-                    : typedSekaiCharacterData[currentSelectedCharacter]
+                    : typedSekaiCharacterData[currentSelectedCharacter]?.sort(
+                          (a, b) => a.modelName.localeCompare(b.modelName),
+                      )
                 )?.map((model, idx) => {
                     const value =
                         currentModel.from === "static"
                             ? (model as string)
-                            : (model as ILive2DModelList).modelBase;
+                            : (model as ILive2DModelList).modelName;
                     return (
                         <option key={`${value}${idx}`} value={value}>
                             {value}

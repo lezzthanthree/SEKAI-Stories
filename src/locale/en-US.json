@@ -59,6 +59,10 @@
                 "povx": "X-Position",
                 "povy": "Y-Position"
             },
+            "background-blur": "Background Blur",
+            "background-blur-settings": {
+                "bluriness": "Bluriness"
+            },
             "sekai-transition": "SEKAI Transition"
         }
     },
