@@ -16,9 +16,16 @@ export const GetCharacterDataFromSekai = async (
         throw new Error(`Character data for ${character} not found`);
     }
 
-    const modelList = characterData.find(
+    let modelList = characterData.find(
         (model) => model.modelName === modelName,
     );
+
+    // old files from export needs this
+    if (!modelList) {
+        modelList = characterData.find(
+            (model) => model.modelBase === modelName,
+        );
+    }
 
     if (!modelList) {
         throw new Error(

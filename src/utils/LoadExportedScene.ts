@@ -89,7 +89,7 @@ export const loadScene = async (
     modelWrapper?.removeChildren();
 
     for (const [idx, model] of modelJsonData.entries()) {
-        const [live2DModel, modelData] = await loadModel(
+        const [live2DModel, modelData, modelName] = await loadModel(
             model.modelName,
             model.from,
             model.character,
@@ -161,7 +161,7 @@ export const loadScene = async (
                 character: model.character,
                 root: modelContainer,
                 model: live2DModel,
-                modelName: model.modelName,
+                modelName: modelName,
                 modelX: modelContainer.x,
                 modelY: modelContainer.y,
                 modelScale: modelContainer.scale.x,

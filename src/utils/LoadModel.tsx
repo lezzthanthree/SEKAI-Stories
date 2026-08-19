@@ -18,18 +18,20 @@ export const loadModel = async (
     setErrorInformation: Dispatch<SetStateAction<string>>,
     setLoading: Dispatch<SetStateAction<number>>,
     formula: (x: number) => number,
-    abort?: AbortSignal
-): Promise<[Live2DModel, ILive2DModelData]> => {
+    abort?: AbortSignal,
+): Promise<[Live2DModel, ILive2DModelData, string]> => {
     setLoading(formula(0));
     setLoadingMsg(`${t("loadings.loading-1")} ${model}...`);
     let modelData: ILive2DModelData | undefined = undefined;
+    let modelName: string = "";
     if (from === "static") {
         const [characterFolder] = await GetCharacterFolder(model);
-
+        modelName = characterFolder;
         modelData = await GetModelDataFromStatic(characterFolder, model);
     }
     if (from === "sekai" || from === "upload") {
         const characterData = await GetCharacterDataFromSekai(character, model);
+        modelName = characterData.modelName;
         modelData = await GetModelDataFromSekai(characterData);
     }
     if (from === "/ / // / /") {
@@ -64,7 +66,7 @@ export const loadModel = async (
     });
 
     if (abort?.aborted) throw new Error("Operation aborted.");
-    
+
     const internalModel = live2DModel.internalModel;
     internalModel.extendParallelMotionManager(2);
 
@@ -72,5 +74,5 @@ export const loadModel = async (
         internalModel.coreModel.setOverwriteFlagForModelCullings(true);
     }
 
-    return [live2DModel, modelData];
+    return [live2DModel, modelData, modelName];
 };
