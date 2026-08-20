@@ -40,7 +40,7 @@ const i18nInit = () => {
         lng: "en",
         resources: {
             en: { translation: en },
-            ja: { translation: ja},
+            ja: { translation: ja },
             pl: { translation: pl },
             zh: { translation: zh },
             es: { translation: es },
