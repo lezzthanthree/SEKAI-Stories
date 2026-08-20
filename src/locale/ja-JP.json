@@ -1,0 +1,490 @@
+{
+    "global": {
+        "toggles": "切り替え",
+        "close": "閉じる",
+        "clear-ok": "クリア",
+        "copy": "コピー",
+        "continue-ok": "続ける",
+        "cancel": "キャンセル",
+        "next": "次へ",
+        "input": "入力",
+        "adjust": "調整",
+        "enter-value": "値を入力してください。",
+        "visible": "表示",
+        "import": "インポート",
+        "export": "エクスポート"
+    },
+    "background": {
+        "header": "背景",
+        "select": {
+            "header": "選択",
+            "button": "選択",
+            "split-location": "分割ロケーション",
+            "upload": "アップロード",
+            "upload-info": "画像が正しく表示され、引き伸ばされたり切り取られたりしないように、16:9の画像を使用してください。"
+        },
+        "lighting": {
+            "header": "ライティング",
+            "preset": "プリセット",
+            "red": "赤",
+            "green": "緑",
+            "blue": "青",
+            "brightness": "明るさ",
+            "saturation": "彩度",
+            "presets": {
+                "select-preset": "プリセットを選択",
+                "default": "デフォルト",
+                "warm": "暖色",
+                "sunset": "夕焼け",
+                "night": "夜",
+                "off": "消灯",
+                "bright": "明るい",
+                "silhouette": "シルエット",
+                "custom-preset": "カスタムプリセット"
+            }
+        },
+        "filters": {
+            "header": "フィルター",
+            "flashback": "フラッシュバック",
+            "monochrome": "モノクロ",
+            "monochrome-settings": {
+                "contrast": "コントラスト"
+            },
+            "sick": "病気",
+            "vignette": "ビネット",
+            "drooping-lines": "垂れ下がる線",
+            "pov": "視点/FOV",
+            "pov-settings": {
+                "zoom": "ズーム",
+                "povx": "X位置",
+                "povy": "Y位置"
+            },
+            "background-blur": "背景ぼかし",
+            "background-blur-settings": {
+                "bluriness": "ぼかし"
+            },
+            "sekai-transition": "セカイ切り替え"
+        }
+    },
+    "text": {
+        "header": "テキスト",
+        "name-tag": {
+            "header": "名前タグ",
+            "easy-switch": "簡単切り替えを使用"
+        },
+        "dialogue": {
+            "header": "セリフ",
+            "box-type": {
+                "header": "ボックスの種類",
+                "default": "デフォルト",
+                "classic": "クラシック",
+                "mysekai": "マイセカイ"
+            },
+            "font-size": "フォントサイズ",
+            "enter-font-size": "フォントサイズを入力してください。",
+            "add-symbol": "記号を追加"
+        },
+        "scene-text": {
+            "header": "シーンテキスト",
+            "variant": {
+                "header": "配置",
+                "middle": "中央",
+                "top-left": "左上"
+            },
+            "box-type": {
+                "header": "ボックスの種類",
+                "default": "デフォルト",
+                "classic": "クラシック"
+            },
+            "hide-everything": "モデルとセリフを非表示"
+        },
+        "choices-text": {
+            "header": "選択肢テキスト",
+            "box-type": {
+                "header": "ボックスの種類",
+                "default": "デフォルト",
+                "classic": "クラシック"
+            },
+            "dialogue-box-visible": "セリフボックスを表示"
+        },
+        "y-offset": {
+            "header": "Yオフセット",
+            "details": "キャンバス上のテキストが正しく揃わない場合は、調整が必要になることがあります。"
+        },
+        "toggles": "切り替え"
+    },
+    "model": {
+        "header": "モデル",
+        "selected-layer": {
+            "header": "選択中のレイヤー",
+            "layer": "レイヤー",
+            "add-model": {
+                "header": "モデルを追加",
+                "description": "モデルの取得元を選択してください。",
+                "sekai": "sekai.best",
+                "sekai-description": "Sekai Viewerが提供するモデルを利用できます！",
+                "static": "SEKAI Stories",
+                "static-description": "Sekai Viewerが利用できない場合の代替手段です。",
+                "roleplay-sprites": "ロールプレイ用スプライト",
+                "roleplay-sprites-description": "ロールプレイ用スプライトから選択します。",
+                "upload-image": "画像をアップロード",
+                "upload-image-description": "自分の画像をアップロードします。"
+            },
+            "delete-model-warn": "これは唯一のレイヤーなので削除できません。"
+        },
+        "character": {
+            "header": "キャラクター",
+            "select-character": "キャラクターを選択",
+            "roleplay": {
+                "new": "新規",
+                "new-description": "このキャラクターに名前を付けてください。",
+                "delete-warn": "このキャラクターにはスプライトがあります。続行するとスプライトが破棄されます！",
+                "no-sprite-warn": "このキャラクターにはスプライトがありません。まず新しいスプライトを追加してください。"
+            }
+        },
+        "sprite": {
+            "header": "スプライト",
+            "select-sprite": "スプライトを選択",
+            "add-sprite": "スプライトを追加",
+            "add-sprite-description": "このスプライトに名前を付けてください。"
+        },
+        "costume": {
+            "header": "衣装",
+            "live2d-issue": "この衣装には一部のパーツが欠けている可能性があります。",
+            "live2d-issue-github": "こちらで問題を確認できます。",
+            "virtual": "バーチャルエフェクト"
+        },
+        "emotion": {
+            "header": "感情",
+            "rename-emotion": "この感情に名前を付けてください。空欄にするとリセットされます。",
+            "pose": "ポーズ",
+            "select-pose": "ポーズを選択",
+            "expression": "表情",
+            "run-both": "両方を実行",
+            "select-expression": "表情を選択"
+        },
+        "transform": {
+            "header": "変形",
+            "x-position": "X位置",
+            "y-position": "Y位置",
+            "scale": "拡大率",
+            "rotation": "回転",
+            "opacity": "不透明度",
+            "blur": "ぼかし",
+            "layering": "レイヤー順序"
+        },
+        "mouth": {
+            "header": "口",
+            "ParamMouthForm": "メイン形状",
+            "ParamMouthOpenY": "開き",
+            "ParamMouthForm2": "サブ形状",
+            "ParamMouthScaleX": "X倍率",
+            "ParamMouthScaleY": "Y倍率",
+            "ParamMouthPositionY": "Y位置",
+            "ParamMouthShadow": "影"
+        },
+        "live2d": {
+            "header": "Live2D",
+            "parameters": {
+                "header": "パラメータ",
+                "select-parameter": "パラメータを選択",
+                "tooltip": "矢印キーでパラメータを選択・調整できます。"
+            },
+            "reapply-all": "すべて再適用",
+            "idle": "待機アニメーション",
+            "import-export": {
+                "header": "インポート/エクスポート",
+                "description": "行った調整を保存して、別のモデルに読み込むことができます。"
+            },
+            "emotion-copy": {
+                "header": "感情をコピー",
+                "description": "設定した表情とポーズのすべてのパラメータをコピーします。",
+                "confirm-header": "コピーしました！",
+                "confirm-description": "感情のパラメータをコピーしました。"
+            },
+            "show-live2d-parts": "Live2Dパーツを表示",
+            "access-live2d-parts": "このモデルのすべてのパーツにアクセスしようとしています。続行しますか？"
+        },
+        "live2d-changed-warn": "カスタムLive2Dパラメータの調整があります。続行すると破棄されます！",
+        "long-wait": "モデルの読み込みに時間がかかりすぎる場合は、代わりにSEKAI Storiesからモデルを取得することを検討してください。",
+        "re-apply": "再適用",
+        "advanced": "詳細設定"
+    },
+    "experimental": {
+        "header": "実験的機能",
+        "details": "変更が反映されない場合は、キャンバスを更新してみてください。",
+        "refresh": "更新"
+    },
+    "clear": {
+        "message": "キャンバス全体がクリアされます。進行中の作業はすべて失われます！",
+        "start-blank": "次回は空のキャンバスから開始する"
+    },
+    "support": {
+        "header": "サポート",
+        "report-header": "バグを見つけましたか？",
+        "report-details": "バグや不具合を見つけた場合は、GitHubリポジトリで報告してください。",
+        "report-button": "問題を報告",
+        "details": "SEKAI Storiesを気に入っていただけましたら、以下の方法で支援できます：",
+        "ko-fi-details": "寄付は任意です！ウェブサイトの更新情報もそこで投稿します。",
+        "github-details": "このプロジェクトは完全なオープンソースです！問題を報告したり、プルリクエストを送って貢献したりできます！",
+        "special-thanks-header": "スペシャルサンクス",
+        "special-thanks-description": "このサイトからモデルにアクセスできるよう許可してくださったSekai Viewerのオーナーに感謝します！"
+    },
+    "loadings": {
+        "please-wait": "お待ちください…",
+        "loading-1": "モデルファイルを取得中：",
+        "loading-2": "モーションファイルを取得中：",
+        "loading-3": "モデルデータを修正中：",
+        "loading-4": "テクスチャを読み込み中：",
+        "loading-5": "moc3ファイルを読み込み中：",
+        "loading-6": "物理演算ファイルを読み込み中：",
+        "loading-7": "新しいモデルを配置中：",
+        "failed-load": "新しいモデルの読み込みに失敗しました！"
+    },
+    "character": {
+        "none": "なし",
+        "custom": "カスタム",
+        "ichika": "一歌",
+        "saki": "咲希",
+        "honami": "穂波",
+        "shiho": "志歩",
+        "minori": "みのり",
+        "haruka": "遥",
+        "airi": "愛莉",
+        "shizuku": "雫",
+        "kohane": "こはね",
+        "an": "杏",
+        "akito": "彰人",
+        "touya": "冬弥",
+        "tsukasa": "司",
+        "emu": "えむ",
+        "nene": "寧々",
+        "rui": "類",
+        "kanade": "奏",
+        "mafuyu": "まふゆ",
+        "ena": "絵名",
+        "mizuki": "瑞希",
+        "miku": "ミク",
+        "rin": "リン",
+        "len": "レン",
+        "luka": "ルカ",
+        "meiko": "MEIKO",
+        "kaito": "KAITO",
+        "others": "その他"
+    },
+    "group": {
+        "all": "すべて",
+        "bookmarks": "ブックマーク",
+        "general": "一般",
+        "mmj": "MORE MORE JUMP！",
+        "vbs": "Vivid BAD SQUAD",
+        "wxs": "ワンダーランズ×ショウタイム",
+        "n25": "25時、ナイトコードで。",
+        "ln": "Leo/need",
+        "vs": "バーチャル・シンガー",
+        "split": "分割ロケーション",
+        "temp": "その他",
+        "cards": "カード"
+    },
+    "settings": {
+        "header": "設定",
+        "language": "言語",
+        "starting-box-type": "開始時のボックスの種類",
+        "starting-box-type-description": "キャンバスをクリアした後に反映されます。",
+        "auto-save": "自動保存",
+        "auto-save-description": "作業内容は3分ごとに自動保存されます。問題が発生した場合は、最新のバックアップをSEKAISCENEファイルとしてダウンロードできます。",
+        "auto-save-button": "最新の保存データを取得",
+        "toggles": "切り替え",
+        "audio": "音声を有効化",
+        "guidelines": "ガイドラインを表示",
+        "experimental": "実験的機能を表示",
+        "expand": "すべてのメニュー項目を展開",
+        "tutorial": "チュートリアル",
+        "show-tutorial": "もう一度表示",
+        "mental-health-window": "メンタルヘルスに関する注意を表示",
+        "save-dialog": "保存ダイアログを表示",
+        "blank-canvas": "空のキャンバスから開始",
+        "announcement": "お知らせを表示"
+    },
+    "import-export": {
+        "header": "インポート/エクスポート",
+        "description": "カスタム背景とスプライトはこのSEKAISCENEファイルには含まれません。"
+    },
+    "save": {
+        "header": "保存",
+        "note-1-desktop": "ダウンロードが開始されない場合は、下の画像を右クリックして保存してください。",
+        "note-1-phone": "ダウンロードが開始されない場合は、下の画像を長押しして保存してください。",
+        "note-2": "このウィンドウは設定から無効にできます。",
+        "disable-dialog": "次回からこのダイアログを表示しない"
+    },
+    "error": {
+        "header": "エラー",
+        "import-scene-fail": "キャンバスがリセットされました。",
+        "invalid-json": "無効なJSON形式です",
+        "no-autosave": "自動保存データが見つかりません。",
+        "no-valid-models": "まず新しいLive2Dキャラクターモデルを追加してください。",
+        "not-an-image": "これは画像ではありません。",
+        "default-scene-fail": "デフォルトシーンの読み込み中にエラーが発生しました。\nクリアボタンを使用するか、ブラウザを更新するか、Cookieを削除してください。\n問題が解決しない場合は、GitHubでこのバグを報告してください。",
+        "name-tag-inputs-limit": "名前タグの入力欄は2～6個までです。",
+        "background-bookmark": "カスタム背景にはブックマークを設定できません。",
+        "hide-everything-warning": "シーンテキストの「モデルとセリフを非表示」オプションが有効になっています。\nテキストメニューでこのオプションを無効にしてください。",
+        "low-opacity-visible": "モデルの不透明度がほぼ0になっています。\n念のためお知らせします～",
+        "character-name-empty": "キャラクター名を空欄にはできません。",
+        "character-name-invalid": "このキャラクター名は使用できません。別の名前を選択してください。",
+        "character-name-exists": "このキャラクター名はすでに存在します。",
+        "sprite-name-empty": "スプライト名を空欄にはできません。",
+        "sprite-name-invalid": "このスプライト名は使用できません。別の名前を選択してください。",
+        "sprite-name-exists": "このスプライト名はすでに存在します。",
+        "nonexistent-character": "このキャラクターは存在しません。",
+        "nonexistent-sprite": "このスプライトは存在しません。"
+    },
+    "error-boundary": {
+        "unexpected": "予期しないエラーが発生しました",
+        "inconvenience": "ご不便をおかけして申し訳ありません。",
+        "clear-cookies": "Cookieを削除し、ページを更新してからもう一度お試しください。",
+        "report-issue": "問題が解決しない場合は、GitHubでこの問題を報告してください。",
+        "automatic-save": "作業内容は自動的に保存されています。",
+        "save-data": "できるだけ早く保存してください。",
+        "save-data-button": "データを保存",
+        "report-issue-button": "問題を報告",
+        "copied-to-clipboard": "トレースバックをコピーしました。報告する際に貼り付けてください。"
+    },
+    "mental-health": {
+        "header": "誰かに相談しても大丈夫です",
+        "details": "あなたが感じていることには意味があり、あなたは一人ではありません。つらい時を過ごしているなら、下のボタンから支援してくれる人や役立つ情報を見つけることができます。",
+        "settings-details": "このメッセージは設定から無効にできます。",
+        "button": "案内を見る"
+    },
+    "tutorial": {
+        "initial-setup": {
+            "paragraph-1": "赤い点が見えなくなるまでスライダーを調整してください。",
+            "paragraph-2": "この設定はいつでもテキストメニューから変更できます。"
+        },
+        "welcome": {
+            "header": "SEKAI Storiesへようこそ！",
+            "intro-header": "このウィンドウでは、このサイトの使い方を説明します。",
+            "paragraph-1": "このアプリケーションに慣れている場合は、このウィンドウを閉じても構いません。",
+            "paragraph-2": "このチュートリアルはいつでも設定から開くことができます。",
+            "confirm-first-time": "ここを利用するのは初めてです"
+        },
+        "video": {
+            "header": "チュートリアル全編をYouTubeで見ることができます！",
+            "youtube": "YouTubeを開く"
+        },
+        "menu-navigation": {
+            "header": "これらを使ってメニュー間を移動できます！"
+        },
+        "background-menu": {
+            "header": "背景メニュー",
+            "select-upload": {
+                "header": "選択とアップロード",
+                "paragraph": "プロジェクトセカイから背景を選択するか、自分の画像をアップロードできます。",
+                "split": {
+                    "header": "分割ロケーション",
+                    "paragraph": "分割ロケーションを使って、1つの背景に2つの場所を表示することもできます。"
+                }
+            },
+            "lighting": {
+                "header": "ライティング",
+                "paragraph": "背景の設定に合わせて前景の色合いを変更します。"
+            },
+            "filters": {
+                "header": "フィルター",
+                "paragraph": "キャンバス全体にフィルターを追加します。"
+            }
+        },
+        "text-menu": {
+            "header": "テキストメニュー",
+            "name-tag": {
+                "header": "名前タグ",
+                "paragraph": "ここにキャラクターの名前を入力します。",
+                "easy-switch": {
+                    "header": "簡単切り替え",
+                    "paragraph": "簡単切り替えを使うと、名前を入力し直さずに2人のキャラクターを切り替えられます。"
+                }
+            },
+            "dialogue": {
+                "header": "セリフ",
+                "paragraph": "ここにキャラクターが話すセリフを入力します。"
+            },
+            "scene-text": {
+                "header": "シーンテキスト",
+                "paragraph": "作成中のシーンの時刻と場所です。通常、PJSKの各ストーリーの冒頭に表示されます。"
+            },
+            "choices-text": {
+                "header": "選択肢テキスト",
+                "paragraph": "編集できる2つの選択肢ボタンです。通常、初音ミクとの会話中に表示されます。"
+            }
+        },
+        "model-menu": {
+            "header": "モデル＆スプライトメニュー",
+            "selected-layer": {
+                "header": "選択中のレイヤー",
+                "paragraph": "作業中に表示されているすべてのモデルがここにあります。選択して調整できます。",
+                "add-model": {
+                    "header": "モデルを追加",
+                    "paragraph": "新しいLive2Dモデルのキャラクターを追加したり、自分の画像をアップロードしたりできます。"
+                },
+                "upload-sprite": {
+                    "header": "PNGスプライトをアップロード",
+                    "paragraph": "自分のPNGスプライトをアップロードします。"
+                },
+                "hide-layer": {
+                    "header": "表示",
+                    "paragraph": "レイヤーの表示/非表示を切り替えます。"
+                },
+                "remove-layer": {
+                    "header": "レイヤーを削除",
+                    "paragraph": "選択したレイヤーを削除します。"
+                }
+            },
+            "transform": {
+                "header": "変形",
+                "paragraph": "選択したレイヤーを移動したり、サイズを変更したり、非表示にしたりできます。"
+            },
+            "character": {
+                "header": "キャラクター",
+                "paragraph": "選択したモデルがLive2Dの場合、PJSKのキャストからキャラクターを選択できます。"
+            },
+            "costume": {
+                "header": "衣装",
+                "paragraph": "キャラクターを選択すると、好きな衣装を選択できます。"
+            },
+            "emotion": {
+                "header": "感情",
+                "pose": {
+                    "header": "ポーズ",
+                    "paragraph": "選択したキャラクターのポーズを変更します。"
+                },
+                "expression": {
+                    "header": "表情",
+                    "paragraph": "選択したキャラクターの表情を変更します。"
+                }
+            },
+            "mouth": {
+                "header": "口",
+                "paragraph": "Live2Dモデルの口の開き方や形状を変更・調整できます。"
+            },
+            "live-2d": {
+                "header": "Live2D",
+                "paragraph": "Live2Dパラメータを調整して自分だけのポーズを作ったり、待機アニメーションを一時停止したりできます。",
+                "import-export": {
+                    "header": "インポート/エクスポート",
+                    "paragraph": "行った調整を保存して、別のモデルに読み込むこともできます。"
+                },
+                "emotion-copy": {
+                    "header": "感情をコピー",
+                    "paragraph": "現在設定している表情とポーズのLive2Dパラメータをコピーします。"
+                }
+            }
+        },
+        "save": {
+            "header": "作業が終わったら、保存しましょう！",
+            "scene-paragraph": "シーン全体を編集可能な形式で保存・読み込みできるようになります。"
+        },
+        "ending": {
+            "header": "これで完了です！",
+            "paragraph": "もう一度この説明を見る場合は、設定からアクセスできます。"
+        }
+    }
+}
