@@ -13,6 +13,7 @@ import zhHK from "../locale/zh-HK.json";
 export const languageNames = {
     en: "English (en-US)",
     es: "Español (es-ES)",
+    ja: "日本語 (ja-JP)",
     fr: "Français (fr-FR)",
     zh: "简体中文 (zh-CN)",
     zhTW: "繁體中文 (zh-TW)",
