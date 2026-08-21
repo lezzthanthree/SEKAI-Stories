@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import en from "../locale/en-US.json";
+import ja from "../locale/ja-JP.json";
 import pl from "../locale/pl-PL.json";
 import zh from "../locale/zh-CN.json";
 import es from "../locale/es-ES.json";
