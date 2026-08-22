@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import en from "../locale/en-US.json";
+import ja from "../locale/ja-JP.json";
 import pl from "../locale/pl-PL.json";
 import zh from "../locale/zh-CN.json";
 import es from "../locale/es-ES.json";
@@ -14,6 +15,7 @@ export const languageNames = {
     en: "English (en-US)",
     es: "Español (es-ES)",
     fr: "Français (fr-FR)",
+    ja: "日本語 (ja-JP)",
     zh: "简体中文 (zh-CN)",
     zhTW: "繁體中文 (zh-TW)",
     zhHK: "港式廣東話 (zh-HK)",
@@ -38,6 +40,7 @@ const i18nInit = () => {
         lng: "en",
         resources: {
             en: { translation: en },
+            ja: { translation: ja },
             pl: { translation: pl },
             zh: { translation: zh },
             es: { translation: es },

@@ -18,11 +18,11 @@ const randomText = {
         "Honami is driving without her driver license.",
         "Shiho is forming a new band with her little Phennies.",
         "Shizuku is giving Shiho some make up.",
+        "Shizuku ended up lost in The Backrooms.",
         "In a parallel universe, where Minori is the leader of ASRUN.",
         "Haruka becomes the wife of Minori.",
         "Airi lost her fang.",
         "Setsuna has been mistakenly called Kanade for the 1888th time.",
-        'K and OWN made music together titled "Kamui". [v=Z64pjmgHg4I]',
         "Mizuki is five kilometers away from your house.",
         "Mizuki stole the precious thing.",
         "Mizu-Mizu-Kii!",
@@ -61,6 +61,7 @@ const randomText = {
         "恋をして",
         "jamie paige is so mid. i mean, sincerely, who listen to ts?",
         "I spend my hours doing alchemy",
+        "Baby, do you know what you wanna hear? 'Cause you can say the word, make it oh so clear.",
         "じゃ！",
         "Burn Your Dread.",
         "It's a amazing!",
@@ -211,7 +212,7 @@ const FlavorText: React.FC = () => {
 export default FlavorText;
 
 /* 
-    LAST UPDATE: 04/30/2026
+    LAST UPDATE: 08/03/2026
     Will not list the obvious PJSK references.
     Placed here for people who needs explaination when translating.
 
@@ -257,11 +258,13 @@ export default FlavorText;
         -> Jamie Paige Song Reference: "Aggrandicize"
     "I spend my hours doing alchemy",
         -> Jamie Paige Song Reference: "Cadmium Colors"
+    "Baby, do you know what you wanna hear? 'Cause you can say the word, make it oh so clear."
+        -> Jamie Paige's common leitmotif and song reference to "Dyad"
     "じゃ！",
         -> Jamie Paige's Song Signature
     "██ ██ ██ ██ / ██ ██ ██",
         -> Song Reference: "Letter to the Black World"
-        -> Yes, it spells that morse code from the song
+        -> Yes, it spells that morse code from the song (F*** YOU)
     "kurukurukurukurukurikaesu"
         -> Song Reference: "Looping the Rooms"
     "Burn Your Dread.",
