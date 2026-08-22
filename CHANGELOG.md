@@ -1,3 +1,8 @@
+# 2026.08.22
+- Changed name on selection of costumes
+- Added background blur
+- Added ja-JP localization
+
 # 2026.07.20
 - Added Scene Text and Choices Text to the export JSON.
 

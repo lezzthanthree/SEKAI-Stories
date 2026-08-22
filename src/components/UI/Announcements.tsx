@@ -31,6 +31,21 @@ const Announcements: React.FC = () => {
             <p>Few updates have been made!</p>
             <ul>
                 <li>
+                    <div className="flex-vertical">
+                        <h2>Japanese Localization is now available!</h2>
+                        <p>
+                            Thanks to{" "}
+                            <a
+                                href="https://github.com/BubblyVaporeon"
+                                target="_blank"
+                            >
+                                BubblyVaporeon
+                            </a>{" "}
+                            for their contribution!
+                        </p>
+                    </div>
+                </li>
+                <li className="margin-top-10">
                     Updated models and backgrounds{" "}
                     {daysUntil > 0 &&
                         `(mizook birthday in ${daysUntil} ${

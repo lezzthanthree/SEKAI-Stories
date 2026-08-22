@@ -27,6 +27,7 @@ Huge thanks to our translators!
 [<img src="https://avatars.githubusercontent.com/u/67418738?v=4" width="50">](https://github.com/lmaodick1239)
 [<img src="https://avatars.githubusercontent.com/u/77572452?v=4" width="50">](https://github.com/KrajeQQ)
 [<img src="https://avatars.githubusercontent.com/u/132699819?v=4" width="50">](https://github.com/733402)
+[<img src="https://avatars.githubusercontent.com/u/109556338?v=4" width="50">](https://github.com/BubblyVaporeon)
 
 If you wish to contribute for your own language, you can check this [localization guide](./README-localization.md) to help you get started!
 
