@@ -152,6 +152,7 @@
             "header": "Costume",
             "live2d-issue": "This costume may be missing some parts.",
             "live2d-issue-github": "See issue here.",
+            "texture": "Swap Texture",
             "virtual": "Virtual Effect"
         },
         "emotion": {

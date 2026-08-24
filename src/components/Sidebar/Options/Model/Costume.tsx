@@ -11,6 +11,7 @@ import { ILive2DModelList } from "../../../../types/ILive2DModelList";
 import { ILive2DModelData } from "../../../../types/ILive2DModelData";
 import * as PIXI from "pixi.js";
 import { Checkbox } from "../../../UI/Checkbox";
+import UploadImageButton from "../../../UI/UploadButton";
 import IModel from "../../../../types/IModel";
 import { GetCharacterDataFromSekai } from "../../../../utils/GetCharacterDataFromSekai";
 import Live2DIssue from "../../../UI/Live2DIssue";
@@ -145,6 +146,14 @@ const Costume: React.FC<CostumeProps> = ({
         });
     };
 
+    const handleTextureSwap = (img: ImageBitmap) => {
+        if (!currentModel) return;
+        const model = currentModel.model as Live2DModel;
+        const newTexture = model.textures[0].clone();
+        newTexture.baseTexture = PIXI.BaseTexture.from(img);
+        model.textures[0] = newTexture;
+    };
+
     return (
         <>
             <select
@@ -179,6 +188,15 @@ const Costume: React.FC<CostumeProps> = ({
                 onChange={(event) => {
                     const value = event.target.checked;
                     handleVirtualEffect(value);
+                }}
+            />
+            <UploadImageButton
+                id="swap-texture"
+                text={t("model.costume.texture")}
+                disabled={currentModel.character == "none"}
+                uploadFunction={async (file) => {
+                    const img = await createImageBitmap(file);
+                    handleTextureSwap(img);
                 }}
             />
             <Live2DIssue costume={currentModel.modelName} />
