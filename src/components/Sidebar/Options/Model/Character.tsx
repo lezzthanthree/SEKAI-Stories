@@ -91,6 +91,7 @@ const Character: React.FC<CharacterProps> = ({
                 expression: 99999,
                 virtualEffect: false,
                 virtualEffectEntity: null,
+                textureSwapped: false,
                 modelName: isStatic
                     ? (firstFile as string)
                     : (firstFile as ILive2DModelList).modelName,

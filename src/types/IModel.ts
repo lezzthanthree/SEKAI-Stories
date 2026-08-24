@@ -20,6 +20,7 @@ export default interface IModel {
     modelOpacity: number;
     adjustmentFilter: AdjustmentFilter;
     virtualEffect: boolean;
+    textureSwapped: boolean;
     modelData: ILive2DModelData | undefined;
     expression: number;
     pose: number;

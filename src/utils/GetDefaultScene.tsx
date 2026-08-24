@@ -179,6 +179,7 @@ const LoadModel = async (
                 adjustmentFilter: adjustmentFilter,
                 virtualEffect: false,
                 virtualEffectEntity: null,
+                textureSwapped: false,
                 expression: 0,
                 pose: 0,
                 idle: true,
