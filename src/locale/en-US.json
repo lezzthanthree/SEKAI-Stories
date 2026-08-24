@@ -152,7 +152,6 @@
             "header": "Costume",
             "live2d-issue": "This costume may be missing some parts.",
             "live2d-issue-github": "See issue here.",
-            "texture": "Swap Texture",
             "virtual": "Virtual Effect"
         },
         "emotion": {
@@ -193,6 +192,11 @@
             },
             "reapply-all": "Re-apply All",
             "idle": "Idle Animation",
+            "texture": {
+                "header": "Texture",
+                "get": "Get Texture",
+                "swap": "Swap Texture"
+            },
             "import-export": {
                 "header": "Import/Export",
                 "description": "You can save the adjustments you made and load it to another model."
