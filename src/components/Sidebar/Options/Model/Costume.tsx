@@ -110,7 +110,7 @@ const Costume: React.FC<CostumeProps> = ({
                 expression: 99999,
                 virtualEffect: false,
                 virtualEffectEntity: null,
-                textureSwapped: false,
+                textureSwap: null,
                 modelName: modelName,
                 modelData: modelData,
                 visible: true,
@@ -153,7 +153,6 @@ const Costume: React.FC<CostumeProps> = ({
         const newTexture = model.textures[0].clone();
         newTexture.baseTexture = PIXI.BaseTexture.from(img);
         model.textures[0] = newTexture;
-        updateModelState({textureSwapped: true});
     };
 
     return (

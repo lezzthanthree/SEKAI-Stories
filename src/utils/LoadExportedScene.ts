@@ -172,7 +172,7 @@ export const loadScene = async (
                 adjustmentFilter: adjustmentFilter,
                 virtualEffect: false,
                 virtualEffectEntity: null,
-                textureSwapped: false,
+                textureSwap: null,
                 expression: model.modelExpression ?? 99999,
                 pose: model.modelPose ?? 99999,
                 idle: model.modelIdle,
