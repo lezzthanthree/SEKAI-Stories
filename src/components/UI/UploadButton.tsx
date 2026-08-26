@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 interface UploadImageButtonProps {
     id: string;
-    uploadFunction: (file: File) => void;
+    uploadFunction: (file: File) => void | Promise<void>;
     text: string | React.ReactNode;
     alertMsg?: string;
     type?: string;

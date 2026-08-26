@@ -16,7 +16,9 @@ import {
 import { ILive2DParameterJsonSave } from "../../../../types/ILive2DParameterJsonSave";
 import { ValidateLive2DParameterJsonSave } from "../../../../utils/ValidateJsonSave";
 import { Checkbox } from "../../../UI/Checkbox";
+import UploadImageButton from "../../../UI/UploadButton";
 import { SoftErrorContext } from "../../../../contexts/SoftErrorContext";
+import { applyTextureSwap, currentTextureURL } from "../../../../utils/TextureSwap";
 import { Sprite } from "pixi.js";
 
 interface Live2DProps {
@@ -194,6 +196,37 @@ const Live2D: React.FC<Live2DProps> = ({
         }
     };
 
+    const currentTexture = currentTextureURL(currentModel);
+    const handleTextureGet = async () => {
+        if (!currentTexture) return;
+        let url = currentTexture;
+        // The a.download attribute doesn't work cross-origin, so if we're
+        // looking at a remote texture file from sekai.best, fetch() the image
+        // data first and then turn it into a download locally.
+        if (url.startsWith('http')) {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            url = URL.createObjectURL(blob);
+        }
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${currentModel.modelName ?? "character"}.png`;
+        a.click();
+        a.remove();
+        // If we needed to create an object URL to perform the download,
+        // dispose of it when we're done. Revoking is a safe no-op on other
+        // types of URLs.
+        URL.revokeObjectURL(url);
+    };
+    
+    const handleTextureSwap = async (file: File) => {
+        if (!currentModel) return;
+        const model = currentModel.model;
+        if (!(model instanceof Live2DModel)) return;
+        const img = await applyTextureSwap(model, file);
+        updateModelState({ textureSwap: img });
+    };
+
     const handleImportLive2DParams = () => {
         const input = document.createElement("input");
         input.type = "file";
@@ -362,6 +395,23 @@ const Live2D: React.FC<Live2DProps> = ({
                     id="idle"
                     onChange={handleIdle}
                 />
+            </div>
+            <div className="option__content">
+                <h3>{t("model.live2d.texture.header")}</h3>
+                <img className="width-100" alt="The active texture applied to this model." src={currentTexture} />
+                <div>
+                    <button
+                        className="btn-regular btn-100 btn-blue"
+                        onClick={handleTextureGet}
+                    >
+                        {t("model.live2d.texture.get")}
+                    </button>
+                    <UploadImageButton
+                        id="texture-swap"
+                        text={t("model.live2d.texture.swap")}
+                        uploadFunction={file => handleTextureSwap(file)}
+                    />
+                </div>
             </div>
             <div className="option__content">
                 <h3>{t("model.live2d.import-export.header")}</h3>

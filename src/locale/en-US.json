@@ -192,6 +192,11 @@
             },
             "reapply-all": "Re-apply All",
             "idle": "Idle Animation",
+            "texture": {
+                "header": "Texture",
+                "get": "Get Texture",
+                "swap": "Swap Texture"
+            },
             "import-export": {
                 "header": "Import/Export",
                 "description": "You can save the adjustments you made and load it to another model."

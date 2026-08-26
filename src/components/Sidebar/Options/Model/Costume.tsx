@@ -109,6 +109,7 @@ const Costume: React.FC<CostumeProps> = ({
                 expression: 99999,
                 virtualEffect: false,
                 virtualEffectEntity: null,
+                textureSwap: null,
                 modelName: modelName,
                 modelData: modelData,
                 visible: true,
