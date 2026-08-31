@@ -59,6 +59,10 @@
                 "povx": "X轴位置",
                 "povy": "Y轴位置"
             },
+            "background-blur": "背景模糊",
+            "background-blur-settings": {
+                "bluriness": "模糊程度"
+            },
             "sekai-transition": "SEKAI转换"
         }
     },
@@ -189,6 +193,11 @@
             },
             "reapply-all": "重新套用所有参数",
             "idle": "闲置动画",
+            "texture": {
+                "header": "材质",
+                "get": "获取材质",
+                "swap": "交换材质"
+            },
             "import-export": {
                 "header": "导入/导出",
                 "description": "你可以保存对这个模型所做的调整，并把这些调整加载到其他的模型上，很方便，不是吗"
@@ -225,7 +234,10 @@
         "ko-fi-details": "捐款是个很好的选择！我也会在捐款网站那里发布我这个网站的更新",
         "github-details": "这个项目是完全开源的！你可以在Github上报告问题或打开拉取请求来做出贡献！",
         "special-thanks-header": "特别感谢",
-        "special-thanks-description": "我要在这里感谢Sekai Viewer的所有者允许我访问他们的模型!"
+        "special-thanks-contributors-header": "贡献者",
+        "special-thanks-contributors-description": "感谢那些贡献到这个项目的人！因为他们才有更多的功能和翻译被添加！",
+        "special-thanks-description": "我要在这里感谢Sekai Viewer的所有者允许我访问他们的模型!",
+        "donate": "捐赠"
     },
     "loadings": {
         "please-wait": "稍安勿躁，正在加载...",
@@ -271,6 +283,7 @@
     },
     "group": {
         "all": "全部",
+        "colors": "颜色",
         "bookmarks": "收藏",
         "general": "通用",
         "mmj": "MORE MORE JUMP!",
