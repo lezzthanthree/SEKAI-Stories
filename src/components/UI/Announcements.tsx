@@ -19,12 +19,6 @@ const Announcements: React.FC = () => {
         localStorage.setItem(announcementKey, `${Number(cookie) + 1}`);
     };
 
-    const mizookBirthday = new Date("08/27/2026");
-    const daysUntil = Math.ceil(
-        (mizookBirthday.getTime() - new Date().getTime()) /
-            (1000 * 60 * 60 * 24),
-    );
-
     return (
         <div id="announcements" onClick={handleAnnouncements}>
             <h2>Notice</h2>
@@ -32,31 +26,31 @@ const Announcements: React.FC = () => {
             <ul>
                 <li>
                     <div className="flex-vertical">
-                        <h2>Japanese Localization is now available!</h2>
+                        <h2>
+                            Getting and changing the texture of a Live2D
+                            character is now possible!
+                        </h2>
                         <p>
                             Thanks to{" "}
-                            <a
-                                href="https://github.com/BubblyVaporeon"
-                                target="_blank"
-                            >
-                                BubblyVaporeon
+                            <a href="https://github.com/00dani" target="_blank">
+                                Danielle McLean
                             </a>{" "}
-                            for their contribution!
+                            for her contribution!
+                        </p>
+                        <p>
+                            You can try this feature by going to the Live2D
+                            option.
                         </p>
                     </div>
                 </li>
                 <li className="margin-top-10">
-                    Updated models and backgrounds{" "}
-                    {daysUntil > 0 &&
-                        `(mizook birthday in ${daysUntil} ${
-                            daysUntil > 1 ? "days" : "day"
-                        }!)`}
+                    You can now upload your own backgrounds under Split!
                 </li>
                 <li>
-                    All costumes list now have unique names when selecting from
-                    sekai.best.
+                    Added a warning prompt when importing a scene with unsaved
+                    changes.
                 </li>
-                <li>Added a Background Blur Filter</li>
+                <li>Support window now includes the contributors.</li>
             </ul>
             <p>Tap this section to close.</p>
         </div>
