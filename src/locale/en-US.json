@@ -282,6 +282,7 @@
     },
     "group": {
         "all": "All",
+        "colors": "Colors",
         "bookmarks": "Bookmarks",
         "general": "General",
         "mmj": "MORE MORE JUMP!",

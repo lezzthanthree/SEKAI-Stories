@@ -1,13 +1,15 @@
 {
-    "update": "2026-08-19",
+    "update": "2026-08-31",
     "background": {
-        "general": [
+        "colors": [
             "bg_transparent",
             "bg_white",
             "bg_black",
             "bg_green",
             "bg_blue",
-            "bg_magenta",
+            "bg_magenta"
+        ],
+        "general": [
             "bg_a000101",
             "bg_a000102",
             "bg_a000104",
@@ -1351,7 +1353,9 @@
             "bg_s000628",
             "bg_s000629",
             "bg_s000630",
-            "bg_s000631"
+            "bg_s000631",
+            "bg_s000632",
+            "bg_s000633"
         ]
     }
 }

@@ -49,6 +49,30 @@ app = {
     "platform": None,
 }
 
+data = {
+    "update": str(datetime.datetime.now(datetime.timezone.utc).date()),
+    "background": {
+        "common": [
+            "bg_transparent",
+            "bg_white",
+            "bg_black",
+            "bg_green",
+            "bg_blue",
+            "bg_magenta",
+        ],
+        "general": [],
+        "mmj": [],
+        "vbs": [],
+        "wxs": [],
+        "n25": [],
+        "ln": [],
+        "vs": [],
+        "split": [],
+        "temp": [],
+        "cards": [],
+    },
+}
+
 
 def run(command, shell=True):
     print(f"\n>> {command}")
@@ -65,6 +89,41 @@ def copy_files(src_dir, dest_dir):
         if not os.path.exists(dest_file):
             print(f"Copying {file} to {dest_dir}")
             dest_file.write_bytes(src_file.read_bytes())
+
+
+def append_filename(filename, prefix):
+    if filename in [
+        "bg_transparent",
+        "bg_white",
+        "bg_black",
+        "bg_green",
+        "bg_blue",
+        "bg_magenta",
+    ]:
+        return
+    match prefix:
+        case "bg_a" if re.match(r"bg_a0000[0-9]{2}$", filename):
+            data["background"]["cards"].append(filename)
+        case "bg_a":
+            data["background"]["general"].append(filename)
+        case "bg_b":
+            data["background"]["mmj"].append(filename)
+        case "bg_c":
+            data["background"]["vbs"].append(filename)
+        case "bg_d":
+            data["background"]["wxs"].append(filename)
+        case "bg_e":
+            data["background"]["n25"].append(filename)
+        case "bg_f":
+            data["background"]["ln"].append(filename)
+        case "bg_g":
+            data["background"]["vs"].append(filename)
+        case "bg_h":
+            data["background"]["split"].append(filename)
+        case "bg_i":
+            data["background"]["temp"].append(filename)
+        case "bg_s":
+            data["background"]["cards"].append(filename)
 
 
 def ensure_sssekai():
@@ -112,14 +171,22 @@ def download_backgrounds():
     )
 
 
-def check_differences():
-    existing_backgrounds = set()
+def load_backgrounds_from_json():
+    if not Path(SEKAI_STORIES_JSON).exists():
+        print(f"{SEKAI_STORIES_JSON} does not exist. Creating a new one.")
+        with open(SEKAI_STORIES_JSON, "w") as f:
+            json.dump({"background": {}}, f, indent=4)
+
     with open(SEKAI_STORIES_JSON, "r") as f:
         json_data = json.load(f)
         background = json_data.get("background", {})
         for value in background.values():
             for bg in value:
-                existing_backgrounds.add(bg)
+                append_filename(bg, bg[:4])
+
+
+def check_differences():
+    existing_backgrounds = {bg for value in data["background"].values() for bg in value}
 
     updated_backgrounds = os.listdir(BUNDLES_DIR)
     updated_backgrounds = {
@@ -154,44 +221,30 @@ def copy_new_backgrounds(new_backgrounds):
 
 
 def convert_unity_to_img(new_backgrounds=None):
+    if not EXPORT_DIR.exists():
+        EXPORT_DIR.mkdir(parents=True)
+
+    if not TEXTURE_DIR.exists():
+        TEXTURE_DIR.mkdir(parents=True)
+
+    files_in_texture_dir = set(os.listdir(TEXTURE_DIR))
+
+    for file in files_in_texture_dir:
+        file_path = TEXTURE_DIR / file
+        if file_path.is_file():
+            file_path.unlink()
+
     cli_path = Path(ASSETSTUDIO_DIR) / "AssetStudio.CLI.exe"
     if not cli_path.exists():
         print(f"AssetStudio CLI not found at {cli_path}")
         sys.exit(1)
-    if not EXPORT_DIR.exists():
-        EXPORT_DIR.mkdir(parents=True)
 
     run(
         f'"{cli_path}" "{NEW_DIR if new_backgrounds else BUNDLES_DIR}" "{EXPORT_DIR}" --game ProjectSekai --unity_version "{UNITY_VERSION}"'
     )
 
 
-def convert_img_to_lowres(new_backgrounds=None, only_save_json=False):
-    if new_backgrounds is None:
-        new_backgrounds = []
-
-    data = {
-        "update": str(datetime.datetime.now().date()),
-        "background": {
-            "general": [
-                "bg_transparent",
-                "bg_white",
-                "bg_black",
-                "bg_green",
-                "bg_blue",
-                "bg_magenta",
-            ],
-            "mmj": [],
-            "vbs": [],
-            "wxs": [],
-            "n25": [],
-            "ln": [],
-            "vs": [],
-            "split": [],
-            "temp": [],
-            "cards": [],
-        },
-    }
+def convert_img_to_lowres( only_save_json=False):
 
     exported_backgrounds = sorted(os.listdir(f"./{TEXTURE_DIR}/"))
 
@@ -213,49 +266,22 @@ def convert_img_to_lowres(new_backgrounds=None, only_save_json=False):
             continue
 
         prefix = filename[:4]
-        match prefix:
-            case "bg_a" if re.match(r"bg_a0000[0-9]{2}$", filename):
-                data["background"]["cards"].append(filename)
-            case "bg_a":
-                data["background"]["general"].append(filename)
-            case "bg_b":
-                data["background"]["mmj"].append(filename)
-            case "bg_c":
-                data["background"]["vbs"].append(filename)
-            case "bg_d":
-                data["background"]["wxs"].append(filename)
-            case "bg_e":
-                data["background"]["n25"].append(filename)
-            case "bg_f":
-                data["background"]["ln"].append(filename)
-            case "bg_g":
-                data["background"]["vs"].append(filename)
-            case "bg_h":
-                data["background"]["split"].append(filename)
-            case "bg_i":
-                data["background"]["temp"].append(filename)
-            case "bg_s":
-                data["background"]["cards"].append(filename)
+        append_filename(filename, prefix)
 
         if only_save_json:
             continue
 
-        if filename in new_backgrounds:
-            print(f"Processing {background}")
+        print(f"Processing {background}")
 
-            compressed_path = os.path.join(BACKGROUND_DIR, f"{filename}.jpg")
-            preview_path = os.path.join(PREVIEW_DIR, f"{filename}.jpg")
-            input_path = os.path.join(TEXTURE_DIR, background)
-            run(
-                f'ffmpeg -hide_banner -loglevel error -n -i "{input_path}" -vf scale=300:-1 "{preview_path}" '
-            )
-            run(
-                f'ffmpeg -hide_banner -loglevel error -n -i "{input_path}" "{compressed_path}"'
-            )
-            run("cls")
-
-    with open("_background.json", "w") as f:
-        json.dump(data, f, indent=4)
+        compressed_path = os.path.join(BACKGROUND_DIR, f"{filename}.jpg")
+        preview_path = os.path.join(PREVIEW_DIR, f"{filename}.jpg")
+        input_path = os.path.join(TEXTURE_DIR, background)
+        run(
+            f'ffmpeg -hide_banner -loglevel error -n -i "{input_path}" -vf scale=300:-1 "{preview_path}" '
+        )
+        run(
+            f'ffmpeg -hide_banner -loglevel error -n -i "{input_path}" "{compressed_path}"'
+        )
 
 
 def copy_to_public():
@@ -270,21 +296,34 @@ def copy_to_public():
     copy_files(PREVIEW_DIR, PUBLIC_PREVIEW_DIR)
 
 
+def sort_and_save_json():
+    for key in data["background"]:
+        if key == "common":
+            continue
+        data["background"][key] = sorted(set(data["background"][key]))
+
+    with open("_background.json", "w") as f:
+        json.dump(data, f, indent=4)
+
+    os.replace("_background.json", SEKAI_STORIES_JSON)
+
+
 def main():
     if not Path(WORKSPACE).exists():
         print(f"Creating workspace directory at {WORKSPACE}")
         WORKSPACE.mkdir()
-    ensure_sssekai()
-    download_assetstudio()
-    get_app_hash()
-    prepare_abcache()
-    download_backgrounds()
+    # ensure_sssekai()
+    # download_assetstudio()
+    # get_app_hash()
+    # prepare_abcache()
+    # download_backgrounds()
+    load_backgrounds_from_json()
     new = check_differences()
     copy_new_backgrounds(new_backgrounds=new)
     convert_unity_to_img(new_backgrounds=new)
-    convert_img_to_lowres(new_backgrounds=new)
+    convert_img_to_lowres()
     copy_to_public()
-    os.replace("_background.json", SEKAI_STORIES_JSON)
+    sort_and_save_json()
 
 
 if __name__ == "__main__":
