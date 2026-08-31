@@ -464,6 +464,17 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             },
         },
     ],
+    mikudayo: [
+        {
+            background: "/background_compressed/bg_g000101.jpg",
+            text: "Guess whose birthday is it?",
+            nameTag: "Mikudayo",
+            modelX: 960,
+            modelY: 540,
+            pngName: "mikudayo",
+            sceneText: "???",
+        },
+    ],
     temporary: [
         {
             background: "/background_special/Background_Dojima.png",
@@ -499,6 +510,7 @@ export const CheckSceneCategory = (blank: boolean): string => {
         "3-9": "sankyuu",
         "7-27": "727",
         "8-27": "mizuki",
+        "8-31": "mikudayo",
         "10-3": "nomizu5",
     };
 
