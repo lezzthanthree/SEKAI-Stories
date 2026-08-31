@@ -1,6 +1,8 @@
 ![Screenshot)](./public/img/Title.png)
 
+<p align="center">
 A Dialogue Generator for making fan-made stories from the game [Project SEKAI COLORFUL STAGE!](https://colorfulstage.com/) (also known as Hatsune Miku: COLORFUL STAGE!).
+</p>
 
 ![Screenshot)](./public/img/Screenshot-3.png)
 
@@ -30,6 +32,11 @@ Huge thanks to our translators!
 [<img src="https://avatars.githubusercontent.com/u/109556338?v=4" width="50">](https://github.com/BubblyVaporeon)
 
 If you wish to contribute for your own language, you can check this [localization guide](./README-localization.md) to help you get started!
+
+### The Feature Contributors
+Huge thanks to our contributors for helping us add new features to the dialogue generator!
+
+[<img src="https://avatars.githubusercontent.com/u/610876?v=4" width="50">](https://github.com/00dani)
 
 ## Features
 ### Choose your background
@@ -84,6 +91,7 @@ If you think there's a problem on using the dialogue generator, please [submit a
 ## Relevant Links
 - [Project Sekai Stickers](https://st.ayaka.one/) by [TheOriginalAyaka](https://github.com/TheOriginalAyaka/sekai-stickers)
 - [SEKAI Viewer](https://sekai.best/) by [Sekai-World](https://github.com/Sekai-World/sekai-viewer)
+- [sssekai](https://github.com/mos9527/sssekai/) by [mos9527](https://github.com/mos9527)
 - [SIFAS Dialogue Sandbox](https://sifas-dialogue-sandbox.vercel.app/) by me!
 
 ## License
