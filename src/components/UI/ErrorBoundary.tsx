@@ -10,13 +10,13 @@ export function ErrorFallback({ error }: { error: Error }) {
     const settings = useContext(SettingsContext);
     if (!scene || !settings) throw new Error("Context not prepared.");
     const { sceneJson } = scene;
-    const { setAllowRefresh, showExperimental } = settings;
+    const { setUnsaved, showExperimental } = settings;
 
     useEffect(() => {
         localStorage.setItem("autoSave", JSON.stringify(sceneJson));
     }, [sceneJson]);
 
-    setAllowRefresh(true);
+    setUnsaved(true);
 
     const handleAutoSaveData = () => {
         const data = localStorage.getItem("autoSave");

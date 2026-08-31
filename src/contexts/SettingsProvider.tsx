@@ -36,7 +36,7 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
     const [nameTags, setNameTags] = useState<IEasyNameTag>({});
     const [nameTagInputs, setNameTagInputs] = useState<number>(2);
     const [easySwitch, setEasySwitch] = useState<boolean>(false);
-    const [allowRefresh, setAllowRefresh] = useState<boolean>(false);
+    const [unsaved, setUnsaved] = useState<boolean>(false);
     const [audio, setAudio] = useState<boolean>(false);
     const [startingBoxType, setStartingBoxType] = useState<
         "default" | "classic"
@@ -164,8 +164,8 @@ export const SettingsProvider: React.FC<SidebarProviderProps> = ({
                 setNameTags,
                 nameTagInputs,
                 setNameTagInputs,
-                allowRefresh,
-                setAllowRefresh,
+                unsaved,
+                setUnsaved,
                 audio,
                 setAudio,
                 startingBoxType,

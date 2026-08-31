@@ -18,7 +18,7 @@ const DownloadButton: React.FC = () => {
     }
 
     const { app, guideline, setGuideline, sceneJson } = scene;
-    const { setAllowRefresh, showSaveDialog, setLoading } = settings;
+    const { setUnsaved, showSaveDialog, setLoading } = settings;
     const { setErrorInformation } = error;
 
     const handleSave = async () => {
@@ -54,7 +54,7 @@ const DownloadButton: React.FC = () => {
 
             setLoading(100);
             localStorage.setItem("autoSave", JSON.stringify(sceneJson));
-            setAllowRefresh(true);
+            setUnsaved(false);
         } catch (err) {
             if (err instanceof Error) {
                 setErrorInformation(
