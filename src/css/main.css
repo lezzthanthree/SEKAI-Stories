@@ -71,9 +71,7 @@
 .app-ja select p {
   font-family: "FOT-RodinNTLGPro-DB", sans-serif;
 }
-.app-en #sidebar h3,
 .app-en #sidebar p,
-.app-ja #sidebar h3,
 .app-ja #sidebar p {
   font-family: "FOT-RodinNTLGPro-DB", sans-serif;
 }
@@ -1022,6 +1020,7 @@ select:disabled {
   max-width: 768px;
   max-height: 80dvh;
   overflow: visible;
+  animation: open_window 0.1s linear;
 }
 .window img {
   max-width: 80%;
@@ -1029,9 +1028,6 @@ select:disabled {
 .window .width-100 {
   width: 100%;
   max-width: 100%;
-}
-.window {
-  animation: open_window 0.1s linear;
 }
 
 .window.window_close {
