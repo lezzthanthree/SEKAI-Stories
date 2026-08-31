@@ -35,15 +35,16 @@ For creativity, you can translate the flavor texts or add your own at [`src/comp
 ## List of languages translated
 | Language               | Locale Code | Translator/s                          | Completeness  |
 |------------------------|-------------|---------------------------------------|---------------|
-| Spanish                | es-ES       | GatoMago                              | 86.61%        |
+| Spanish                | es-ES       | GatoMago                              | 77.46%        |
+| Japanese               | ja-JP       | BubblyVaporeon                        | 98.08 %       |
 | Filipino               | fil-PH      | lezzthanthree                         | 100.00%       | 
-| French                 | fr-FR       | 39Choko                               | 91.53%        | 
-| Malay                  | ms-MY       | fab144                                | 78.96%        | 
-| Polish                 | pl-PL       | counter185, KrajeQQ                   | 84.70%        |
-| Thai                   | th-TH       | aungpaos                              | 94.81%        |
+| French                 | fr-FR       | 39Choko                               | 80.34%        | 
+| Malay                  | ms-MY       | fab144                                | 69.30%        | 
+| Polish                 | pl-PL       | counter185, KrajeQQ                   | 74.34%        |
+| Thai                   | th-TH       | aungpaos                              | 97.36%        |
 | S. Chinese             | zh-CN       | MiddleRed, SteveLF, emptylight370     | 91.80%        |
-| T. Chinese (Hong Kong) | zh-HK       | lmaodick1239                          | 87.43%        |
-| T. Chinese (Taiwan)    | zh-TW       | lmaodick1239                          | 87.43%        |
+| T. Chinese (Hong Kong) | zh-HK       | lmaodick1239                          | 87.05%        |
+| T. Chinese (Taiwan)    | zh-TW       | lmaodick1239                          | 87.29%        |
 
 You can run the [`_check_missing.py`](./src/locale/_check_missing.py) Python script to check for missing keys in your translation. 
 

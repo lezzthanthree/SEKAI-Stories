@@ -16,8 +16,7 @@ def load_keys(json_data, parent_key=""):
 
 def main(locale: str):
     if locale.lower().endswith(".json"):
-        print("You don't need the .json extension, darling.")
-        return
+        locale = locale.strip(".json")
 
     en_json = "./en-US.json"
     with open(en_json, "r", encoding="utf-8") as f:
