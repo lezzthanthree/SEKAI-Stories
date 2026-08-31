@@ -64,7 +64,7 @@ const SettingsButton: React.FC = () => {
                             }}
                         >
                             <p>{"v" + packageJson.version}</p>
-                            {stillAlive > 5 && stillAlive < 39 && (
+                            {stillAlive > 2 && stillAlive < 39 && (
                                 <p>{39 - stillAlive} more...</p>
                             )}
                         </div>
