@@ -53,7 +53,17 @@
                 "zoom": "Zoom",
                 "povx": "X-Posisyon",
                 "povy": "Y-Posisyon"
-            }
+            },
+            "monochrome": "Monochrome",
+            "monochrome-settings": {
+                "contrast": "Kontrast"
+            },
+            "background-blur": "Labo sa Likuran",
+            "background-blur-settings": {
+                "bluriness": "Labo"
+            },
+            "sekai-transition": "Transisyon sa SEKAI",
+            "vignette": "Binyeta"
         }
     },
     "text": {
@@ -116,6 +126,8 @@
                 "sekai-description": "Kumuha ng mga modelo galing sa Sekai Viewer!",
                 "static": "Magdagdag ng modelo mula sa SEKAI Stories",
                 "static-description": "Backup na opsyon kung kasaling hindi gumagana ang Sekai Viewer.",
+                "roleplay-sprites": "Roleplay Sprites",
+                "roleplay-sprites-description": "Pumili sa inyong mga roleplay sprites",
                 "upload-image": "Mag-upload ng imahe",
                 "upload-image-description": "Mag-upload ng kustom na sprite."
             },
@@ -123,7 +135,19 @@
         },
         "character": {
             "header": "Karakter",
-            "select-character": "Pumili ng karakter"
+            "select-character": "Pumili ng karakter",
+            "roleplay": {
+                "new": "Bago",
+                "new-description": "Bigyan ng pangalan ang karakter.",
+                "delete-warn": "May sprites ang karakter na ito. Mawawala ito pag ipinagpatuloy!",
+                "no-sprite-warn": "Walang sprites ang karakter na it. Magdagdag ng bago."
+            }
+        },
+        "sprite": {
+            "header": "Sprite",
+            "select-sprite": "Select sprite",
+            "add-sprite": "Magdagdag ng sprite",
+            "add-sprite-description": "Bigyan ng pangalan ang sprite."
         },
         "costume": {
             "header": "Kasuotan",
@@ -147,7 +171,8 @@
             "scale": "Sukat",
             "rotation": "Rotasyon",
             "blur": "Labo",
-            "layering": "Layer Order"
+            "layering": "Layer Order",
+            "opacity": "Opacity"
         },
         "mouth": {
             "header": "Bibig",
@@ -167,6 +192,11 @@
                 "tooltip": "Puwede mong gamitin ang mga arrow keys upang pumili ng parameter at ayusin."
             },
             "idle": "Idle na animasyon",
+            "texture": {
+                "header": "Texture",
+                "get": "Kunin ang Texture",
+                "swap": "Palitan ang Texture"
+            },
             "import-export": {
                 "header": "Import/Export",
                 "description": "Ang mga ginawa mong pagbabago sa Live2D adjustments ay puwede mong i-save at i-load."
@@ -201,10 +231,13 @@
         "ko-fi-details": "Opsyonal ang mga donasyon! Dito rin ako nagbibigay ng mga updates para sa website!.",
         "github-details": "Ang proyektong ito ay open-source! Maaari kang mag-report ng issue o magpadala ng pull request para tumulong!",
         "special-thanks-header": "Espesyal na Pasasalamat",
+        "special-thanks-contributors-header": "Kontributors",
+        "special-thanks-contributors-description": "Maraming salamat sa mga nag-kotribute sa proyektong ito! Ang mga translations at mga features ay naririto dahil sakanila!",
         "special-thanks-description": "Lubos kong pinasasalamatan ang may-ari ng Sekai Viewer sa pagbibigay ng access sa kanilang mga modelo sa site na ito!",
         "report-details": "Kapag may nakita kang bug or glitch, paki-report ito sa aming GitHub Repository",
         "report-header": "Nakahanap ka ba ng bug?",
-        "report-button": "Mag-report ng issue"
+        "report-button": "Mag-report ng issue",
+        "donate": "Donasyon"
     },
     "loadings": {
         "please-wait": "Maghintay...",
@@ -250,6 +283,7 @@
     },
     "group": {
         "all": "Lahat",
+        "colors": "Kulay",
         "bookmarks": "Mga Bookmark",
         "general": "General",
         "mmj": "MORE MORE JUMP!",
@@ -303,7 +337,27 @@
         "default-scene-fail": "Nagkaroon ng error habang inaayos ang default scene.\nPaki click ang clear button, i-refresh ang browser, o i-clear ang cookies.\nKung ang problema ay hindi naresolba, paki-report ito sa GitHub..",
         "name-tag-inputs-limit": "Ang limit ay 2 to 6 na pangalan.",
         "background-bookmark": "Hindi puwede i-bookmark ang custom na likuran.",
-        "hide-everything-warning": "Ang \"Itago ang mga modelo at dayalogo\" na opsyon sa Eksena ay naka-enable.\nPaki disable itong opyson sa Text Menu."
+        "hide-everything-warning": "Ang \"Itago ang mga modelo at dayalogo\" na opsyon sa Eksena ay naka-enable.\nPaki disable itong opyson sa Text Menu.",
+        "character-name-empty": "Hindi pwedeng walang pangalan ang karakter.",
+        "character-name-invalid": "Bawal ang pangalang ito. Pumili ng iba.",
+        "character-name-exists": "May gumagamit na ng pangalang ito.",
+        "sprite-name-empty": "Hindi pwedeng walang pangalan ang sprite.",
+        "sprite-name-invalid": "Bawal ang pangalang ito. Pumili ng iba.",
+        "sprite-name-exists": "May gumagamit na ng pangalang ito.",
+        "nonexistent-character": "Walang ganitong karakter.",
+        "nonexistent-sprite": "Walang ganitong sprite.",
+        "low-opacity-visible": "Malapit sa zero ang opacity ng model. Sinasabi ko lang～"
+    },
+    "error-boundary": {
+        "unexpected": "May error na natagpuan.",
+        "inconvenience": "Pasensya na sa abala.",
+        "clear-cookies": "Paki-clear ang inyong cookies, i-refresh ang page, at subukang muli.",
+        "report-issue": "Kung patuloy ang error, paki-report ito sa GitHub.",
+        "automatic-save": "Awtomatikong na-save ang iyong gawa.",
+        "save-data": "Paki-save ito kung makakaya.",
+        "save-data-button": "I-save",
+        "report-issue-button": "I-report ang issue",
+        "copied-to-clipboard": "Nakopya ang traceback. Paki-lagay ito habang gumagawa ng report."
     },
     "mental-health": {
         "button": "Gusto ko ng tulong...",
@@ -322,6 +376,10 @@
             "paragraph-1": "Kung alam mo na paano gamitin ang application na ito, puwede mong isara ito.",
             "paragraph-2": "Puwede mo itong ulitn ang tutorial sa Settings.",
             "confirm-first-time": "Paki simulan"
+        },
+        "video": {
+            "header": "Puwede mong panoorin ang buong tutorial sa YouTube",
+            "youtube": "Tignan sa YouTube"
         },
         "menu-navigation": {
             "header": "Gamitin ito para lumipat sa mga menu!"
