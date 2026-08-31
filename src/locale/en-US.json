@@ -233,7 +233,10 @@
         "ko-fi-details": "Donations are optional! I will also be posting the website updates there as well.",
         "github-details": "This project is completely open-source! You can report issues or open a pull request to contribute!",
         "special-thanks-header": "Special Thanks",
-        "special-thanks-description": "I would like to thank the owner of Sekai Viewer for allowing me to access their models through this site!"
+        "special-thanks-contributors-header": "Contributors",
+        "special-thanks-contributors-description": "Thank you to the people who contributed on this project! More features and translations have been added because of them!",
+        "special-thanks-description": "I would like to thank the owner of Sekai Viewer for allowing me to access their models through this site!",
+        "donate": "Donate"
     },
     "loadings": {
         "please-wait": "Please wait...",

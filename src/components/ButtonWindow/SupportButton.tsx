@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Window from "../UI/Window";
+import { contributors } from "../../data/Constants";
 
 const SupportButton: React.FC = () => {
     const { t } = useTranslation();
@@ -17,7 +18,7 @@ const SupportButton: React.FC = () => {
             </button>
             {show && (
                 <Window show={setShow}>
-                    <div className="window__content">
+                    <div className="window__content gap-10">
                         <div className="window__divider">
                             <h1>{t("support.header")}</h1>
                             <div className="window__divider">
@@ -28,22 +29,12 @@ const SupportButton: React.FC = () => {
                                     onClick={() => {
                                         window.open(
                                             "https://github.com/lezzthanthree/SEKAI-Stories/issues",
-                                            "_blank"
+                                            "_blank",
                                         );
                                     }}
                                 >
                                     {t("support.report-button")}
                                 </button>
-                            </div>
-                            <div className="window__divider">
-                                <h2>Ko-fi</h2>
-                                <p>{t("support.ko-fi-details")}</p>
-                                <a
-                                    href="https://ko-fi.com/smiliepop"
-                                    target="_blank"
-                                >
-                                    <img src="/img/kofi.jpg" alt="ko-fi" />
-                                </a>
                             </div>
                             <div className="window__divider">
                                 <h2>GitHub</h2>
@@ -56,8 +47,36 @@ const SupportButton: React.FC = () => {
                                 </a>
                             </div>
                         </div>
+
                         <div className="window__divider">
                             <h1>{t("support.special-thanks-header")}</h1>
+                            <h2>
+                                {t(
+                                    "support.special-thanks-contributors-header",
+                                )}
+                            </h2>
+                            <p>
+                                {t(
+                                    "support.special-thanks-contributors-description",
+                                )}
+                            </p>
+                            <div className="window__divider flex flex-row items-center gap-10 flex-wrap">
+                                {contributors.map((contributor, idx) => (
+                                    <a
+                                        key={idx}
+                                        href={contributor.link}
+                                        target="_blank"
+                                        className="translators"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <img
+                                            src={contributor.img}
+                                            alt={`contributor ${idx + 1}`}
+                                        />
+                                    </a>
+                                ))}
+                            </div>
+                            <h2>Sekai Viewer</h2>
                             <p>{t("support.special-thanks-description")}</p>
                             <div className="window__divider">
                                 <a href="https://sekai.best" target="_blank">
@@ -65,6 +84,19 @@ const SupportButton: React.FC = () => {
                                         src="/img/sekai-viewer.png"
                                         alt="sekai-viewer"
                                     />
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h1>Donate</h1>
+                            <div className="window__divider">
+                                <h2>Ko-fi</h2>
+                                <p>{t("support.ko-fi-details")}</p>
+                                <a
+                                    href="https://ko-fi.com/smiliepop"
+                                    target="_blank"
+                                >
+                                    <img src="/img/kofi.jpg" alt="ko-fi" />
                                 </a>
                             </div>
                         </div>

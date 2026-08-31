@@ -1,6 +1,6 @@
 export const staticUrl = "/live2d";
 export const sekaiUrl = "https://storage.sekai.best/sekai-live2d-assets/live2d";
-export const announcementKey = "2026.08.22";
+export const announcementKey = "2026.08.31";
 export const textTypeYPositions = [
     [775, 845],
     [745, 825],
@@ -32,3 +32,54 @@ export const characterEasterEggs: Record<string, string> = {
     monokuma: "Let's give it everything we've got! It's PUNISHMENT TIME!",
     himiko: "Nyeh?",
 };
+
+export const contributors: { img: string; link: string }[] = [
+    {
+        img: "https://yt3.googleusercontent.com/bXEX1lrt2hFwcGYSGUuWDDYSd2VtHMJ-_-FnJMWzVRjcpQZMlpYeWe7MSCI9kszUAbydBSN5=s120-c-k-c0x00ffffff-no-rj",
+        link: "https://www.youtube.com/@GatoMagoMusic",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/132699819?v=4",
+        link: "https://github.com/733402",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/109556338?v=4",
+        link: "https://github.com/BubblyVaporeon",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/98752512?v=4",
+        link: "https://github.com/MiddleRed",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/182323592?v=4",
+        link: "https://github.com/SteveLF-bili",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/61617417?v=4",
+        link: "https://github.com/emptylight370",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/58261459?v=4",
+        link: "https://github.com/fab144",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/33550839?v=4",
+        link: "https://github.com/counter185",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/77572452?v=4",
+        link: "https://github.com/KrajeQQ",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/117494034?v=4",
+        link: "https://github.com/aungpaos",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/59890180?v=4",
+        link: "https://github.com/39Choko",
+    },
+    {
+        img: "https://avatars.githubusercontent.com/u/610876?v=4",
+        link: "https://github.com/00dani",
+    },
+];

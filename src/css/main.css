@@ -687,6 +687,10 @@ select:disabled {
   }
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 #content {
   padding: 25px;
   box-sizing: border-box;
