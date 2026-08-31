@@ -13,8 +13,10 @@ const Select: React.FC = () => {
 
     const { background, setBackground, splitBackground, setSplitBackground } =
         scene;
-    if (!background || !background.backgroundContainer)
+
+    if (!background || !background.backgroundContainer || !splitBackground)
         return <p>{t("loadings.please-wait")}</p>;
+
     const handleUploadImage = async (file: File) => {
         const imgSrc = URL.createObjectURL(file);
         const backgroundImage = await getBackground(imgSrc).catch();
@@ -25,6 +27,30 @@ const Select: React.FC = () => {
                 ...background,
                 filename: imgSrc,
                 upload: true,
+            });
+        }
+    };
+
+    const handleSplitUploadImage = async (
+        file: File,
+        selected: "first" | "second",
+    ) => {
+        const imgSrc = URL.createObjectURL(file);
+        const backgroundImage = await getBackground(imgSrc).catch();
+        const splitBackgroundSelected = splitBackground[selected];
+        splitBackgroundSelected.backgroundContainer.removeChildAt(0);
+        splitBackgroundSelected.backgroundContainer.addChildAt(
+            backgroundImage,
+            0,
+        );
+        if (splitBackgroundSelected?.backgroundContainer) {
+            setSplitBackground({
+                ...splitBackground,
+                [selected]: {
+                    ...splitBackgroundSelected,
+                    filename: imgSrc,
+                    upload: true,
+                },
             });
         }
     };
@@ -59,6 +85,14 @@ const Select: React.FC = () => {
                             });
                         }}
                     />
+                    <UploadImageButton
+                        id="background-upload"
+                        uploadFunction={(file: File) => {
+                            handleSplitUploadImage(file, "first");
+                        }}
+                        text={t("background.select.upload")}
+                        alertMsg={t("background.select.upload-info")}
+                    />
                     <BackgroundPicker
                         background={splitBackground.second}
                         setFunction={(bg) => {
@@ -70,6 +104,14 @@ const Select: React.FC = () => {
                                 },
                             });
                         }}
+                    />
+                    <UploadImageButton
+                        id="background-upload"
+                        uploadFunction={(file: File) => {
+                            handleSplitUploadImage(file, "second");
+                        }}
+                        text={t("background.select.upload")}
+                        alertMsg={t("background.select.upload-info")}
                     />
                 </>
             ) : (
