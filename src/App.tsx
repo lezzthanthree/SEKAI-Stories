@@ -32,7 +32,7 @@ function App() {
     if (!settings) {
         throw new Error("Context is not loaded properly.");
     }
-    const { hide, showAnnouncements, allowRefresh, setAllowRefresh } = settings;
+    const { hide, showAnnouncements, unsaved, setUnsaved } = settings;
 
     const { i18n } = useTranslation();
     const lang = i18n.language;
@@ -43,17 +43,19 @@ function App() {
     }, [sceneJson]);
 
     useEffect(() => {
-        if (!allowRefresh) {
+        if (unsaved) {
             window.onbeforeunload = (e) => {
                 e.preventDefault();
             };
+            document.title = "(Unsaved) SEKAI Stories";
         } else {
             window.onbeforeunload = null;
+            document.title = "SEKAI Stories";
         }
         return () => {
             window.onbeforeunload = null;
         };
-    }, [allowRefresh]);
+    }, [unsaved]);
 
     useEffect(() => {
         const handleButtonClick = (e: MouseEvent) => {
@@ -125,7 +127,7 @@ function App() {
             choicesText: currentChoicesText,
             models: currentModels,
         });
-        setAllowRefresh(false);
+        setUnsaved(true);
     }, [
         background,
         splitBackground,
