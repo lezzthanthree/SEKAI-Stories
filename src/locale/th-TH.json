@@ -59,6 +59,10 @@
                 "povx": "ตำแหน่ง X",
                 "povy": "ตำแหน่ง Y"
             },
+            "background-blur": "พื้นหลังเบลอ",
+            "background-blur-settings": {
+                "bluriness": "ความเบลอ"
+            },
             "sekai-transition": "SEKAI แทรนซิชัน"
         }
     },
@@ -188,6 +192,11 @@
             },
             "reapply-all": "ปรับซ้ำทั้งหมด",
             "idle": "แอนิเมชันท่ายืน",
+            "texture": {
+                "header": "เท็กซ์เจอร์",
+                "get": "รับเท็กซ์เจอร์",
+                "swap": "เปลี่ยนเท็กซ์เจอร์"
+            },
             "import-export": {
                 "header": "นำเข้า/ส่งออก",
                 "description": "คุณสามารถบันทึกการปรับแต่งที่คุณทำและโหลดไปยังโมเดลอื่นได้"
@@ -224,7 +233,10 @@
         "ko-fi-details": "การบริจาคเป็นทางเลือก! ฉันจะโพสต์อัปเดตเว็บไซต์ที่นั่นด้วยเช่นกัน",
         "github-details": "โครงการนี้เป็นโอเพนซอร์สอย่างสมบูรณ์! คุณสามารถรายงานปัญหาหรือเปิดคำขอ Pull Request เพื่อร่วมแบ่งปันได้!",
         "special-thanks-header": "ขอขอบคุณเป็นพิเศษ",
-        "special-thanks-description": "เราขอขอบคุณเจ้าของ Sekai Viewer ที่อนุญาตให้เข้าถึงโมเดลของพวกเขาผ่านเว็บไซต์นี้!"
+        "special-thanks-contributors-header": "ผู้มีส่วนร่วม",
+        "special-thanks-contributors-description": "ขอขอบคุณทุกคนที่มีส่วนร่วมในโครงการนี้! เพราะทุกคน, จึงได้มีฟีเจอร์และคำแปลต่างๆ เข้ามามากมาย!",
+        "special-thanks-description": "ขอขอบคุณ Sekai Viewer ที่อนุญาตให้เข้าถึงโมเดลของพวกเขาผ่านเว็บไซต์นี้!",
+        "donate": "โดเนท"
     },
     "loadings": {
         "please-wait": "โปรดรอ...",
@@ -270,6 +282,7 @@
     },
     "group": {
         "all": "ทั้งหมด",
+        "colors": "สี",
         "bookmarks": "บุ๊กมาร์ก",
         "general": "ทั้วไป",
         "mmj": "MORE MORE JUMP!",
