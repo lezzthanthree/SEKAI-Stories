@@ -37,6 +37,7 @@ export const loadScene = async (
         setModels,
         setLayers,
         setNextLayer,
+        setCurrentKey,
     } = scene;
 
     setLoading(0);
@@ -297,5 +298,6 @@ export const loadScene = async (
     setLayers(Object.keys(modelTextures).length);
     setNextLayer(Object.keys(modelTextures).length);
     setLoadingMsg("");
+    setCurrentKey("character1");
     setLoading(100);
 };
