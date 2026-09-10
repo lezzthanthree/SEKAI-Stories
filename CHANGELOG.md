@@ -1,3 +1,10 @@
+# 2026.09.10
+- Fixed issue on importing a scene that causes Model sidebar to malfunction
+- Remove custom split background on import json
+- Hide the sidebar when importing or loading a scene
+- Updated background and model list
+- Fixed local on import prompt when the scene is unsaved  
+
 # 2026.08.31
 - Allow getting and swapping textures of Live2D
 - Allow upload image on Split Background
