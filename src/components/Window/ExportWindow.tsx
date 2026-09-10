@@ -161,8 +161,7 @@ const ExportWindow: React.FC<ExportWindowProps> = ({ setShow }) => {
                     <div className="window__content">
                         <div className="window__divider center">
                             <h3 className="text-center">
-                                You have unsaved changes to your story.
-                                Do you wish to continue?
+                                {t("import-export.import-prompt")}
                             </h3>
                         </div>
                         <div className="windown__divider center"></div>

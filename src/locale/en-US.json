@@ -317,7 +317,8 @@
     },
     "import-export": {
         "header": "Import/Export",
-        "description": "Custom backgrounds and sprites are not included in this SEKAISCENE file."
+        "description": "Custom backgrounds and sprites are not included in this SEKAISCENE file.",
+        "import-prompt": "You have unsaved changes to your story. Do you wish to continue?"
     },
     "save": {
         "header": "Save",
