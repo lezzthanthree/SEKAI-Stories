@@ -62,7 +62,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         undefined,
     );
     const [reset, setReset] = useState<number>(0);
-    const [startingMessage, setStartingMessage] = useState<string>("");
+    const [loadingMessage, setLoadingMessage] = useState<string>("");
     const [sceneJson, setSceneJson] = useState<IJsonSave | undefined>(
         undefined,
     );
@@ -87,7 +87,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         } = await LoadScene({
             app,
             startingBoxType,
-            setStartingMessage,
+            setLoadingMessage,
             setLoading,
             blankCanvas,
         });
@@ -104,7 +104,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         setSceneText(sceneText);
         setFilter(filter);
         setGuideline(guideline);
-        setStartingMessage("");
+        setLoadingMessage("");
         setLighting(lighting);
         setLayers(1);
         setInitialState(true);
@@ -117,7 +117,7 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
         }
         runCanvas().catch((error) => {
             setErrorInformation(t("error.default-scene-fail"));
-            setStartingMessage(t("error.default-scene-fail"));
+            setLoadingMessage(t("error.default-scene-fail"));
             setLoading(100);
             console.error(error);
         });
@@ -160,8 +160,8 @@ export const SceneProvider: React.FC<SceneProviderProps> = ({ children }) => {
                 setGuideline,
                 reset,
                 setReset,
-                startingMessage,
-                setStartingMessage,
+                loadingMessage,
+                setLoadingMessage,
                 initialState,
                 setInitialState,
             }}

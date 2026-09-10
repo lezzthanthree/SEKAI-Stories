@@ -30,7 +30,7 @@ import {
 interface GetDefaultSceneProps {
     app: PIXI.Application | undefined;
     startingBoxType: "default" | "classic";
-    setStartingMessage: Dispatch<SetStateAction<string>>;
+    setLoadingMessage: Dispatch<SetStateAction<string>>;
     setLoading: Dispatch<SetStateAction<number>>;
     blankCanvas: boolean;
 }
@@ -432,7 +432,7 @@ const LoadGuideline = async (
 export const LoadScene = async ({
     app,
     startingBoxType,
-    setStartingMessage,
+    setLoadingMessage,
     setLoading,
     blankCanvas,
 }: GetDefaultSceneProps) => {
@@ -469,7 +469,7 @@ export const LoadScene = async ({
 
     setLoading(30);
     // Load Background
-    setStartingMessage("Adding background...");
+    setLoadingMessage("Adding background...");
     const background = await LoadBackground(
         filterContainer,
         0,
@@ -478,12 +478,12 @@ export const LoadScene = async ({
 
     setLoading(40);
     // Load Split Background
-    setStartingMessage("Adding split background...");
+    setLoadingMessage("Adding split background...");
     const splitBackground = await LoadSplitBackground(filterContainer, 1);
 
     setLoading(50);
     // Load Sample PNG Sprite
-    setStartingMessage("Adding sample model...");
+    setLoadingMessage("Adding sample model...");
     const { model, modelWrapper, lighting } = await LoadModel(
         filterContainer,
         2,
@@ -495,7 +495,7 @@ export const LoadScene = async ({
 
     setLoading(60);
     // Load Text
-    setStartingMessage("Adding dialogue text...");
+    setLoadingMessage("Adding dialogue text...");
     const text = await LoadText(
         initApplication,
         1,
@@ -506,7 +506,7 @@ export const LoadScene = async ({
 
     // Load Choices Text
     setLoading(70);
-    setStartingMessage("Adding choices text...");
+    setLoadingMessage("Adding choices text...");
     const choicesText = await LoadChoicesText(
         initApplication,
         2,
@@ -517,7 +517,7 @@ export const LoadScene = async ({
 
     // Load Scene Setting Text
     setLoading(80);
-    setStartingMessage("Adding scene text...");
+    setLoadingMessage("Adding scene text...");
     const sceneText = await LoadSceneText(
         initApplication,
         3,
@@ -529,7 +529,7 @@ export const LoadScene = async ({
 
     setLoading(90);
     // Load Guideline Tools
-    setStartingMessage("Adding guidelines...");
+    setLoadingMessage("Adding guidelines...");
     const guideline = await LoadGuideline(initApplication, 4);
 
     setLoading(100);

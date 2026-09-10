@@ -12,7 +12,7 @@ interface ExportWindowProps {
 }
 
 const ExportWindow: React.FC<ExportWindowProps> = ({ setShow }) => {
-    const [loadingMsg, setLoadingMsg] = useState<string>("");
+    const [loadingMsg, setLoadingImportWindowMessage] = useState<string>("");
     const [importedFile, setImportedFile] = useState<File>();
     const [unsavedWindow, setUnsavedWindow] = useState<boolean>(false);
     const scene = useContext(SceneContext);
@@ -24,7 +24,14 @@ const ExportWindow: React.FC<ExportWindowProps> = ({ setShow }) => {
     if (!scene || !settings || !softError)
         throw new Error("Context not prepared.");
 
-    const { models, sceneJson, reset, setReset, setSceneJson } = scene;
+    const {
+        models,
+        sceneJson,
+        reset,
+        setReset,
+        setSceneJson,
+        setLoadingMessage,
+    } = scene;
     const { setUnsaved, setLoading, unsaved } = settings;
     const { setErrorInformation } = softError;
 
@@ -88,7 +95,7 @@ const ExportWindow: React.FC<ExportWindowProps> = ({ setShow }) => {
                         await loadScene(
                             data,
                             setLoading,
-                            setLoadingMsg,
+                            setLoadingImportWindowMessage,
                             setErrorInformation,
                             scene,
                         );
@@ -104,8 +111,10 @@ const ExportWindow: React.FC<ExportWindowProps> = ({ setShow }) => {
                     );
                     console.error("Error loading scene:", error);
                     setReset(reset + 1);
+                } finally {
                     setLoading(100);
-                    setLoadingMsg("");
+                    setLoadingImportWindowMessage("");
+                    setLoadingMessage("");
                 }
             }
         };

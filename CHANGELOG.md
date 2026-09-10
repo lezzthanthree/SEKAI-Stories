@@ -1,3 +1,9 @@
+# 2026.08.31
+- Allow getting and swapping textures of Live2D
+- Allow upload image on Split Background
+- Added a warning unsaved prompt when importing a scene
+- Added contributors on the Support window
+
 # 2026.08.22
 - Changed name on selection of costumes
 - Added background blur

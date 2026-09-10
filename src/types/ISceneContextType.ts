@@ -45,8 +45,8 @@ export default interface ISceneContextType {
     setGuideline: Dispatch<SetStateAction<IGuideline | undefined>>;
     reset: number;
     setReset: Dispatch<SetStateAction<number>>;
-    startingMessage: string;
-    setStartingMessage: Dispatch<SetStateAction<string>>;
+    loadingMessage: string;
+    setLoadingMessage: Dispatch<SetStateAction<string>>;
     initialState: boolean;
     setInitialState: Dispatch<SetStateAction<boolean>>;
 }

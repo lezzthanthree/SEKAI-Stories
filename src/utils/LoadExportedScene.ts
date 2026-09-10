@@ -14,7 +14,7 @@ import { Dispatch, SetStateAction } from "react";
 export const loadScene = async (
     data: IJsonSave,
     setLoading: Dispatch<SetStateAction<number>>,
-    setLoadingMsg: Dispatch<SetStateAction<string>>,
+    setLoadingImportWindowMessage: Dispatch<SetStateAction<string>>,
     setErrorInformation: Dispatch<SetStateAction<string>>,
     scene: ISceneContextType | undefined,
 ) => {
@@ -37,11 +37,13 @@ export const loadScene = async (
         setModels,
         setLayers,
         setNextLayer,
+        setLoadingMessage,
         setCurrentKey,
     } = scene;
 
     setLoading(0);
-    setLoadingMsg("Fetching background...");
+    setLoadingImportWindowMessage("Fetching background...");
+    setLoadingMessage("Fetching background...");
     const backgroundData = data.background;
     setLoading(5);
     const backgroundSprite = await getBackground(backgroundData);
@@ -73,7 +75,8 @@ export const loadScene = async (
           };
 
     setLoading(20);
-    setLoadingMsg("Fetching text...");
+    setLoadingImportWindowMessage("Fetching text...");
+    setLoadingMessage("Fetching text...");
     const textNameTagData = data.text.nameTag;
     const textDialogueData = data.text.dialogue;
 
@@ -90,11 +93,14 @@ export const loadScene = async (
     modelWrapper?.removeChildren();
 
     for (const [idx, model] of modelJsonData.entries()) {
+        setLoadingImportWindowMessage(
+            `Loading model ${idx + 1} of ${modelJsonData.length}...`,
+        );
         const [live2DModel, modelData, modelName] = await loadModel(
             model.modelName,
             model.from,
             model.character,
-            setLoadingMsg,
+            setLoadingMessage,
             setErrorInformation,
             setLoading,
             (x) => {
@@ -297,7 +303,6 @@ export const loadScene = async (
     setModels(modelTextures);
     setLayers(Object.keys(modelTextures).length);
     setNextLayer(Object.keys(modelTextures).length);
-    setLoadingMsg("");
     setCurrentKey("character1");
     setLoading(100);
 };

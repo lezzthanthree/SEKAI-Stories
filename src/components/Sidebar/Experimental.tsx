@@ -23,6 +23,7 @@ const Experimental: React.FC = () => {
     const [crash, setCrash] = useState(false);
 
     if (!scene || !softError || !settings) throw new Error("Context not found");
+    const { loadingMessage, setLoadingMessage } = scene;
     const { setErrorInformation } = softError;
     const { loading, setLoading } = settings;
     const [number, setNumber] = useState(0);
@@ -173,6 +174,16 @@ const Experimental: React.FC = () => {
                     value={loading}
                     onChange={(e) => {
                         setLoading(Number(e.target.value));
+                    }}
+                />
+                <p>Sidebar Loading Message</p>
+                <input
+                    type="text"
+                    name="loading"
+                    id="loading"
+                    value={loadingMessage}
+                    onChange={(e) => {
+                        setLoadingMessage(e.target.value);
                     }}
                 />
             </div>
