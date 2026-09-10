@@ -16,12 +16,16 @@ export const makeSceneJson = (
     lighting: ILighting,
 ) => {
     const modifiedDateStamp = new Date().toISOString();
-    const currentBackground = !background?.upload
-        ? background?.filename
-        : "/img/Background_Between_Worlds.jpg";
+    const currentBackground = background?.upload
+        ? "/img/Background_Between_Worlds.jpg"
+        : background?.filename;
     const currentSplitBackground = {
-        first: splitBackground.first.filename,
-        second: splitBackground.second.filename,
+        first: splitBackground.first.upload
+            ? "/img/Background_Between_Worlds.jpg"
+            : splitBackground.first.filename,
+        second: splitBackground.second.upload
+            ? "/img/Background_Between_Worlds.jpg"
+            : splitBackground.second.filename,
     };
     const currentLighting = lighting
         ? lighting

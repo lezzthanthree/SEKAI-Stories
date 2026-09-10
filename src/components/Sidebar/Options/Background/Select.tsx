@@ -81,6 +81,7 @@ const Select: React.FC = () => {
                                 first: {
                                     ...splitBackground.first,
                                     filename: bg,
+                                    upload: false,
                                 },
                             });
                         }}
@@ -101,6 +102,7 @@ const Select: React.FC = () => {
                                 second: {
                                     ...splitBackground.second,
                                     filename: bg,
+                                    upload: false,
                                 },
                             });
                         }}
@@ -122,6 +124,7 @@ const Select: React.FC = () => {
                             setBackground({
                                 ...background,
                                 filename: bg,
+                                upload: false,
                             });
                         }}
                     />
