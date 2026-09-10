@@ -4397,6 +4397,12 @@
             "modelFile": "sub_rivaltwins_cedric_t07.model3.json"
         },
         {
+            "modelName": "sub_rivaltwins_cedric_t09",
+            "modelBase": "sub_rivaltwins_cedric",
+            "modelPath": "v1/sub/sub_rivaltwins_cedric",
+            "modelFile": "sub_rivaltwins_cedric_t09.model3.json"
+        },
+        {
             "modelName": "sub_rivaltwins_cedric02_t01",
             "modelBase": "sub_rivaltwins_cedric02",
             "modelPath": "v1/sub/sub_rivaltwins_cedric02",
@@ -4407,6 +4413,12 @@
             "modelBase": "sub_rivaltwins_slade",
             "modelPath": "v1/sub/sub_rivaltwins_slade",
             "modelFile": "sub_rivaltwins_slade_t05.model3.json"
+        },
+        {
+            "modelName": "sub_rivaltwins_slade_t06",
+            "modelBase": "sub_rivaltwins_slade",
+            "modelPath": "v1/sub/sub_rivaltwins_slade",
+            "modelFile": "sub_rivaltwins_slade_t06.model3.json"
         },
         {
             "modelName": "sub_ruichild_t06",

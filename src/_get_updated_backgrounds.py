@@ -52,7 +52,7 @@ app = {
 data = {
     "update": str(datetime.datetime.now(datetime.timezone.utc).date()),
     "background": {
-        "common": [
+        "colors": [
             "bg_transparent",
             "bg_white",
             "bg_black",
@@ -298,7 +298,7 @@ def copy_to_public():
 
 def sort_and_save_json():
     for key in data["background"]:
-        if key == "common":
+        if key == "colors":
             continue
         data["background"][key] = sorted(set(data["background"][key]))
 
@@ -312,11 +312,11 @@ def main():
     if not Path(WORKSPACE).exists():
         print(f"Creating workspace directory at {WORKSPACE}")
         WORKSPACE.mkdir()
-    # ensure_sssekai()
-    # download_assetstudio()
-    # get_app_hash()
-    # prepare_abcache()
-    # download_backgrounds()
+    ensure_sssekai()
+    download_assetstudio()
+    get_app_hash()
+    prepare_abcache()
+    download_backgrounds()
     load_backgrounds_from_json()
     new = check_differences()
     copy_new_backgrounds(new_backgrounds=new)

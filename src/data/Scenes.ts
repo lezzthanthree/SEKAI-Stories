@@ -475,7 +475,7 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             sceneText: "???",
         },
     ],
-    temporary: [
+    persona4: [
         {
             background: "/background_special/Background_Dojima.png",
             text: "Every day's great at your Junes!",
@@ -495,6 +495,15 @@ export const randomInitialScene: Record<string, InitialScene[]> = {
             sceneText: "3:00 AM",
             sceneTextVariant: "topLeft",
             sceneTextEnabled: true,
+        },
+        {
+            background: "/background_special/Background_Other_Kamiyama.png",
+            text: "I am a shadow of your true inner self.",
+            nameTag: "Mizuki?",
+            modelX: 960,
+            modelY: 545,
+            pngName: "mizuki_shadow",
+            sceneText: "Kamiyama High School Rooftop?",
         },
     ],
 };
