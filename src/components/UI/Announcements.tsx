@@ -21,37 +21,9 @@ const Announcements: React.FC = () => {
 
     return (
         <div id="announcements" onClick={handleAnnouncements}>
-            <h2>Notice</h2>
-            <p>Few updates have been made!</p>
-            <ul>
-                <li>
-                    <div className="flex-vertical">
-                        <h2>
-                            Getting and changing the texture of a Live2D
-                            character is now possible!
-                        </h2>
-                        <p>
-                            Thanks to{" "}
-                            <a href="https://github.com/00dani" target="_blank">
-                                Danielle McLean
-                            </a>{" "}
-                            for her contribution!
-                        </p>
-                        <p>
-                            You can try this feature by going to the Live2D
-                            option.
-                        </p>
-                    </div>
-                </li>
-                <li className="margin-top-10">
-                    You can now upload your own backgrounds under Split!
-                </li>
-                <li>
-                    Added a warning prompt when importing a scene with unsaved
-                    changes.
-                </li>
-                <li>Support window now includes the contributors.</li>
-            </ul>
+            <h2>lmao</h2>
+            <p>nvm guys, this government is playing jokes with us.</p>
+            <p>discord ban is lifted.</p>
             <p>Tap this section to close.</p>
         </div>
     );
