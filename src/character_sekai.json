@@ -2461,6 +2461,12 @@
             "modelFile": "19ena_jc_t04.model3.json"
         },
         {
+            "modelName": "19ena_jc_cloth_t01",
+            "modelBase": "19ena_jc_cloth",
+            "modelPath": "v1/main/19_ena/19ena_jc_cloth",
+            "modelFile": "19ena_jc_cloth_t01.model3.json"
+        },
+        {
             "modelName": "19ena_normal_3.0_f_t05",
             "modelBase": "19ena_normal",
             "modelPath": "v1/main/19_ena/19ena_normal",
@@ -4743,6 +4749,12 @@
             "modelBase": "v2_sub_child_saki",
             "modelPath": "v2/sub/v2_sub_child_saki",
             "modelFile": "sub_sakichild02_t08.model3.json"
+        },
+        {
+            "modelName": "sub_sakichild02_t09",
+            "modelBase": "v2_sub_child_saki",
+            "modelPath": "v2/sub/v2_sub_child_saki",
+            "modelFile": "sub_sakichild02_t09.model3.json"
         },
         {
             "modelName": "v2_sub_child10_shizuku_t04",
