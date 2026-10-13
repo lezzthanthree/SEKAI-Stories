@@ -70,6 +70,10 @@ const randomText = {
         "Baby, do you know what you wanna hear? 'Cause you can say the word, make it oh so clear.",
         "じゃ！",
         "Burn Your Dread.",
+        "When you're rife with devastation, there's a single explaination.",
+        "You're a toymaker's creation trapped inside a crystal ball.",
+        "Three months of winter coldness and awesome holidays",
+        "Starlight Glimmer.",
         "It's a amazing!",
         "This was a triumph.",
         "Bonds of people is the true power.",
@@ -218,7 +222,7 @@ const FlavorText: React.FC = () => {
 export default FlavorText;
 
 /* 
-    LAST UPDATE: 08/03/2026
+    LAST UPDATE: 10/13/2026
     Will not list the obvious PJSK references.
     Placed here for people who needs explaination when translating.
 
@@ -283,6 +287,14 @@ export default FlavorText;
         -> Portal Song Reference: "Still Alive"
     "Bonds of people is the true power.",
         -> Persona 4 Song Reference: "Beauty of Destiny"
+    "When you're rife with devastation, there's a single explaination.",
+    "You're a toymaker's creation trapped inside a crystal ball.",
+        -> Friendship is Witchcraft Song Reference: "Gypsy Bard"
+        -> lezzthanthree is a part of MLP Fandom since 2017
+    "Three months of winter coldness and awesome holidays",
+        -> My Little Pony Song Reference: "Winter Wrap Up"
+    "Starlight Glimmer.",
+        -> lezzthanthree's favorite character from MLP
     "Meet SEKAI Stories's cousin SIFAS Dialogue Sandbox!"
         -> lezzthanthree's Love Live! SIFAS Story Generator
     "11037"
