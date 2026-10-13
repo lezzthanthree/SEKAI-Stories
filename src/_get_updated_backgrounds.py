@@ -14,6 +14,7 @@ import requests
 
 ASSETSTUDIO_URL = "https://github.com/RazTools/Studio/releases/download/v1.36.00/net8.0-e1d7f5301aa015a3386e245312205969f763c9ae.zip"
 APP_HASH_URL = "https://raw.githubusercontent.com/YangTheParrot/sekai-apphash/refs/heads/master/jp/apphash.json"
+SSSEKAI_URL = "https://github.com/lezzthanthree/sssekai"
 UNITY_VERSION = "2022.3.21f1"
 DB_PATH = Path.home() / ".sssekai/abcache.db"
 BACKGROUND_REGEX = r"bg_[a-is][0-9]{6}$"
@@ -40,6 +41,7 @@ PUBLIC_DIR = Path("../public")
 PUBLIC_BACKGROUND_DIR = PUBLIC_DIR / "background_compressed"
 PUBLIC_PREVIEW_DIR = PUBLIC_DIR / "background_low_jpg"
 
+IS_LINUX = sys.platform.startswith("linux")
 
 app = {
     "hash": None,
@@ -127,7 +129,7 @@ def append_filename(filename, prefix):
 
 
 def ensure_sssekai():
-    run("pip install -U sssekai")
+    run(f"pip install -U git+{SSSEKAI_URL}")
 
 
 def download_assetstudio():
@@ -239,12 +241,17 @@ def convert_unity_to_img(new_backgrounds=None):
         print(f"AssetStudio CLI not found at {cli_path}")
         sys.exit(1)
 
-    run(
-        f'"{cli_path}" "{NEW_DIR if new_backgrounds else BUNDLES_DIR}" "{EXPORT_DIR}" --game ProjectSekai --unity_version "{UNITY_VERSION}"'
-    )
+    if IS_LINUX:
+        run(
+            f'env WINEPREFIX={Path.home()}.wine_dotnet8 wine "{cli_path}" "{NEW_DIR if new_backgrounds else BUNDLES_DIR}" "{EXPORT_DIR}" --game ProjectSekai --unity_version "{UNITY_VERSION}"'
+        )
+    else:
+        run(
+            f'"{cli_path}" "{NEW_DIR if new_backgrounds else BUNDLES_DIR}" "{EXPORT_DIR}" --game ProjectSekai --unity_version "{UNITY_VERSION}"'
+        )
 
 
-def convert_img_to_lowres( only_save_json=False):
+def convert_img_to_lowres(only_save_json=False):
 
     exported_backgrounds = sorted(os.listdir(f"./{TEXTURE_DIR}/"))
 

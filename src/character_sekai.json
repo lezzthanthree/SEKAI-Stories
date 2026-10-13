@@ -3249,6 +3249,12 @@
             "modelFile": "23len_wonder_3.0_f_t03.model3.json"
         },
         {
+            "modelName": "23len_wonder_3.0_f_t05",
+            "modelBase": "23len_wonder",
+            "modelPath": "v1/main/23_len/23len_wonder",
+            "modelFile": "23len_wonder_3.0_f_t05.model3.json"
+        },
+        {
             "modelName": "23len_wonder_3.0_f_t05_black",
             "modelBase": "23len_wonderblack",
             "modelPath": "v1/main/23_len/23len_wonderblack",
@@ -3349,6 +3355,12 @@
             "modelBase": "v2_23len_wonder",
             "modelPath": "v2/main/23_len/v2_23len_wonder",
             "modelFile": "23len_wonder_3.0_f_t04.model3.json"
+        },
+        {
+            "modelName": "23len_wonder_3.0_f_t05",
+            "modelBase": "v2_23len_wonder",
+            "modelPath": "v2/main/23_len/v2_23len_wonder",
+            "modelFile": "23len_wonder_3.0_f_t05.model3.json"
         }
     ],
     "luka": [
