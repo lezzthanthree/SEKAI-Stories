@@ -70,7 +70,7 @@ const randomText = {
         "Baby, do you know what you wanna hear? 'Cause you can say the word, make it oh so clear.",
         "じゃ！",
         "Burn Your Dread.",
-        "When you're rife with devastation, there's a single explaination.",
+        "When you're rife with devastation, there's a single explanation.",
         "You're a toymaker's creation trapped inside a crystal ball.",
         "Three months of winter coldness and awesome holidays",
         "Starlight Glimmer.",
@@ -287,7 +287,7 @@ export default FlavorText;
         -> Portal Song Reference: "Still Alive"
     "Bonds of people is the true power.",
         -> Persona 4 Song Reference: "Beauty of Destiny"
-    "When you're rife with devastation, there's a single explaination.",
+    "When you're rife with devastation, there's a single explanation.",
     "You're a toymaker's creation trapped inside a crystal ball.",
         -> Friendship is Witchcraft Song Reference: "Gypsy Bard"
         -> lezzthanthree is a part of MLP Fandom since 2017
