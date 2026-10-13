@@ -318,7 +318,8 @@
     },
     "import-export": {
         "header": "导入/导出",
-        "description": "自定义的背景和图片不会包含在此JSON文件中"
+        "description": "自定义的背景和图片不会包含在此JSON文件中",
+        "import-prompt": "你的故事还有未保存的修改。确定要继续吗？"
     },
     "save": {
         "header": "保存",
