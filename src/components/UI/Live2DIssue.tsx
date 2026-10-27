@@ -11,7 +11,7 @@ const costumeIssueList: string[] = [
     "16rui_cloth001",
 ];
 
-const costumeCorruptedList: string[] = ["20mizuki_culture"];
+const costumeCorruptedList: string[] = ["20mizuki_culture_t01"];
 
 const Live2DIssue: React.FC<Live2DIssueProps> = ({ costume }) => {
     const [ignoreLive2DIssue, setIgnoreLive2DIssue] = useState<boolean>(
