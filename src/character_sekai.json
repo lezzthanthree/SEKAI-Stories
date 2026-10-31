@@ -1531,6 +1531,12 @@
             "modelBase": "v2_11akito_unit",
             "modelPath": "v2/main/11_akito/v2_11akito_unit",
             "modelFile": "v2_11akito_unit_t11.model3.json"
+        },
+        {
+            "modelName": "v2_11akito_unit_t12",
+            "modelBase": "v2_11akito_unit",
+            "modelPath": "v2/main/11_akito/v2_11akito_unit",
+            "modelFile": "v2_11akito_unit_t12.model3.json"
         }
     ],
     "touya": [
