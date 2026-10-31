@@ -1,7 +1,7 @@
 {
     "name": "sekai-stories",
     "private": true,
-    "version": "2026.10.13",
+    "version": "2026.11.01",
     "type": "module",
     "scripts": {
         "dev": "vite",
