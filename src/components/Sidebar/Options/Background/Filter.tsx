@@ -279,7 +279,7 @@ const Filter: React.FC = () => {
                 <POVFilter filter={filter} setFilter={setFilter} />
             )}
             <Checkbox
-                id="pov"
+                id="backgroundBlur"
                 label={t("background.filters.background-blur")}
                 checked={filter?.backgroundBlur?.show}
                 onChange={handleBackgroundBlur}
