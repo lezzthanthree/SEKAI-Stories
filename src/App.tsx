@@ -9,6 +9,7 @@ import Loading from "./components/UI/Loading";
 import { SceneContext } from "./contexts/SceneContext";
 import { makeSceneJson } from "./utils/MakeSceneJson";
 import { IJsonSave } from "./types/IJsonSave";
+import DeveloperBar from "./components/UI/DeveloperBar";
 
 function App() {
     const { playSound } = useAudioManager();
@@ -141,6 +142,7 @@ function App() {
     return (
         <main className={`app-${lang}`} id="app">
             <Content />
+            <DeveloperBar />
             {!hide && <Sidebar />}
             {showAnnouncements && <Announcements />}
             <Loading />

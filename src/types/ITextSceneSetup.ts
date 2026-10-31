@@ -30,7 +30,7 @@ interface ITextPosition {
     y: number;
 }
 interface ITextStyle {
-    fontFamily: string;
+    fontFamily: string | string[];
     fontSize: number;
     fill: number;
     align?: "left" | "center" | "right";

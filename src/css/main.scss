@@ -51,7 +51,9 @@ video {
 
 #canvas {
     width: 90%;
-    font-family: "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB";
+    font-family:
+        "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB",
+        "FOT-RodinNTLGPro-DB-Viet", "FOT-RodinNTLGPro-EB-Viet";
     border: $dark-miku 2px solid;
     @media (width <= 768px) {
         position: fixed;
@@ -62,7 +64,9 @@ video {
 
 #canvas-test {
     height: 100%;
-    font-family: "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB";
+    font-family:
+        "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB",
+        "FOT-RodinNTLGPro-DB-Viet", "FOT-RodinNTLGPro-EB-Viet";
     width: 100%;
 }
 

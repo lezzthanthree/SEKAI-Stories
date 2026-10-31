@@ -17,6 +17,18 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "FOT-RodinNTLGPro-DB-Viet";
+  src: url("/fonts/FOT-RodinNTLGPro-DB-Viet.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "FOT-RodinNTLGPro-EB-Viet";
+  src: url("/fonts/FOT-RodinNTLGPro-EB-Viet.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 .app-en,
 .app-ja {
   font-family: "FOT-RodinNTLGPro-DB", sans-serif;
@@ -1247,7 +1259,7 @@ video {
 
 #canvas {
   width: 90%;
-  font-family: "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB";
+  font-family: "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB", "FOT-RodinNTLGPro-DB-Viet", "FOT-RodinNTLGPro-EB-Viet";
   border: #00ccbb 2px solid;
 }
 @media (width <= 768px) {
@@ -1260,7 +1272,7 @@ video {
 
 #canvas-test {
   height: 100%;
-  font-family: "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB";
+  font-family: "FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-EB", "FOT-RodinNTLGPro-DB-Viet", "FOT-RodinNTLGPro-EB-Viet";
   width: 100%;
 }
 

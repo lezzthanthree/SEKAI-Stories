@@ -9,7 +9,7 @@ export const dialogueBoxesSetupData: Record<string, IDialogueTextSetup> = {
         bg: "/img/Dialogue_Background.png",
         nameTag: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-EB",
+                fontFamily: ["FOT-RodinNTLGPro-EB", "FOT-RodinNTLGPro-EB-Viet"],
                 fontSize: 44,
                 fill: 0xebebef,
                 stroke: 0x5d5d79,
@@ -22,7 +22,7 @@ export const dialogueBoxesSetupData: Record<string, IDialogueTextSetup> = {
         },
         dialogue: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 44,
                 fill: 0xffffff,
                 stroke: 0x5d5d79,
@@ -42,7 +42,7 @@ export const dialogueBoxesSetupData: Record<string, IDialogueTextSetup> = {
         bg: "/img/Dialogue_Background_Classic.png",
         nameTag: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 48,
                 fill: 0xffffff,
             },
@@ -53,7 +53,7 @@ export const dialogueBoxesSetupData: Record<string, IDialogueTextSetup> = {
         },
         dialogue: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 48,
                 fill: 0x444466,
                 wordWrap: true,
@@ -71,7 +71,7 @@ export const dialogueBoxesSetupData: Record<string, IDialogueTextSetup> = {
         bg: "/img/Dialogue_Background_MYSEKAI.png",
         nameTag: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-EB",
+                fontFamily: ["FOT-RodinNTLGPro-EB", "FOT-RodinNTLGPro-EB-Viet"],
                 fontSize: 44,
                 fill: 0x444466,
             },
@@ -82,7 +82,7 @@ export const dialogueBoxesSetupData: Record<string, IDialogueTextSetup> = {
         },
         dialogue: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 44,
                 fill: 0x444466,
                 wordWrap: true,
@@ -104,7 +104,7 @@ export const choicesTextsSetupData: Record<string, IChoicesTextSetup> = {
         choice1: {
             textString: "Choice 1",
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-EB",
+                fontFamily: ["FOT-RodinNTLGPro-EB", "FOT-RodinNTLGPro-EB-Viet"],
                 fontSize: 32,
                 fill: 0x444466,
                 align: "center",
@@ -121,7 +121,7 @@ export const choicesTextsSetupData: Record<string, IChoicesTextSetup> = {
         choice2: {
             textString: "Choice 2",
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-EB",
+                fontFamily: ["FOT-RodinNTLGPro-EB", "FOT-RodinNTLGPro-EB-Viet"],
                 fontSize: 32,
                 fill: 0x444466,
                 align: "center",
@@ -141,7 +141,7 @@ export const choicesTextsSetupData: Record<string, IChoicesTextSetup> = {
         choice1: {
             textString: "Choice 1",
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 40,
                 fill: 0x444466,
                 align: "center",
@@ -158,7 +158,7 @@ export const choicesTextsSetupData: Record<string, IChoicesTextSetup> = {
         choice2: {
             textString: "Choice 2",
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 40,
                 fill: 0x444466,
                 align: "center",
@@ -180,7 +180,7 @@ export const sceneCenterTextsSetupData: Record<string, ISceneTextSetup> = {
         bg: "/img/SceneText_Background.png",
         text: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 44,
                 fill: 0xffffff,
                 align: "center",
@@ -199,7 +199,7 @@ export const sceneCenterTextsSetupData: Record<string, ISceneTextSetup> = {
         bg: "/img/SceneText_Background_Classic.png",
         text: {
             textStyle: {
-                fontFamily: "FOT-RodinNTLGPro-DB",
+                fontFamily: ["FOT-RodinNTLGPro-DB", "FOT-RodinNTLGPro-DB-Viet"],
                 fontSize: 40,
                 fill: 0xffffff,
                 align: "center",
