@@ -1024,7 +1024,6 @@ select:disabled {
   max-width: 768px;
   max-height: 80dvh;
   overflow: visible;
-  animation: open_window 0.1s linear;
 }
 .window img {
   max-width: 80%;
@@ -1032,6 +1031,9 @@ select:disabled {
 .window .width-100 {
   width: 100%;
   max-width: 100%;
+}
+.window {
+  animation: open_window 0.1s linear;
 }
 
 .window.window_close {
@@ -1184,6 +1186,29 @@ select:disabled {
     animation-timing-function: ease-in;
   }
 }
+.development-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #00ccbb;
+}
+@media (width > 768px) {
+  .development-bar {
+    flex-direction: column;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+@media (width <= 768px) {
+  .development-bar {
+    flex-direction: row;
+  }
+}
+.development-bar {
+  padding: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;

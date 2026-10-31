@@ -1,0 +1,18 @@
+.development-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $dark-miku;
+
+    @media (width > 768px) {
+        flex-direction: column;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+    @media (width <= 768px) {
+        flex-direction: row;
+    }
+
+    padding: 5px;
+}
