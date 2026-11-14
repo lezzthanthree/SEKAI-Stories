@@ -91,6 +91,14 @@
     }
 }
 
+.app-vi {
+    font-family: "Noto Sans", sans-serif;
+    button,
+    select {
+        font-family: "Noto Sans", sans-serif;
+    }
+}
+
 [class^="app-"]:not(.app-en):not(.app-ja) {
     button,
     select {

@@ -10,7 +10,7 @@ import fr from "../locale/fr-FR.json";
 import th from "../locale/th-TH.json";
 import zhTW from "../locale/zh-TW.json";
 import zhHK from "../locale/zh-HK.json";
-import vi from "../locale/vi-VN.json"
+import vi from "../locale/vi-VN.json";
 
 export const languageNames = {
     en: "English (en-US)",
@@ -21,10 +21,10 @@ export const languageNames = {
     zhTW: "繁體中文 (zh-TW)",
     zhHK: "港式廣東話 (zh-HK)",
     fil: "Filipino (fil-PH)",
+    vi: "Tiếng Việt (vi-VN)",
     ms: "Bahasa Melayu (ms-MY)",
     th: "ไทย (th-TH)",
     pl: "Polski (pl-PL)",
-    vi: "Tiếng Việt (vi-VN)"
 };
 
 export const handleChangeLanguage = async (
@@ -52,7 +52,7 @@ const i18nInit = () => {
             th: { translation: th },
             zhTW: { translation: zhTW },
             zhHK: { translation: zhHK },
-            vi: {translation: vi}
+            vi: { translation: vi },
         },
         fallbackLng: "en",
     });

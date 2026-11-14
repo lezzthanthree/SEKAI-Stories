@@ -144,6 +144,14 @@
   font-family: "Noto Sans HK", sans-serif;
 }
 
+.app-vi {
+  font-family: "Noto Sans", sans-serif;
+}
+.app-vi button,
+.app-vi select {
+  font-family: "Noto Sans", sans-serif;
+}
+
 [class^=app-]:not(.app-en):not(.app-ja) button,
 [class^=app-]:not(.app-en):not(.app-ja) select {
   font-family: "Noto Sans JP", "Noto Sans", sans-serif;
