@@ -49,7 +49,7 @@ const SettingsButton: React.FC = () => {
                 </button>
             </div>
             {show && (
-                <Window show={setShow}>
+                <Window show={setShow} className="window__90_width">
                     <div className="window__content">
                         <SupportButton />
                         <h1>{t("settings.header")}</h1>
