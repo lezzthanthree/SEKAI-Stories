@@ -28,6 +28,8 @@ const randomMessage = [
     "mizukey",
     "SIFAS died for this.",
     "C'mere, Mafuyu-chan",
+    "Tin nhắn mẫu",
+    "Ichika có thể hát\nbằng tiếng Việt ư?"
 ];
 
 const AdjustYPosition: React.FC<AdjustYPositionProps> = ({
