@@ -41,10 +41,6 @@ const Announcements: React.FC = () => {
                     what scene you would like when starting SEKAI Stories.
                 </li>
             </ul>
-            <p>
-                Holiday season is nearing! Which means, I will be setting a
-                contest for another SEKAI Stories One-shot: Christmas Edition!
-            </p>
             <p>Tap this section to close.</p>
         </div>
     );
