@@ -144,7 +144,7 @@ function App() {
         <main className={`app-${lang}`} id="app">
             <Content />
             <DeveloperBar />
-            <SidebarResizeBar />
+            {!hide && <SidebarResizeBar />}
             {!hide && <Sidebar />}
             {showAnnouncements && <Announcements />}
             <Loading />
