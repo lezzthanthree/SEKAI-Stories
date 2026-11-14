@@ -93,6 +93,7 @@ If you think there's a problem on using the dialogue generator, please [submit a
 - [Project Sekai Stickers](https://st.ayaka.one/) by [TheOriginalAyaka](https://github.com/TheOriginalAyaka/sekai-stickers)
 - [SEKAI Viewer](https://sekai.best/) by [Sekai-World](https://github.com/Sekai-World/sekai-viewer)
 - [sssekai](https://github.com/mos9527/sssekai/) by [mos9527](https://github.com/mos9527)
+- [MoeSekai](https://pjsk.moe/) by [StarMoe-org](https://github.com/StarMoe-org/Moesekai)
 - [SIFAS Dialogue Sandbox](https://sifas-dialogue-sandbox.vercel.app/) by me!
 
 ## License
