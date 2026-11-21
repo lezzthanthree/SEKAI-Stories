@@ -35,7 +35,7 @@ const randomText = {
         "An woke up and started speaking in English.",
         "Akito is spotted unconscious after eating Ena's favorite cheesecake.",
         "ABSOLUTE CINEMA",
-        "The Disapperance of Hatsune Miku",
+        "The Disappearance of Hatsune Miku",
         "Listening to Romeo And Cinderella (Shizuku Alt.)",
         "Do not overdose yourself with shipping~",
         "Please take only the recommended shipping dosage.",
@@ -54,7 +54,7 @@ const randomText = {
         "Do not slander Vivid BAD Squad, you will get banned. /j",
         "Do not slander the Virtual Singers, you will get banned. /j",
         "Meet SEKAI Stories's cousin, SIFAS Dialogue Sandbox!",
-        '"Smilie, how many more Lo〇e Li〇e! VA joke are you going to make!?"',
+        '"Smilie, how many more Lo〇e Li〇e! VA jokes are you going to make!?"',
         "Girls are now composing...",
         "Squad is now vibing...",
         "Idols are now practicing...",
@@ -76,9 +76,12 @@ const randomText = {
         "Starlight Glimmer.",
         "It's a amazing!",
         "This was a triumph.",
+        "Let your music in you light up your life.",
         "Bonds of people is the true power.",
         "11037",
         "Mukuro Ikusaba. The sixteenth student, lying hidden somewhere in this school. The one they call the Ultimate Despair. Watch out for her.",
+        "Ma, look! It's that blue twin-tailed hair from Fortn〇te!",
+        "Ma, look! It's that fatass red drilled-twin-tailed hair from Fortn〇te!",
         "It's pronounced 'DEKO-NINA'.",
         "Stream Moe Shop!",
         "Stream Jamie Paige!",
@@ -222,7 +225,7 @@ const FlavorText: React.FC = () => {
 export default FlavorText;
 
 /* 
-    LAST UPDATE: 10/13/2026
+    LAST UPDATE: 11/20/2026
     Will not list the obvious PJSK references.
     Placed here for people who needs explaination when translating.
 
@@ -285,6 +288,8 @@ export default FlavorText;
         -> Touhou Reference: "Marisa Stole the Precious Thing" by IOSYS
     "This was a triumph.",
         -> Portal Song Reference: "Still Alive"
+    "Let your music in you light up your life.",
+        -> Song Reference: "LIGHT UP" by Moe Shop
     "Bonds of people is the true power.",
         -> Persona 4 Song Reference: "Beauty of Destiny"
     "When you're rife with devastation, there's a single explanation.",
@@ -318,6 +323,9 @@ export default FlavorText;
         -> "Idols" is for the MMJ members.
         -> "Troupe" is for the WxS members.
         -> "Band" is for the L/N members.
+    "Ma, look! It's that blue twin-tailed hair from Fortn〇te!",
+    "Ma, look! It's that fatass red drilled-twin-tailed hair from Fortn〇te!",
+        -> Miku and Teto's collab from Fortnite.
     "It's pronounced 'DEKO-NINA'."
         -> DECO*27
 */
